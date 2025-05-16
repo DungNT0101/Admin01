@@ -1,0 +1,22 @@
+#loginPage{
+    background-color: #ecececec;
+}
+.login-box{
+    text-align: center;
+    margin-top: 200px;
+    padding: 50px;
+    border: 1px solid #a8a8a8;
+    border-radius: 12px;
+    width: 500px;
+    margin: auto;
+    margin-top: 200px;
+    background: #fff;
+}
+body{
+    background: url(../../images/background/02.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+

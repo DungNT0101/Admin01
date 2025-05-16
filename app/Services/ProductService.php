@@ -1,0 +1,80 @@
+<?php
+
+namespace App\Services;
+
+use Illuminate\Support\Str;
+use App\Models\Product;
+use App\Models\ProductCategory;
+
+class ProductService
+{
+    public function store($request)
+    {
+        $data = $this->mapData($request);
+
+        return Product::create($data);
+    }
+
+    public function getCategories()
+    {
+        return ProductCategory::all();
+    }
+
+    public function getList()
+    {
+        return Product::paginate(10);
+    }
+
+    public function hotProducts()
+    {
+        return Product::where('hot', 1)->paginate(10);
+    }
+
+    public function getByID($id)
+    {
+        return Product::find($id);
+    }
+
+    public function update($request)
+    {
+        $data = $this->mapData($request);
+        $product = Product::find($request->id);
+
+        return $product->update($data);
+    }
+
+    public function mapData($request)
+    {
+        $slug = Str::slug($request->title);
+        $data = [
+            'title' => $request->title,
+            'slug' => $slug,
+            'keywords' => $request->keywords,
+            'description' => $request->description,
+            'price' => $request->price,
+            'sale_price' => $request->sale_price,
+            'category_id' => $request->category,
+            'home' => $request->home,
+            'hot' => empty($request->hot) ? 0 : 1,
+            'content' => $request->content,
+            'images' => $request->images,
+            'home' => empty($request->home) ? 0 : 1
+        ];
+
+        $avatar = $request->avatar;
+
+        if($avatar){
+            $avatarName = $slug.'.'.$avatar->guessExtension();
+            $avatar->move(config('image.products'), $avatarName);
+            $data['avatar'] = config('image.products').'/'.$avatarName;
+        }
+
+        return $data;
+    }
+
+    public function delete($id)
+    {
+        return Product::find($id)->delete();
+    }
+
+}
