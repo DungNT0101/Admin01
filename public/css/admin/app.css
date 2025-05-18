@@ -1,10 +1,14 @@
 body{
     font-family: 'Public Sans', sans-serif;
     font-size: 14px;
-    background-color: #0f172a;
+    background-color: #002B4B;
 }
 img{
     width: 100%;
+}
+img.icon{
+    width: 80%;
+    float: right;
 }
 a{
     text-decoration: none;
@@ -91,6 +95,7 @@ a{
     display: block;
     position: absolute;
     padding-bottom: 100px;
+    background-color: #002B4B;
 }
 #mainContent{
     display: block;
@@ -105,9 +110,10 @@ a{
 }
 #sidebar a{
     text-decoration: none;
-    color: #6c94cd;
+    color: #fff;
     display: block;
     font-size: 14px;
+    margin-top: 5px;
 }
 #sidebar a:hover{
     color: #ececec;
@@ -115,17 +121,17 @@ a{
 .admin-name{
     color: #fff;
     text-align: center;
-    width: 100%;
+    width: 60%;
     padding: 15px 0;
-    border-bottom: 1px solid #3b82f6;
+    margin: 0 auto;
 }
 .box-menu{
-    padding: 10px;
+    padding: 5px 10px;
 }
 
 #sidebar .title-1{
-    color: #6c94cd;
-    text-transform: uppercase;
+    color: #839EB2;
+    /* text-transform: uppercase; */
     font-size: 16px;
 }
 #sidebar ul li{
