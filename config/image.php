@@ -5,7 +5,7 @@ return [
     'logo' => 'images/logo',
     'products' => 'images/products',
     'news' => 'images/news',
-    'kien_thuc' => 'images/kien_thuc',
+    'users' => 'images/users',
     'banner' => 'images/banner',
 
 ];

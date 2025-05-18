@@ -3,16 +3,16 @@
 namespace App\Services;
 
 use Illuminate\Support\Str;
-use App\Models\Product;
+use App\Models\Property;
 use App\Models\ProductCategory;
 
-class ProductService
+class PropertyService
 {
     public function store($request)
     {
         $data = $this->mapData($request);
 
-        return Product::create($data);
+        return Property::create($data);
     }
 
     public function getCategories()
@@ -22,25 +22,25 @@ class ProductService
 
     public function getList()
     {
-        return Product::paginate(10);
+        return Property::paginate(10);
     }
 
     public function hotProducts()
     {
-        return Product::where('hot', 1)->paginate(10);
+        return Property::where('hot', 1)->paginate(10);
     }
 
     public function getByID($id)
     {
-        return Product::find($id);
+        return Property::find($id);
     }
 
     public function update($request)
     {
         $data = $this->mapData($request);
-        $product = Product::find($request->id);
+        $property = Property::find($request->id);
 
-        return $product->update($data);
+        return $property->update($data);
     }
 
     public function mapData($request)
@@ -74,7 +74,7 @@ class ProductService
 
     public function delete($id)
     {
-        return Product::find($id)->delete();
+        return Property::find($id)->delete();
     }
 
 }

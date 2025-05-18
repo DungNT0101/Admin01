@@ -8,7 +8,7 @@
         </div>
         <div class="col-10">
             <h6 class="title-1">
-                <a href="{{route('dashboard')}}">Nhà Đất Bán</a>
+                <a href="{{route('properties.list', 'sale')}}">Nhà Đất Bán</a>
             </h6>
         </div>
     </div>
@@ -20,7 +20,7 @@
         </div>
         <div class="col-10">
             <h6 class="title-1">
-                <a href="{{route('dashboard')}}">Nhà Đất Cho Thuê</a>
+                <a href="{{route('properties.list', 'rent')}}">Nhà Đất Cho Thuê</a>
             </h6>
         </div>
     </div>
@@ -56,7 +56,7 @@
         </div>
         <div class="col-10">
             <h6 class="title-1">
-                <a href="{{route('dashboard')}}">Thông Tin Cá Nhân</a>
+                <a href="{{route('my-profile')}}">Thông Tin Cá Nhân</a>
             </h6>
         </div>
     </div>
@@ -68,7 +68,7 @@
         </div>
         <div class="col-10">
             <h6 class="title-1">
-                <a href="{{route('dashboard')}}">Đăng Xuất</a>
+                <a href="{{route('logout')}}">Đăng Xuất</a>
             </h6>
         </div>
     </div>
