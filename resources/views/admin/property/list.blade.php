@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Sản Phẩm')
+@section('title', 'Nhà Đất Bán')
 
 {{--  Start css  --}}
 @push('css')
@@ -11,19 +11,20 @@
 {{--  Start content  --}}
 @section('content')
 
-<div class="page-head">
-    <h4>
-        <a href={{route('product.index')}}>Danh Sách Sản phẩm</a>
-    </h4>
+<div class="page-head row">
+    <div class="col-md-6">
+        <h1>
+            Nhà Đất Bán
+        </h1>
+    </div>
+    <div class="col-md-6 text-right">
+        <a href="{{ route('property.create') }}" class="btn btn-create mg-right-20 right">Tạo mới</a>
+    </div>
 </div>
 
 <div class="box-content">
 
-    <div class="row">
-        <div class="col-md-12">
-            <a href="{{ route('product.create') }}" class="btn btn-primary mg-right-20">Tạo mới</a>
-        </div>
-    </div>
+
 
     <div class="row">
         {{--  List categories  --}}
@@ -49,37 +50,6 @@
                 </div>
             </div>
 
-            @foreach ($dataList as $data)
-                <form action="{{ route('product.category.update') }}" method="POST">
-                    @csrf
-                    <input type="hidden" value="{{ $data->id }}" name="id">
-                    <div class="row mg-none">
-                        <div class="col-md-3 border-left border-bottom pd-5">
-                            <a href="{{ route('product.edit', $data->id) }}" class="display-block pd-5">{{ $data->title }}</a>
-                        </div>
-                        <div class="col-md-1 border-left border-bottom pd-5 text-center">
-                            @if ($data->hot == 1)
-                                <input type="checkbox" class="checkbox" id="hot" name="hot" value="1" checked>
-                            @else
-                                <input type="checkbox" class="checkbox" id="hot" name="hot" value="1">
-                            @endif
-                        </div>
-                        <div class="col-md-2 border-left border-bottom pd-5 text-center">
-                            {{ $data->price }}
-                        </div>
-                        <div class="col-md-2 border-left border-bottom pd-5 text-center">
-                            {{ $data->sale_price }}
-                        </div>
-                        <div class="col-md-2 border-left border-bottom pd-5 text-center">
-                            {{ $data->updated_at }}
-                        </div>
-                        <div class="col-md-2 border-left border-right border-bottom pd-5 text-center">
-                            <a href="{{ route('product.edit', $data->id) }}" class="btn btn-primary mg-right-20">&#9998;</a>
-                            <a href="{{ route('product.delete', $data->id) }}" class="btn btn-danger">&#10006;</a>
-                        </div>
-                    </div>
-                </form>
-            @endforeach
         </div>
         <div class="row">
             <div class="col-md-12 text-center mg-top-20 main-paginate">

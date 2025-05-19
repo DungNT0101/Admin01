@@ -1,6 +1,8 @@
 @extends('layouts.admin')
 
-@section('title', 'My Profile')
+@section('title', 'Thông tin cá nhân')
+
+{{--  Start breadcrumb  --}}
 
 {{--  Start css  --}}
 @push('css')

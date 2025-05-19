@@ -31,10 +31,23 @@ class PropertyController extends Controller
 
     public function create()
     {
-        $categories = $this->service->getCategories();
-
+        $propertyTypes = $this->service->getCategories();
+        $laws = (object)[
+            [ 'id' => 1, 'name' => 'Số đỏ' ],
+            [ 'id' => 2, 'name' => 'Sổ hồng' ],
+            [ 'id' => 3, 'name' => 'Giấy chứng nhận quyền sử dụng đất' ],
+            [ 'id' => 4, 'name' => 'Giấy chứng nhận quyền sở hữu nhà ở' ],
+        ];
+        $laws = collect($laws)->map(function ($item) {
+            return (object)[
+                'id' => $item['id'],
+                'name' => $item['name']
+            ];
+        });
+        $laws = collect($laws);
         return view('admin.property.create', [
-            'categories' => $categories
+            'propertyTypes' => $propertyTypes,
+            'laws' => $laws
         ]);
     }
 
@@ -49,11 +62,11 @@ class PropertyController extends Controller
     public function edit($id)
     {
         $property = $this->service->getByID($id);
-        $categories = $this->service->getCategories();
+        $propertyTypes = $this->service->getCategories();
 
         return view('admin.property.edit', [
             'data' => $property,
-            'categories' => $categories
+            'propertyTypes' => $propertyTypes
         ]);
     }
 

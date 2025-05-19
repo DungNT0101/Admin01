@@ -1,6 +1,8 @@
 @extends('layouts.admin')
 
-@section('title', 'Product')
+@section('title', 'Thêm Mới Nhà Đất Bán')
+
+{{--  Start breadcrumb  --}}
 
 {{--  Start css  --}}
 @push('css')
@@ -11,110 +13,146 @@
 {{--  Start content  --}}
 @section('content')
 
-<div class="page-head">
-    <h4>
-        <a href={{route('product.index')}}>Sản Phẩm</a>
-    </h4>
+<div class="page-head row">
+    <div class="col-md-5">
+        <h1>
+            Thêm mới nhà đất bán
+        </h1>
+    </div>
+    <div class="col-md-6 text-right">
+        <a href="{{ route('properties.list', 'sale') }}" class="btn btn-create mg-right-20 right">Danh Sách Nhà Đất Bán</a>
+    </div>
 </div>
 
-<div class="box-content">
-    <form action="{{ route('product.store') }}" enctype="multipart/form-data" method="POST">
-        @csrf
-        <div class="row">
-            <div class="col-md-6">
-                <div class="row">
-                    <div class="col-md-11">
-                        <label for="title">Tiêu đề</label>
-                        <input type="text" class="form-control" id="title" name="title">
-                    </div>
-                </div>
-
-                <div class="row mg-top-20">
-                    <div class="col-md-11">
-                        <label for="keywords">Từ khóa SEO</label>
-                        <input type="text" class="form-control" id="keywords" name="keywords">
-                    </div>
-                </div>
-
-                <div class="row mg-top-20">
-                    <div class="col-md-11">
-                        <label for="description">Mô tả</label>
-                        <textarea name="description" id="description" rows="3" class="form-control"></textarea>
-                    </div>
-                </div>
-
-                <div class="row mg-top-20">
-                    <div class="col-md-11">
-                        <label for="keywords">Ảnh đại diện (Tỉ lệ 1:1, 500x500, 600x600 px)</label>
-                        <input type="file" class="form-control" id="avatar" name="avatar" accept="image/*">
-                    </div>
-                </div>
-
-                <div class="row mg-top-20">
-                    <div class="col-md-11">
-                        <label for="content">Giới thiệu sản phẩm</label>
-                        <textarea name="content" id="content" cols="100%" rows="5" class="form-control"></textarea>
-                    </div>
-                </div>
-
+<div class="row">
+    <div class="col-md-12">
+        @if(session('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
-            <div class="col-md-6">
-                <div class="row">
-                    <div class="col-md-11">
-                        <label for="price">Giá</label>
-                        <input type="text" class="form-control" id="price" name="price">
+        @endif
+        @if(session('error'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{ session('error') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+        @if($errors->any())
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+    </div>
+</div>
+<form action="{{ route('property.store') }}" enctype="multipart/form-data" method="POST">
+    @csrf
+    <input type="text" name="type" value="sale" hidden>
+    <input type="text" name="user_id" value="{{ Auth::user()->id }}" hidden>
+    <div class="row">
+        <div class="col-md-10">
+            <div class="row box-content">
+                <div class="col-md-12">
+                    <label for="title">Tiêu đề</label>
+                    <input type="text" class="form-control" id="title" name="title" value="{{ old('title') }}">
+                </div>
+                <div class="col-md-12 mg-top-20">
+                    <label for="address">Địa chỉ</label>
+                    <input type="text" class="form-control" id="address" name="address" value="{{ old('address') }}">
+                </div>
+                <div class="col-md-12 mg-top-20">
+                    <label for="content">Thông tin mô tả</label>
+                    <textarea name="content" id="content" cols="100%" class="form-control" rows="10"></textarea>
+                </div>
+            </div>
+
+            <div class="box-content">
+                <h4 class="border-bottom mg-top-20 pd-bottom-20">
+                    Thông tin chi tiết
+                </h4>
+                <div class="row mg-top-20 pd-top-20">
+                    <div class="col-md-4">
+                        <label for="price">Mức giá (vnd/m2)</label>
+                        <input type="text" class="form-control" id="price" name="price" value="{{ old('price') }}">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="area">Diện tích (m2)</label>
+                        <input type="text" class="form-control" id="area" name="area" value="{{ old('area') }}">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="equivalent_value">Giá trị tương đương (vnd)</label>
+                        <input type="text" class="form-control" id="equivalent_value" name="equivalent_value" value="{{ old('equivalent_value') }}">
                     </div>
                 </div>
-
                 <div class="row mg-top-20">
-                    <div class="col-md-11">
-                        <label for="sale-price">Giá sau giảm</label>
-                        <input type="text" class="form-control" id="sale-price" name="sale_price">
+                    <div class="col-md-6">
+                        <label for="type_property">Loại hình</label>
+                        <select name="type_property" id="type_property" class="form-control">
+                            <option value="">Chọn loại hình</option>
+                            @foreach($propertyTypes as $propertyType)
+                                <option value="{{ $propertyType->id }}">{{ $propertyType->name }}</option>
+                            @endforeach
+                        </select>
                     </div>
-                </div>
-
-                <div class="row mg-top-20">
-                    <div class="col-md-11">
-                        <label for="category">Danh mục sản phẩm</label>
-                        <select name="category" id="category" class="form-control">
-                            <option value=""></option>
-                            @if(!empty($categories))
-                                @foreach ($categories as $data)
-                                    <option value="{{ $data->id }}">{{ $data->title }}</option>
-                                @endforeach
-                            @endif
+                    <div class="col-md-6">
+                        <label for="law">Pháp lý</label>
+                        <select name="law" id="law" class="form-control">
+                            <option value="">Chọn pháp lý</option>
+                            @foreach($laws as $law)
+                                <option value="{{ $law->id }}">{{ $law->name }}</option>
+                            @endforeach
                         </select>
                     </div>
                 </div>
-
                 <div class="row mg-top-20">
-                    <div class="col-md-5">
-                        <label for="home">Hiển thị trang chủ</label>
-                        <input type="checkbox" class="checkbox" id="home" name="home" value="1">
+                    <div class="col-md-4">
+                        <label for="bedroom">Số phòng ngủ</label>
+                        <input type="text" class="form-control" id="bedroom" name="bedroom" value="{{ old('bedroom') }}">
                     </div>
-                    <div class="col-md-5">
-                        <label for="hot">Sản phẩm  bán chạy</label>
-                        <input type="checkbox" class="checkbox" id="hot" name="hot" value="1">
+                    <div class="col-md-4">
+                        <label for="bathroom">Số phòng tắm</label>
+                        <input type="text" class="form-control" id="bathroom" name="bathroom" value="{{ old('bathroom') }}">
                     </div>
                 </div>
-
                 <div class="row mg-top-20">
-                    <div class="col-md-11">
-                        <label for="images">Hình ảnh (Ảnh tỉ lệ 2:1, 1500:750, 1200:600)</label>
-                        <textarea name="images" id="images" cols="100%" rows="5" class="form-control"></textarea>
+                    <div class="col-md-4">
+                        <label for="direction">Hướng</label>
+                        <input type="text" class="form-control" id="direction" name="direction" value="{{ old('direction') }}">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="front">Mặt tiền (m)</label>
+                        <input type="text" class="form-control" id="front" name="front" value="{{ old('front') }}">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="road">Đường vào (m)</label>
+                        <input type="text" class="form-control" id="road" name="road" value="{{ old('road') }}">
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="row mg-top-40">
-            <div class="col-md-12 text-center">
-                <a href="{{ route('product.index') }}" class="btn btn-primary">Quay lại</a>
-                <button type="submit" class="btn btn-primary">Tạo mới</button>
-            </div>
+        <div class="col-md-2 text-center mg-top-20">
+            @if(@empty(Auth::user()->avatar))
+                <img src="{{ asset('images/icons/user_default.png') }}" alt="{{ Auth::user()->name }}" class="img-avatar center">
+            @else
+                <img src="{{ asset(Auth::user()->avatar) }}" alt="{{ Auth::user()->name }}" class="img-avatar center">
+            @endif
+            <h6 class="mg-top-20 text-center">
+                {{ Auth::user()->full_name }}
+            </h6>
         </div>
-    </form>
-</div>
+    </div>
+    <div class="row mg-top-20">
+        <div class="col-md-12 mg-top-20 text-right">
+            <button type="submit" class="btn btn-create">Thêm mới</button>
+        </div>
+    </div>
+</form>
+
 
 
 @endsection
@@ -127,7 +165,7 @@
 {{--  End modals  --}}
 
 {{--  Start scripts  --}}
-@push('scripts')
+{{--  @push('scripts')
     @include('admin.elements.tinymce')
-@endpush
+@endpush  --}}
 {{--  End scripts  --}}
