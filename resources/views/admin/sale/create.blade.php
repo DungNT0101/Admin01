@@ -163,6 +163,19 @@
                     </div>
                 </div>
             </div>
+
+            <div class="box-content mg-top-20">
+                <h4 class="border-bottom mg-top-20 pd-bottom-20">
+                    Thư viện hình ảnh (Gallery)
+                </h4>
+                <div class="row mg-top-20">
+                    <div class="col-md-12">
+                        <label for="gallery_images">Thêm hình ảnh vào thư viện</label>
+                        <input type="file" class="form-control" id="gallery_images" name="gallery_images[]" multiple accept="image/*" onchange="handleGalleryFiles(event)">
+                        <div id="gallery-preview-container" class="row mt-3"></div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="col-md-2 text-center mg-top-20">
             @if(@empty(Auth::user()->avatar))
@@ -216,7 +229,65 @@ function previewImages(event) {
         });
     }
 }
+let galleryFiles = [];
 
+function handleGalleryFiles(event) {
+    const files = Array.from(event.target.files);
+    galleryFiles = galleryFiles.concat(files);
+    renderGalleryPreview();
+}
+
+function removeGalleryImage(index) {
+    galleryFiles.splice(index, 1);
+    renderGalleryPreview();
+}
+
+function renderGalleryPreview() {
+    const previewContainer = document.getElementById('gallery-preview-container');
+    previewContainer.innerHTML = '';
+    galleryFiles.forEach((file, idx) => {
+        if (file.type.startsWith('image/')) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const col = document.createElement('div');
+                col.className = 'col-md-2 mb-2 position-relative';
+                const img = document.createElement('img');
+                img.src = e.target.result;
+                img.className = 'img-thumbnail';
+                img.style.maxWidth = '100%';
+                img.style.height = '100px';
+                // Remove button
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'btn btn-danger btn-sm position-absolute';
+                btn.style.top = '5px';
+                btn.style.right = '10px';
+                btn.innerHTML = '&times;';
+                btn.onclick = function() { removeGalleryImage(idx); };
+                col.appendChild(img);
+                col.appendChild(btn);
+                previewContainer.appendChild(col);
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+    updateGalleryInput();
+}
+
+function updateGalleryInput() {
+    // Remove the old input
+    const oldInput = document.getElementById('gallery_images');
+    const parent = oldInput.parentNode;
+    const newInput = oldInput.cloneNode();
+    newInput.value = '';
+    newInput.files = null;
+    newInput.onchange = handleGalleryFiles;
+    parent.replaceChild(newInput, oldInput);
+    // Create a DataTransfer to update the input's files
+    const dataTransfer = new DataTransfer();
+    galleryFiles.forEach(file => dataTransfer.items.add(file));
+    newInput.files = dataTransfer.files;
+}
 </script>
 @endpush
 {{--  End scripts  --}}
