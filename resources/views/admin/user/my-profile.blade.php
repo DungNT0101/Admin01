@@ -19,7 +19,6 @@
             Thông tin cá nhân
         </h1>
     </div>
-
 </div>
 
 <div class="box-content">

@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Property extends Model
+class Sale extends Model
 {
 
-    protected $table = 'properties';
+    protected $table = 'sales';
 
     /**
      * The attributes that are mass assignable.

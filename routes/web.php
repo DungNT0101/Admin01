@@ -5,7 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductCategoryController;
-use App\Http\Controllers\PropertyController;
+use App\Http\Controllers\SaleController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\KienThucController;
 use App\Http\Controllers\PageController;
@@ -43,14 +43,14 @@ Route::group([
     Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 
 
-    // Property
-    Route::get('/property/create', [PropertyController::class, 'create'])->name('property.create');
-    Route::post('/property/store', [PropertyController::class, 'store'])->name('property.store');
-    Route::get('/properties', [PropertyController::class, 'index'])->name('properties.list');
-    Route::post('/property/update', [PropertyController::class, 'update'])->name('property.update');
-    Route::get('/property/delete/{id}', [PropertyController::class, 'delete'])->name('property.delete');
-    Route::get('/property/hot', [PropertyController::class, 'hotProducts'])->name('property.hot');
-    Route::get('/property/{id}', [PropertyController::class, 'edit'])->name('property.edit');
+    // Property Sale
+    Route::get('/property/sales', [SaleController::class, 'index'])->name('sale.list');
+    Route::get('/property/sale/create', [SaleController::class, 'create'])->name('sale.create');
+    Route::post('/property/sale/store', [SaleController::class, 'store'])->name('sale.store');
+    Route::post('/property/sale/update', [SaleController::class, 'update'])->name('sale.update');
+    Route::get('/property/sale/delete/{id}', [SaleController::class, 'delete'])->name('sale.delete');
+    Route::get('/property/sale/hot', [SaleController::class, 'hotProducts'])->name('sale.hot');
+    Route::get('/property/sale/{id}', [SaleController::class, 'edit'])->name('sale.edit');
 
     // News
     Route::get('/news', [NewsController::class, 'getNews'])->name('news.index');

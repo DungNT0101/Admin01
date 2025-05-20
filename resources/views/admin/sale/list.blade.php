@@ -12,13 +12,13 @@
 @section('content')
 
 <div class="page-head row">
-    <div class="col-md-6">
+    <div class="col-md-5">
         <h1>
             Nhà Đất Bán
         </h1>
     </div>
     <div class="col-md-6 text-right">
-        <a href="{{ route('property.create') }}" class="btn btn-create mg-right-20 right">Tạo mới</a>
+        <a href="{{ route('sale.create') }}" class="btn btn-create mg-right-20 right">Tạo mới</a>
     </div>
 </div>
 

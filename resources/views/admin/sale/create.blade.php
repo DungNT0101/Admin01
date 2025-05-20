@@ -20,7 +20,7 @@
         </h1>
     </div>
     <div class="col-md-6 text-right">
-        <a href="{{ route('properties.list', 'sale') }}" class="btn btn-create mg-right-20 right">Danh Sách Nhà Đất Bán</a>
+        <a href="{{ route('sale.list') }}" class="btn btn-create mg-right-20 right">Danh Sách Nhà Đất Bán</a>
     </div>
 </div>
 
@@ -50,7 +50,7 @@
         @endif
     </div>
 </div>
-<form action="{{ route('property.store') }}" enctype="multipart/form-data" method="POST">
+<form action="{{ route('sale.store') }}" enctype="multipart/form-data" method="POST">
     @csrf
     <input type="text" name="type" value="sale" hidden>
     <input type="text" name="user_id" value="{{ Auth::user()->id }}" hidden>
@@ -64,6 +64,15 @@
                 <div class="col-md-12 mg-top-20">
                     <label for="address">Địa chỉ</label>
                     <input type="text" class="form-control" id="address" name="address" value="{{ old('address') }}">
+                </div>
+                <div class="col-md-12">
+                    <label for="type_property">Loại hình</label>
+                    <select name="type_property" id="type_property" class="form-control">
+                        <option value="">Chọn loại hình</option>
+                        @foreach($saleTypes as $saleType)
+                            <option value="{{ $saleType->id }}">{{ $saleType->name }}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <div class="col-md-12 mg-top-20">
                     <label for="content">Thông tin mô tả</label>
@@ -90,16 +99,7 @@
                     </div>
                 </div>
                 <div class="row mg-top-20">
-                    <div class="col-md-6">
-                        <label for="type_property">Loại hình</label>
-                        <select name="type_property" id="type_property" class="form-control">
-                            <option value="">Chọn loại hình</option>
-                            @foreach($propertyTypes as $propertyType)
-                                <option value="{{ $propertyType->id }}">{{ $propertyType->name }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <label for="law">Pháp lý</label>
                         <select name="law" id="law" class="form-control">
                             <option value="">Chọn pháp lý</option>
@@ -108,14 +108,12 @@
                             @endforeach
                         </select>
                     </div>
-                </div>
-                <div class="row mg-top-20">
                     <div class="col-md-4">
                         <label for="bedroom">Số phòng ngủ</label>
                         <input type="text" class="form-control" id="bedroom" name="bedroom" value="{{ old('bedroom') }}">
                     </div>
                     <div class="col-md-4">
-                        <label for="bathroom">Số phòng tắm</label>
+                        <label for="bathroom">Số phòng tắm / Vệ sinh</label>
                         <input type="text" class="form-control" id="bathroom" name="bathroom" value="{{ old('bathroom') }}">
                     </div>
                 </div>
@@ -133,6 +131,37 @@
                         <input type="text" class="form-control" id="road" name="road" value="{{ old('road') }}">
                     </div>
                 </div>
+                <div class="row mg-top-20">
+                    <div class="col-md-12 mg-top-20 text-center">
+                        <button type="submit" class="btn btn-success">Lưu Thông Tin</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-content mg-top-20">
+                <h4 class="border-bottom mg-top-20 pd-bottom-20">
+                    Media
+                </h4>
+                <div class="row mg-top-20">
+                    <div class="col-md-12">
+                        <label for="images">Hình ảnh</label>
+                        <input type="file" class="form-control" id="images" name="images[]" multiple onchange="previewImages(event)">
+                        <div id="preview-container" class="row mt-3"></div>
+                    </div>
+                    <div class="col-md-12 mg-top-20">
+                        <label for="video">Video URL</label>
+                        <input type="text" class="form-control" id="video" name="video" value="{{ old('video') }}">
+                    </div>
+                    <div class="col-md-12 mg-top-20">
+                        <label for="maps">Google Maps</label>
+                        <input type="text" class="form-control" id="maps" name="maps" value="{{ old('maps') }}">
+                    </div>
+                </div>
+                <div class="row mg-top-20">
+                    <div class="col-md-12 mg-top-20 text-center">
+                        <button type="submit" class="btn btn-success">Lưu Thông Tin</button>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="col-md-2 text-center mg-top-20">
@@ -146,11 +175,7 @@
             </h6>
         </div>
     </div>
-    <div class="row mg-top-20">
-        <div class="col-md-12 mg-top-20 text-right">
-            <button type="submit" class="btn btn-create">Thêm mới</button>
-        </div>
-    </div>
+
 </form>
 
 
@@ -165,7 +190,33 @@
 {{--  End modals  --}}
 
 {{--  Start scripts  --}}
-{{--  @push('scripts')
-    @include('admin.elements.tinymce')
-@endpush  --}}
+@push('scripts')
+<script>
+function previewImages(event) {
+    const files = event.target.files;
+    const previewContainer = document.getElementById('preview-container');
+    previewContainer.innerHTML = '';
+    if (files) {
+        Array.from(files).forEach(file => {
+            if (file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const col = document.createElement('div');
+                    col.className = 'col-md-2 mb-2';
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.className = 'img-thumbnail';
+                    img.style.maxWidth = '100%';
+                    img.style.height = '100px';
+                    col.appendChild(img);
+                    previewContainer.appendChild(col);
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    }
+}
+
+</script>
+@endpush
 {{--  End scripts  --}}
