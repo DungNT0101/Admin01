@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Services\SaleService;
+use Illuminate\Support\Facades\Auth;
+use App\Models\SaleImage;
+
 
 class SaleController extends Controller
 {
@@ -51,12 +54,7 @@ class SaleController extends Controller
         ]);
     }
 
-    public function store(Request $request)
-    {
-        $this->service->store($request);
 
-        return redirect(route('sale.create'));
-    }
 
 
     public function edit($id)
@@ -91,6 +89,31 @@ class SaleController extends Controller
         return view('admin.sale.list', [
             'dataList' => $sales
         ]);
+    }
+
+    public function store(Request $request)
+    {
+        // Validate and save Sale
+        $sale = $this->service->store($request);
+
+        // Handle gallery images
+        if ($request->hasFile('gallery_images')) {
+            foreach ($request->file('gallery_images') as $file) {
+                $filename = Auth::id().'_'.time() . '.' . $file->guessExtension();
+                $file->move(config('image.sales'), $filename);
+                // Save each image to the database
+                SaleImage::create([
+                    'sale_id' => $sale->id,
+                    'path' => config('image.sales').'/'.$filename,
+                    'type' => 'gallery',
+                ]);
+            }
+        }
+
+        // Optionally handle main image (if you have a main image field)
+        // if ($request->hasFile('images')) { ... }
+
+        return redirect()->route('sale.create')->with('success', 'Tạo mới thành công!');
     }
 
 }

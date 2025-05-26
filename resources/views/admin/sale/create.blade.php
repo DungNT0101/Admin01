@@ -24,7 +24,7 @@
     </div>
 </div>
 
-<div class="row">
+<div class="row show-alerts">
     <div class="col-md-12">
         @if(session('success'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -50,9 +50,8 @@
         @endif
     </div>
 </div>
-<form action="{{ route('sale.store') }}" enctype="multipart/form-data" method="POST">
+<form action="{{ route('sale.store') }}" enctype="multipart/form-data" method="POST" name="formSale">
     @csrf
-    <input type="text" name="type" value="sale" hidden>
     <input type="text" name="user_id" value="{{ Auth::user()->id }}" hidden>
     <div class="row">
         <div class="col-md-10">
@@ -65,13 +64,14 @@
                     <label for="address">Địa chỉ</label>
                     <input type="text" class="form-control" id="address" name="address" value="{{ old('address') }}">
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-12 mg-top-20">
                     <label for="type_property">Loại hình</label>
                     <select name="type_property" id="type_property" class="form-control">
                         <option value="">Chọn loại hình</option>
-                        @foreach($saleTypes as $saleType)
-                            <option value="{{ $saleType->id }}">{{ $saleType->name }}</option>
-                        @endforeach
+                        <option value="Nhà đất">Nhà đất</option>
+                        <option value="Chung cư">Chung cư</option>
+                        <option value="Biệt thự">Biệt thự</option>
+                        <option value="Đất nền">Đất nền</option>
                     </select>
                 </div>
                 <div class="col-md-12 mg-top-20">
@@ -140,21 +140,13 @@
 
             <div class="box-content mg-top-20">
                 <h4 class="border-bottom mg-top-20 pd-bottom-20">
-                    Media
+                    Thư viện hình ảnh (Gallery)
                 </h4>
                 <div class="row mg-top-20">
                     <div class="col-md-12">
-                        <label for="images">Hình ảnh</label>
-                        <input type="file" class="form-control" id="images" name="images[]" multiple onchange="previewImages(event)">
-                        <div id="preview-container" class="row mt-3"></div>
-                    </div>
-                    <div class="col-md-12 mg-top-20">
-                        <label for="video">Video URL</label>
-                        <input type="text" class="form-control" id="video" name="video" value="{{ old('video') }}">
-                    </div>
-                    <div class="col-md-12 mg-top-20">
-                        <label for="maps">Google Maps</label>
-                        <input type="text" class="form-control" id="maps" name="maps" value="{{ old('maps') }}">
+                        <label for="gallery_images">Thêm hình ảnh vào thư viện</label>
+                        <input type="file" class="form-control" id="gallery_images" name="gallery_images[]" multiple accept="image/*" onchange="handleGalleryFiles(event)">
+                        <div id="gallery-preview-container" class="row mt-3"></div>
                     </div>
                 </div>
                 <div class="row mg-top-20">
@@ -166,16 +158,54 @@
 
             <div class="box-content mg-top-20">
                 <h4 class="border-bottom mg-top-20 pd-bottom-20">
-                    Thư viện hình ảnh (Gallery)
+                    Mạng xã hội
                 </h4>
                 <div class="row mg-top-20">
-                    <div class="col-md-12">
-                        <label for="gallery_images">Thêm hình ảnh vào thư viện</label>
-                        <input type="file" class="form-control" id="gallery_images" name="gallery_images[]" multiple accept="image/*" onchange="handleGalleryFiles(event)">
-                        <div id="gallery-preview-container" class="row mt-3"></div>
+                    <div class="col-md-12 mg-top-20">
+                        <label for="video">Video Youtube</label>
+                        <input type="text" class="form-control" id="video" name="video" value="{{ old('video') }}">
+                    </div>
+                    <div class="col-md-12 mg-top-20">
+                        <label for="maps">Google Maps</label>
+                        <input type="text" class="form-control" id="maps" name="maps" value="{{ old('maps') }}">
+                    </div>
+                    <div class="col-md-12 mg-top-20">
+                        <label for="zalo">Zalo</label>
+                        <input type="text" class="form-control" id="zalo" name="zalo" value="{{ old('zalo') }}">
+                    </div>
+                    <div class="col-md-12 mg-top-20">
+                        <label for="facebook">Facebook</label>
+                        <input type="text" class="form-control" id="facebook" name="facebook" value="{{ old('facebook') }}">
+                    </div>
+                </div>
+                <div class="row mg-top-20">
+                    <div class="col-md-12 mg-top-20 text-center">
+                        <button type="submit" class="btn btn-success">Lưu Thông Tin</button>
                     </div>
                 </div>
             </div>
+
+            <div class="box-content mg-top-20">
+                <h4 class="border-bottom mg-top-20 pd-bottom-20">
+                    Quan tâm
+                </h4>
+                <div class="row mg-top-20">
+                    <div class="col-md-12 mg-top-20">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="favorite" name="favorite" value="1" {{ old('favorite') ? 'checked' : '' }}>
+                            <label class="form-check-label" for="favorite"> Quan tâm / Theo dõi</label>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row mg-top-20">
+                    <div class="col-md-12 mg-top-20 text-center">
+                        <button type="submit" class="btn btn-success">Lưu Thông Tin</button>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
         <div class="col-md-2 text-center mg-top-20">
             @if(@empty(Auth::user()->avatar))

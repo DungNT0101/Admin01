@@ -10,9 +10,36 @@ class SaleService
 {
     public function store($request)
     {
-        $data = $this->mapData($request);
-
-        return Sale::create($data);
+        $slug = Str::slug($request->title);
+        // Validate unique slug
+        if (Sale::where('slug', $slug)->exists()) {
+            return False;
+        }
+        $data = [
+            'user_id' => $request->user_id,
+            'type' => $request->type,
+            'title' => $request->title,
+            'slug' => $slug,
+            'address' => $request->address,
+            'type_property' => $request->type_property,
+            'content' => $request->content,
+            'price' => $request->price,
+            'area' => $request->area,
+            'equivalent_value' => $request->equivalent_value,
+            'law' => $request->law,
+            'bedroom' => $request->bedroom,
+            'bathroom' => $request->bathroom,
+            'direction' => $request->direction,
+            'front' => $request->front,
+            'road' => $request->road,
+            'video' => $request->video,
+            'maps' => $request->maps,
+            'zalo' => $request->zalo,
+            'facebook' => $request->facebook,
+            'favorite' => $request->has('favorite') ? 1 : 0,
+        ];
+        $sale = Sale::create($data);
+        return $sale;
     }
 
     public function getCategories()

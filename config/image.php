@@ -7,5 +7,7 @@ return [
     'news' => 'images/news',
     'users' => 'images/users',
     'banner' => 'images/banner',
+    'sales' => 'images/sale',
+    'rents' => 'images/rent',
 
 ];

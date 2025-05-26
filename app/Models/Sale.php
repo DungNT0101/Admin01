@@ -16,19 +16,29 @@ class Sale extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'user_id',
+        'type',
         'title',
-        'slug',
-        'keywords',
-        'description',
-        'price',
-        'sale_price',
-        'avatar',
-        'home',
-        'hot',
+        'slug', // add slug for saving slug by title
+        'address',
+        'type_property',
         'content',
-        'images',
-        'category_id',
-        'updated_by'
+        'price',
+        'area',
+        'equivalent_value',
+        'law',
+        'bedroom',
+        'bathroom',
+        'direction',
+        'front',
+        'road',
+        'video',
+        'maps',
+        'zalo',
+        'facebook',
+        'favorite',
+        // 'images', // handled by relationship or separate table
+        // 'gallery_images', // handled by relationship or separate table
     ];
 
 
