@@ -16,13 +16,13 @@
             <div class="main-content">
                 @yield('content')
             </div>
-            
+
             <div class="footer" id="footer">
                 @include('admin.elements.footer')
             </div>
         </div>
 
-        
+
 
         @yield('modals')
 

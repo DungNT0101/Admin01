@@ -1,3 +1,10 @@
+body{
+    font-family: "Lexend Medium", Roboto, Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
 .w-100{
     width: 100%;
 }
@@ -25,9 +32,35 @@
 a{
     text-decoration: none;
 }
+.nav-user-info{
+    position: absolute;
+    background: #66d78ad1;
+    width: 200px;
+    border-radius: 6px;
+    z-index: 99;
+}
+.nav-user-info .nav-item{
+    width: 100%;
+}
+.nav-link{
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+}
+.nav-link:hover{
+    color: #fff;
+    background-color: #0d938b;
+    border-radius: 4px;
+}
+.nav-link.active{
+    color: #7ab542;
+}
 .display-block{
     display: block;
     overflow: hidden;
+}
+.text-right{
+    text-align: right;
 }
 .pd-tb-5{
     padding: 5px 0;
@@ -83,6 +116,24 @@ a{
 .top-box{
     padding: 35px 0;
 }
+.btn-create{
+    background-color: #fff;
+    color: #0d938b;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: #0d938b 1px solid;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+}
+.btn-create:hover{
+    background-color: #0d938b;
+    color: #fff;
+}
+#top-menu {
+    border-bottom: 2px solid #e0e0e0;
+    /* You can adjust color and thickness as needed */
+}
 .icon-search{
     background-color: #7ab542;
     color: #fff;
@@ -105,8 +156,8 @@ a{
     color: #7ab542;
 }
 #top-menu{
-    background-color: #7ab542;
-    color: #fff;
+    background-color: #fff;
+    color: #333;
 }
 .icon-menu{
     margin-right: 5px;

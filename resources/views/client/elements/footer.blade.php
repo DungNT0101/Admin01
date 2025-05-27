@@ -22,39 +22,7 @@
             </div>
 
             <div class="col-md-4 footer-logo">
-                <h4>Về Chúng Tôi</h4>
-                <ul>
-                    <li>
-                        <a href="{{ route('client.introduction') }}" >
-                            Giới thiệu
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('client.khuyenMai') }}" >
-                            Khuyến mãi
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('client.contact') }}" >
-                            Liên hệ
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Hướng dẫn mua hàng
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('client.news') }}">
-                            Tin tức
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('client.kienThuc') }}">
-                            Kiến thức
-                        </a>
-                    </li>
-                </ul>
+
             </div>
 
             <div class="col-md-4 footer-logo">
@@ -82,7 +50,7 @@
     </div>
     <div class="row bottom-footer text-center">
         <div class="col-md-12">
-            &#169; Copyright 2024 - GinnyShop.com.vn
+            &#169; Copyright 2025
         </div>
     </div>
 </div>

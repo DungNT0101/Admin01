@@ -15,23 +15,11 @@ class ClientController extends Controller
     {
         $this->service = $service;
         View::share('homeConfig', Cache::get('homeConfig'));
-        View::share('productCategory', Cache::get('productCategory'));
+        // View::share('productCategory', Cache::get('productCategory'));
     }
 
     public function index(){
-        $hotProducts = $this->service->getHotProducts();
-        $products = $this->service->getProducts();
-        $categories = $this->service->getCategories();
-        $news = $this->service->getHomeNews();
-        $posts = $this->service->getHomePosts();
-
-        return view('client.home', [
-            'hotProducts' => $hotProducts,
-            'products' => $products,
-            'categories' => $categories,
-            'news' => $news,
-            'posts' => $posts,
-        ]);
+        return view('client.home', []);
     }
 
     public function category($slug){
