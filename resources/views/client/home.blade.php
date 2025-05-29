@@ -26,39 +26,286 @@
             <button class="slider-btn next">&#10095;</button>
         </div>
 
-        <style>
-        .slider {
-            position: relative;
-            width: 100%;
-            margin: 0 auto;
-            overflow: hidden;
-        }
-        .slider-wrapper {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-        .slider-image {
-            min-width: 100%;
-            height: 500px;
-            object-fit: cover;
-        }
-        .slider-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0,0,0,0.5);
-            color: #fff;
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-            z-index: 2;
-        }
-        .slider-btn.prev { left: 10px; }
-        .slider-btn.next { right: 10px; }
-        </style>
+<div class="container home-page">
+    {{--  Bất động sản theo địa điểm  --}}
+    <div class="row mg-top-20">
+        <div class="col-md-12">
+            <h3 class="title-home">Bất động sản theo địa điểm</h3>
+        </div>
+        <div class="col-md-6 addr-box">
+            <div class="addr-img-box">
+                <img src="/images/home/HCM-web-1.jpg" alt="Bất động sản Hồ Chí Minh">
+            </div>
+            <div class="addr-text-box">
+                <a href="#">
+                    <h5 class="title">TP. Hồ Chí Minh</h5>
+                    <p class="size">1.000.000 tin đăng</p>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-6 addr-box">
+                    <div class="addr-img-box">
+                        <img src="/images/home/HN-web-1.jpg" alt="Bất động sản Hà Nội">
+                    </div>
+                    <div class="addr-text-box">
+                        <a href="#">
+                            <h5 class="title">TP. Hà Nội</h5>
+                            <p class="size">900.000 tin đăng</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 addr-box">
+                    <div class="addr-img-box">
+                        <img src="/images/home/DDN-web-1.jpg" alt="Bất động sản Đà Nẵng">
+                    </div>
+                    <div class="addr-text-box">
+                        <a href="#">
+                            <h5 class="title">TP. Đà Nẵng</h5>
+                            <p class="size">900.000 tin đăng</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row mg-top-15">
+                <div class="col-md-6 addr-box">
+                    <div class="addr-img-box">
+                        <img src="/images/home/HN-web-1.jpg" alt="Bất động sản Hà Nội">
+                    </div>
+                    <div class="addr-text-box">
+                        <a href="#">
+                            <h5 class="title">TP. Bình Dương</h5>
+                            <p class="size">900.000 tin đăng</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 addr-box">
+                    <div class="addr-img-box">
+                        <img src="/images/home/DNA-web-1.jpg" alt="Bất động sản Đà Nẵng">
+                    </div>
+                    <div class="addr-text-box">
+                        <a href="#">
+                            <h5 class="title">TP. Đồng Nai</h5>
+                            <p class="size">900.000 tin đăng</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        @push('scripts')
-        <script>
+    {{--  Dự án nổi bật  --}}
+    <div class="row mg-top-20">
+        <div class="col-md-12">
+            <h3 class="title-home">Dự án nổi bật</h3>
+        </div>
+        <div class="col-md-4 project-box">
+            <div class="addr-img-box">
+                <a href="#">
+                    <img src="/images/home/HCM-web-1.jpg" alt="Vinhomes Grand Park">
+                </a>
+            </div>
+            <div class="project-text-box">
+                <a href="#">
+                    <h5 class="title">Vinhomes Grand Park</h5>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4 project-box">
+            <div class="addr-img-box">
+                <a href="#">
+                    <img src="/images/home/HCM-web-1.jpg" alt="Vinhomes Grand Park">
+                </a>
+            </div>
+            <div class="project-text-box">
+                <a href="#">
+                    <h5 class="title">Vinhomes Grand Park</h5>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4 project-box">
+            <div class="addr-img-box">
+                <a href="#">
+                    <img src="/images/home/HCM-web-1.jpg" alt="Vinhomes Grand Park">
+                </a>
+            </div>
+            <div class="project-text-box">
+                <a href="#">
+                    <h5 class="title">Vinhomes Grand Park</h5>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-4 project-box">
+            <div class="addr-img-box">
+                <a href="#">
+                    <img src="/images/home/HCM-web-1.jpg" alt="Vinhomes Grand Park">
+                </a>
+            </div>
+            <div class="project-text-box">
+                <a href="#">
+                    <h5 class="title">Vinhomes Grand Park</h5>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4 project-box">
+            <div class="addr-img-box">
+                <a href="#">
+                    <img src="/images/home/HCM-web-1.jpg" alt="Vinhomes Grand Park">
+                </a>
+            </div>
+            <div class="project-text-box">
+                <a href="#">
+                    <h5 class="title">Vinhomes Grand Park</h5>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4 project-box">
+            <div class="addr-img-box">
+                <a href="#">
+                    <img src="/images/home/HCM-web-1.jpg" alt="Vinhomes Grand Park">
+                </a>
+            </div>
+            <div class="project-text-box">
+                <a href="#">
+                    <h5 class="title">Vinhomes Grand Park</h5>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    {{--  Bất động sản nổi bật  --}}
+    <div class="row mg-top-20">
+        <div class="col-md-12">
+            <h3 class="title-home">Bất động sản nổi bật</h3>
+        </div>
+        <div class="col-md-3 property-box mg-top-20">
+            <div class="property-img-box">
+                <a href="#">
+                    <img src="/images/home/sakura-3.jpg" alt="Vinhomes Grand Park">
+                </a>
+            </div>
+            <div class="property-text-box">
+                <a href="#">
+                    <p class="title">Vinhomes Grand Park</p>
+                    <p class="price">Giá: 2 tỷ    88m2</p>
+                    <p class="address">Quận 9, TP. Hồ Chí Minh</p>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-3 property-box mg-top-20">
+            <div class="property-img-box">
+                <a href="#">
+                    <img src="/images/home/sakura-3.jpg" alt="Vinhomes Grand Park">
+                </a>
+            </div>
+            <div class="property-text-box">
+                <a href="#">
+                    <p class="title">Vinhomes Grand Park</p>
+                    <p class="price">Giá: 2 tỷ    88m2</p>
+                    <p class="address">Quận 9, TP. Hồ Chí Minh</p>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-3 property-box mg-top-20">
+            <div class="property-img-box">
+                <a href="#">
+                    <img src="/images/home/sakura-3.jpg" alt="Vinhomes Grand Park">
+                </a>
+            </div>
+            <div class="property-text-box">
+                <a href="#">
+                    <p class="title">Vinhomes Grand Park</p>
+                    <p class="price">Giá: 2 tỷ    88m2</p>
+                    <p class="address">Quận 9, TP. Hồ Chí Minh</p>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-3 property-box mg-top-20">
+            <div class="property-img-box">
+                <a href="#">
+                    <img src="/images/home/sakura-3.jpg" alt="Vinhomes Grand Park">
+                </a>
+            </div>
+            <div class="property-text-box">
+                <a href="#">
+                    <p class="title">Vinhomes Grand Park</p>
+                    <p class="price">Giá: 2 tỷ    88m2</p>
+                    <p class="address">Quận 9, TP. Hồ Chí Minh</p>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-3 property-box mg-top-20">
+            <div class="property-img-box">
+                <a href="#">
+                    <img src="/images/home/sakura-3.jpg" alt="Vinhomes Grand Park">
+                </a>
+            </div>
+            <div class="property-text-box">
+                <a href="#">
+                    <p class="title">Vinhomes Grand Park</p>
+                    <p class="price">Giá: 2 tỷ    88m2</p>
+                    <p class="address">Quận 9, TP. Hồ Chí Minh</p>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-3 property-box mg-top-20">
+            <div class="property-img-box">
+                <a href="#">
+                    <img src="/images/home/sakura-3.jpg" alt="Vinhomes Grand Park">
+                </a>
+            </div>
+            <div class="property-text-box">
+                <a href="#">
+                    <p class="title">Vinhomes Grand Park</p>
+                    <p class="price">Giá: 2 tỷ    88m2</p>
+                    <p class="address">Quận 9, TP. Hồ Chí Minh</p>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-3 property-box mg-top-20">
+            <div class="property-img-box">
+                <a href="#">
+                    <img src="/images/home/sakura-3.jpg" alt="Vinhomes Grand Park">
+                </a>
+            </div>
+            <div class="property-text-box">
+                <a href="#">
+                    <p class="title">Vinhomes Grand Park</p>
+                    <p class="price">Giá: 2 tỷ    88m2</p>
+                    <p class="address">Quận 9, TP. Hồ Chí Minh</p>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-3 property-box mg-top-20">
+            <div class="property-img-box">
+                <a href="#">
+                    <img src="/images/home/sakura-3.jpg" alt="Vinhomes Grand Park">
+                </a>
+            </div>
+            <div class="property-text-box">
+                <a href="#">
+                    <p class="title">Vinhomes Grand Park</p>
+                    <p class="price">Giá: 2 tỷ    88m2</p>
+                    <p class="address">Quận 9, TP. Hồ Chí Minh</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@endsection
+{{--  End content  --}}
+
+{{--  Start modals  --}}
+@section('modals')
+
+@endsection
+{{--  End modals  --}}
+
+@push('scripts')
+    <script>
         document.addEventListener('DOMContentLoaded', function () {
             const slider = document.querySelector('.slider');
             if (!slider) return;
@@ -81,22 +328,8 @@
             });
             showSlide(0);
         });
-        </script>
-        @endpush
-
-<div class="container">
-
-</div>
-
-@endsection
-{{--  End content  --}}
-
-{{--  Start modals  --}}
-@section('modals')
-
-@endsection
-{{--  End modals  --}}
-
+    </script>
+@endpush
 {{--  Start scripts  --}}
 @push('scripts')
 

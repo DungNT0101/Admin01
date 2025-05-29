@@ -26,7 +26,7 @@
 
         {{--  @include('client.elements.footer')  --}}
 
-        {{--  @include('client.elements.footer')  --}}
+        @include('client.elements.footer')
 
         @yield('modals')
 

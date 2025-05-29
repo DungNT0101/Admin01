@@ -80,6 +80,9 @@ a{
 .mg-top-10{
     margin-top: 10px;
 }
+.mg-top-15{
+    margin-top: 15px;
+}
 .mg-top-40{
     margin-top: 40px;
 }
@@ -252,14 +255,14 @@ img{
     text-decoration:line-through;
 }
 .sale-price, .price{
-    font-weight: bold;
-    color: #7ab542;
+    color: #E03C31;
 }
 .item-img:hover{
     transform: scale(1.2);
     -webkit-transition: transform 0.5s ease-in-out;
 }
 .footer{
+    margin-top: 100px;
     padding: 30px 0 0 0;
     background-color: #4d7726;
     color: #fff;
@@ -334,4 +337,91 @@ a.product-menu-active{
 .img-box{
     display: block;
     overflow: hidden;
+}
+/* CSS Slider Home Page */
+.slider {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+.slider-image {
+    min-width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 2;
+}
+.slider-btn.prev { left: 10px; }
+.slider-btn.next { right: 10px; }
+
+/* CSS for home page */
+.title-home{
+    text-align: center;
+    font-size: 26px;
+    color: #444;
+    padding: 50px 0;
+}
+.home-page .addr-box{
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0)
+}
+.home-page .addr-img-box{
+    border-radius: 4px;
+}
+
+.home-page  .addr-text-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    padding: 5px 10px 5px 20px;
+    color: #fff;
+    background-color: rgba(63, 160, 153, 0.6) !important;
+}
+.addr-text-box a{
+    color: #fff;
+    text-decoration: none;
+}
+.addr-text-box a p{
+    font-size: 14px;
+}
+.addr-text-box a:hover{
+    text-decoration: underline;
+}
+.project-text-box a{
+    color: #444;
+    text-decoration: none;
+    padding: 20px 0 0 0;
+    text-align: center;
+    display: block;
+    font-size: 18px;
+}
+.property-text-box a{
+    color: #444;
+    text-decoration: none;
+    padding: 10px 0 0 0;
+    display: block;
+    font-size: 16px;
+}
+.property-text-box a p{
+    padding-bottom: 0px;
+    margin-bottom: 3px;
+}
+.property-text-box a p.address{
+    font-size: 14px;
 }

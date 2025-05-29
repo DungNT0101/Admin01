@@ -37,10 +37,10 @@
                             <span class="user-name">Xin chào, Admin</span>
                             <ul class="nav nav-user-info d-none">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('my-profile') }}">Thông tin cá nhân</a>
+                                    <a class="nav-link" href="#">Thông tin cá nhân</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('logout') }}">Đăng xuất</a>
+                                    <a class="nav-link" href="#">Đăng xuất</a>
                                 </li>
                             </ul>
                         </div>
