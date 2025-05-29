@@ -414,7 +414,7 @@ a.product-menu-active{
 .property-text-box a{
     color: #444;
     text-decoration: none;
-    padding: 10px 0 0 0;
+    padding: 0;
     display: block;
     font-size: 16px;
 }
@@ -422,6 +422,37 @@ a.product-menu-active{
     padding-bottom: 0px;
     margin-bottom: 3px;
 }
-.property-text-box a p.address{
+.property-text-box p.address{
     font-size: 14px;
+}
+.property-box{
+    border: #ececec 1px solid;
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 10px;
+    margin: 10px;
+}
+.property-listing{
+    background-color: #f5f7fb ;
+    margin-top: 50px;
+    padding-bottom: 50px;
+}
+.icon-location{
+    width: 25px;
+    float: left;
+}
+.icon-heart{
+    width: 25px;
+    float: right;
+    margin-right: 20px;
+}
+a.favorite{
+    width: auto;
+    float: right;
+    padding: 0;
+}
+.property-text-box p.public-date{
+    font-size: 14px;
+    display: inline;
+    float: left;
 }
