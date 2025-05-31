@@ -14,7 +14,7 @@ class ClientController extends Controller
     public function __construct(ClientService $service)
     {
         $this->service = $service;
-        View::share('homeConfig', Cache::get('homeConfig'));
+        // View::share('homeConfig', Cache::get('homeConfig'));
         // View::share('productCategory', Cache::get('productCategory'));
     }
 
@@ -22,84 +22,8 @@ class ClientController extends Controller
         return view('client.home', []);
     }
 
-    public function category($slug){
-        $category = $this->service->getCategory($slug);
-        $products = $this->service->productCategory($category->id);
-
-        return view('client.product-category', [
-            'products' => $products,
-            'category' => $category,
-        ]);
-    }
-
-    public function news(){
-        $posts = $this->service->getNews();
-
-        return view('client.news', [
-            'posts' => $posts,
-            'title' => 'Tin tức',
-            'keywords' => 'Tin tức',
-            'description' => 'Tin tức'
-        ]);
-    }
-
-    public function kienThuc(){
-        $posts = $this->service->getKienThuc();
-
-        return view('client.posts', [
-            'posts' => $posts,
-            'title' => 'Kiến thức',
-            'keywords' => 'Kiến thức',
-            'description' => 'Kiến thức'
-        ]);
-    }
-
-    public function introduction(){
-        $page = $this->service->getPage('gioi-thieu');
-
-        return view('client.page-details', [
-            'page' => $page
-        ]);
-    }
-
-    public function khuyenMai(){
-        $page = $this->service->getPage('khuyen-mai');
-
-        return view('client.page-details', [
-            'page' => $page
-        ]);
-    }
-
-    public function contact(){
-        $page = $this->service->getPage('lien-he');
-
-        return view('client.page-details', [
-            'page' => $page
-        ]);
-    }
-
-    public function productDetails($slug){
-        $product = $this->service->getProductDetails($slug);
-
-        return view('client.product-details', [
-            'product' => $product
-        ]);
-    }
-
-    public function newsDetails($slug){
-        $news = $this->service->getNewsDetails($slug);
-
-        return view('client.news-details', [
-            'news' => $news
-        ]);
-    }
-
-    public function kienThucDetails($slug){
-        $post = $this->service->getKienThucDetails($slug);
-
-        return view('client.post-details', [
-            'post' => $post
-        ]);
+    public function homePage(){
+        return view('client.type-1.page.home-1', []);
     }
 
 }

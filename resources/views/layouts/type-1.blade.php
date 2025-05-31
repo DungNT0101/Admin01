@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>@yield('title')</title>
+        <meta name="keywords" content="@yield('keywords')" />
+        <meta name="description" content="@yield('description')" />
+        <link rel="icon" type="image/x-icon" href="{{ asset('layout/type-1/images/logo.png') }}">
+
+        {{--  FAVICON  --}}
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+        {{--  Bootstrap 5  --}}
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        {{--  GOOGLE FONTS  --}}
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i%7CMontserrat:600,800" rel="stylesheet">
+
+        {{--  FONT AWESOME  --}}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+        {{--  Jquery 3.6  --}}
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        {{--  Bootstrap 5 JS  --}}
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        {{--  Custom CSS  --}}
+        <link rel="stylesheet" href={{asset('layout/type-1/css/main.css') }}>
+
+    </head>
+    <body class="">
+        {{--  @include('client.elements.top-header')  --}}
+
+        @include('client.type-1.element.top-menu')
+
+        @yield('content')
+
+        {{--  @include('client.elements.footer')  --}}
+
+        @include('client.type-1.element.footer')
+
+        @yield('modals')
+
+        <script src="{{ asset('layout/type-1/js/main.js') }}"></script>
+
+        {{--  Custom Scripts  --}}
+        @stack('scripts')
+
+    </body>
+</html>

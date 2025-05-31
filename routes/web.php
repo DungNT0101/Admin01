@@ -76,5 +76,6 @@ Route::group([
 });
 
 // Client
-Route::get('/', [ClientController::class, 'index'])->name('home');
+// Route::get('/home-1', [ClientController::class, 'index'])->name('home-1');
+Route::get('/', [ClientController::class, 'homePage'])->name('home');
 

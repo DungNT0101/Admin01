@@ -255,7 +255,8 @@ img{
     text-decoration:line-through;
 }
 .sale-price, .price{
-    color: #E03C31;
+    font-weight: bold;
+    color: #7ab542;
 }
 .item-img:hover{
     transform: scale(1.2);
@@ -389,70 +390,11 @@ a.product-menu-active{
     top: 0;
     left: 0;
     z-index: 2;
-    padding: 5px 10px 5px 20px;
+    padding: 5px 10px;
     color: #fff;
-    background-color: rgba(63, 160, 153, 0.6) !important;
+    background-color: #0d938b;
 }
 .addr-text-box a{
     color: #fff;
     text-decoration: none;
-}
-.addr-text-box a p{
-    font-size: 14px;
-}
-.addr-text-box a:hover{
-    text-decoration: underline;
-}
-.project-text-box a{
-    color: #444;
-    text-decoration: none;
-    padding: 20px 0 0 0;
-    text-align: center;
-    display: block;
-    font-size: 18px;
-}
-.property-text-box a{
-    color: #444;
-    text-decoration: none;
-    padding: 0;
-    display: block;
-    font-size: 16px;
-}
-.property-text-box a p{
-    padding-bottom: 0px;
-    margin-bottom: 3px;
-}
-.property-text-box p.address{
-    font-size: 14px;
-}
-.property-box{
-    border: #ececec 1px solid;
-    border-radius: 8px;
-    background-color: #fff;
-    padding: 10px;
-    margin: 10px;
-}
-.property-listing{
-    background-color: #f5f7fb ;
-    margin-top: 50px;
-    padding-bottom: 50px;
-}
-.icon-location{
-    width: 25px;
-    float: left;
-}
-.icon-heart{
-    width: 25px;
-    float: right;
-    margin-right: 20px;
-}
-a.favorite{
-    width: auto;
-    float: right;
-    padding: 0;
-}
-.property-text-box p.public-date{
-    font-size: 14px;
-    display: inline;
-    float: left;
 }
