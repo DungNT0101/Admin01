@@ -11,7 +11,7 @@
             <div class="col-md-6 main-menu mg-top-20">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Nhà đất bán</a>
+                        <a class="nav-link" href="{{ route('sale.property') }}">Nhà đất bán</a>
                     </li>
 
                     <li class="nav-item">

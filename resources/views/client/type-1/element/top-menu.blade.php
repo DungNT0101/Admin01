@@ -9,10 +9,10 @@
             <div class="col-md-6">
                 <ul class="nav-top-menu">
                     <li>
-                        <a href="{{ route('home') }}">Nhà đất bán</a>
+                        <a href="{{ route('sale.property') }}">Nhà đất bán</a>
                     </li>
                     <li>
-                        <a href="{{ route('home') }}">Nhà đất cho thuê</a>
+                        <a href="{{ route('rent.property') }}">Nhà đất cho thuê</a>
                     </li>
                     <li>
                         <a href="{{ route('home') }}">Dự án</a>
@@ -77,10 +77,10 @@
                 </div>
                 <ul class="nav-top-menu" id="mobileTopMenu">
                     <li>
-                        <a href="{{ route('home') }}">Nhà đất bán</a>
+                        <a href="{{ route('sale.property') }}">Nhà đất bán</a>
                     </li>
                     <li>
-                        <a href="{{ route('home') }}">Nhà đất cho thuê</a>
+                        <a href="{{ route('rent.property') }}">Nhà đất cho thuê</a>
                     </li>
                     <li>
                         <a href="{{ route('home') }}">Dự án</a>

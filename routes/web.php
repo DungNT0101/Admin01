@@ -78,4 +78,6 @@ Route::group([
 // Client
 // Route::get('/home-1', [ClientController::class, 'index'])->name('home-1');
 Route::get('/', [ClientController::class, 'homePage'])->name('home');
+Route::get('/bat-dong-san-ban', [ClientController::class, 'saleProperty'])->name('sale.property');
+Route::get('/bat-dong-san-cho-thue', [ClientController::class, 'rentProperty'])->name('rent.property');
 

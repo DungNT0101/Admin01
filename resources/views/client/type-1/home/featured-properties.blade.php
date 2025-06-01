@@ -22,17 +22,17 @@
                             <div class="col-12">
                                 <p class="property-location"><i class="fa fa-map-marker"></i> Hà Nội </p>
                             </div>
-                            <div class="col-md-6 mg-top-10">
+                            <div class="col-6 mg-top-10">
                                 <p class="square-meters"><i class="fa fa-ruler-combined"></i>100 m²</p>
                             </div>
-                            <div class="col-md-6 mg-top-10">
+                            <div class="col-6 mg-top-10">
                                 <p class="bedrooms"><i class="fa fa-bed"></i> 2</p>
                             </div>
-                            <div class="col-md-6 mg-top-10">
+                            <div class="col-6 mg-top-10">
                                 <p class="bathrooms"><i class="fa fa-bath"></i> 2</p>
                             </div>
-                            <div class="col-md-6 mg-top-10">
-                                <p class="direction"><i class="fa fa-arrow-up"></i> Đông Nam</p>
+                            <div class="col-6 mg-top-10">
+                                <p class="direction"><i class="fa fa-map-marker"></i> Google Map</p>
                             </div>
                             <div class="col-12 mg-top-10 top-line">
                                 <p class="price mg-top-10"><i class="fa fa-dollar-sign"></i> 3 tỷ</p>
@@ -57,17 +57,17 @@
                             <div class="col-12">
                                 <p class="property-location"><i class="fa fa-map-marker"></i> Hà Nội </p>
                             </div>
-                            <div class="col-md-6 mg-top-10">
+                            <div class="col-6 mg-top-10">
                                 <p class="square-meters"><i class="fa fa-ruler-combined"></i>100 m²</p>
                             </div>
-                            <div class="col-md-6 mg-top-10">
+                            <div class="col-6 mg-top-10">
                                 <p class="bedrooms"><i class="fa fa-bed"></i> 2</p>
                             </div>
-                            <div class="col-md-6 mg-top-10">
+                            <div class="col-6 mg-top-10">
                                 <p class="bathrooms"><i class="fa fa-bath"></i> 2</p>
                             </div>
-                            <div class="col-md-6 mg-top-10">
-                                <p class="direction"><i class="fa fa-arrow-up"></i> Đông Nam</p>
+                            <div class="col-6 mg-top-10">
+                                <p class="direction"><i class="fa fa-map-marker"></i> Google Map</p>
                             </div>
                             <div class="col-12 mg-top-10 top-line">
                                 <p class="price mg-top-10"><i class="fa fa-dollar-sign"></i> 3 tỷ</p>
@@ -92,17 +92,17 @@
                             <div class="col-12">
                                 <p class="property-location"><i class="fa fa-map-marker"></i> Hà Nội </p>
                             </div>
-                            <div class="col-md-6 mg-top-10">
+                            <div class="col-6 mg-top-10">
                                 <p class="square-meters"><i class="fa fa-ruler-combined"></i>100 m²</p>
                             </div>
-                            <div class="col-md-6 mg-top-10">
+                            <div class="col-6 mg-top-10">
                                 <p class="bedrooms"><i class="fa fa-bed"></i> 2</p>
                             </div>
-                            <div class="col-md-6 mg-top-10">
+                            <div class="col-6 mg-top-10">
                                 <p class="bathrooms"><i class="fa fa-bath"></i> 2</p>
                             </div>
-                            <div class="col-md-6 mg-top-10">
-                                <p class="direction"><i class="fa fa-arrow-up"></i> Đông Nam</p>
+                            <div class="col-6 mg-top-10">
+                                <p class="direction"><i class="fa fa-map-marker"></i> Google Map</p>
                             </div>
                             <div class="col-12 mg-top-10 top-line">
                                 <p class="price mg-top-10"><i class="fa fa-dollar-sign"></i> 3 tỷ</p>
@@ -127,17 +127,17 @@
                             <div class="col-12">
                                 <p class="property-location"><i class="fa fa-map-marker"></i> Hà Nội </p>
                             </div>
-                            <div class="col-md-6 mg-top-10">
+                            <div class="col-6 mg-top-10">
                                 <p class="square-meters"><i class="fa fa-ruler-combined"></i>100 m²</p>
                             </div>
-                            <div class="col-md-6 mg-top-10">
+                            <div class="col-6 mg-top-10">
                                 <p class="bedrooms"><i class="fa fa-bed"></i> 2</p>
                             </div>
-                            <div class="col-md-6 mg-top-10">
+                            <div class="col-6 mg-top-10">
                                 <p class="bathrooms"><i class="fa fa-bath"></i> 2</p>
                             </div>
-                            <div class="col-md-6 mg-top-10">
-                                <p class="direction"><i class="fa fa-arrow-up"></i> Đông Nam</p>
+                            <div class="col-6 mg-top-10">
+                                <p class="direction"><i class="fa fa-map-marker"></i> Google Map</p>
                             </div>
                             <div class="col-12 mg-top-10 top-line">
                                 <p class="price mg-top-10"><i class="fa fa-dollar-sign"></i> 3 tỷ</p>
@@ -162,17 +162,17 @@
                             <div class="col-12">
                                 <p class="property-location"><i class="fa fa-map-marker"></i> Hà Nội </p>
                             </div>
-                            <div class="col-md-6 mg-top-10">
+                            <div class="col-6 mg-top-10">
                                 <p class="square-meters"><i class="fa fa-ruler-combined"></i>100 m²</p>
                             </div>
-                            <div class="col-md-6 mg-top-10">
+                            <div class="col-6 mg-top-10">
                                 <p class="bedrooms"><i class="fa fa-bed"></i> 2</p>
                             </div>
-                            <div class="col-md-6 mg-top-10">
+                            <div class="col-6 mg-top-10">
                                 <p class="bathrooms"><i class="fa fa-bath"></i> 2</p>
                             </div>
-                            <div class="col-md-6 mg-top-10">
-                                <p class="direction"><i class="fa fa-arrow-up"></i> Đông Nam</p>
+                            <div class="col-6 mg-top-10">
+                                <p class="direction"><i class="fa fa-map-marker"></i> Google Map</p>
                             </div>
                             <div class="col-12 mg-top-10 top-line">
                                 <p class="price mg-top-10"><i class="fa fa-dollar-sign"></i> 3 tỷ</p>
@@ -197,17 +197,17 @@
                             <div class="col-12">
                                 <p class="property-location"><i class="fa fa-map-marker"></i> Hà Nội </p>
                             </div>
-                            <div class="col-md-6 mg-top-10">
+                            <div class="col-6 mg-top-10">
                                 <p class="square-meters"><i class="fa fa-ruler-combined"></i>100 m²</p>
                             </div>
-                            <div class="col-md-6 mg-top-10">
+                            <div class="col-6 mg-top-10">
                                 <p class="bedrooms"><i class="fa fa-bed"></i> 2</p>
                             </div>
-                            <div class="col-md-6 mg-top-10">
+                            <div class="col-6 mg-top-10">
                                 <p class="bathrooms"><i class="fa fa-bath"></i> 2</p>
                             </div>
-                            <div class="col-md-6 mg-top-10">
-                                <p class="direction"><i class="fa fa-arrow-up"></i> Đông Nam</p>
+                            <div class="col-6 mg-top-10">
+                                <p class="direction"><i class="fa fa-map-marker"></i> Google Map</p>
                             </div>
                             <div class="col-12 mg-top-10 top-line">
                                 <p class="price mg-top-10"><i class="fa fa-dollar-sign"></i> 3 tỷ</p>

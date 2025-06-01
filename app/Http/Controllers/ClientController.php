@@ -26,4 +26,12 @@ class ClientController extends Controller
         return view('client.type-1.page.home-1', []);
     }
 
+    public function saleProperty(){
+        return view('client.type-1.page.sale-property', []);
+    }
+
+    public function rentProperty(){
+        return view('client.type-1.page.rent-property', []);
+    }
+
 }
