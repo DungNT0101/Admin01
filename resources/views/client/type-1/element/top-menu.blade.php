@@ -51,17 +51,22 @@
             <div class="col-md-12">
                 <div class="mobile-menu-header">
                     <div class="row">
-                        <div class="col-4">
+                        <div class="col-3">
                             <button id="mobile-menu-toggle" class="btn btn-toggle-menu">
                                 <i class="fas fa-bars"></i>
                             </button>
                         </div>
-                        <div class="col-4">
+                        <div class="col-3">
                             <a href="{{ route('home') }}" class="mobile-logo">
                                 <img src="{{ asset('layout/type-1/images/logo.png') }}" alt="Logo">
                             </a>
                         </div>
-                        <div class="col-4 text-end">
+                        <div class="col-3">
+                            <p class="btn mg-10">
+                                <span class="watching-properties-count">0</span><i class="fas fa-heart"></i>
+                            </p>
+                        </div>
+                        <div class="col-3 text-end">
                             @if (Auth::check())
                                 <a href="#" class="user-info">
                                     {{--  <i class="fas fa-user"></i> Xin chào! Admin  --}}
@@ -93,48 +98,3 @@
         </div>
     </div>
 </div>
-
-@push('css')
-<style>
-
-
-</style>
-@endpush
-
-@push('scripts')
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    const toggleBtn = document.getElementById('mobile-menu-toggle');
-    const mobileMenu = document.getElementById('mobileTopMenu');
-    if (toggleBtn && mobileMenu) {
-        toggleBtn.addEventListener('click', function (e) {
-            e.stopPropagation();
-            mobileMenu.classList.toggle('open');
-        });
-        // Optional: close menu when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!toggleBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
-                mobileMenu.classList.remove('open');
-            }
-        });
-    }
-
-    var topMenu = document.getElementById('topMenu');
-    var lastScroll = 0;
-    var menuHeight = topMenu.offsetHeight;
-    window.addEventListener('scroll', function () {
-        if (window.scrollY > menuHeight) {
-            if (!topMenu.classList.contains('fixed')) {
-                topMenu.classList.add('fixed');
-                document.body.classList.add('menu-fixed');
-            }
-        } else {
-            if (topMenu.classList.contains('fixed')) {
-                topMenu.classList.remove('fixed');
-                document.body.classList.remove('menu-fixed');
-            }
-        }
-    });
-});
-</script>
-@endpush

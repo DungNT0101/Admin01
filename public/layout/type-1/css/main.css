@@ -270,7 +270,7 @@ a.user-info {
         width: 65px;
         border-radius: 6px;
     }
-    .mobile-menu-header .fa-bars, .mobile-menu-header .fa-user {
+    .mobile-menu-header .fa-bars, .mobile-menu-header .fa-user, .mobile-menu-header .fa-heart {
         font-size: 28px;
         padding: 15px;
         background: #FF385C;
@@ -815,4 +815,10 @@ h3.property-title{
 }
 .listing-top-search{
     padding-bottom: 20px;
+}
+.watching-properties-count{
+    position: absolute;
+    color: #fff;
+    font-size: 18px;
+    margin-left: 5px;
 }
