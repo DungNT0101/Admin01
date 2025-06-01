@@ -270,7 +270,7 @@ a.user-info {
         width: 65px;
         border-radius: 6px;
     }
-    .fa-bars, .fa-user {
+    .mobile-menu-header .fa-bars, .mobile-menu-header .fa-user {
         font-size: 28px;
         padding: 15px;
         background: #FF385C;

@@ -11,7 +11,7 @@
         </div>
         <div class="row">
             <div class="col-md-9">
-                <a href="#">68 bất động sản đang theo dõi</a>
+                <a href="#"><span class="watching-rent-count">0</span> bất động sản cho thuê đang theo dõi</a>
             </div>
             <div class="sorting-options col-md-3 text-right">
                 <select class="form-control sort-select">

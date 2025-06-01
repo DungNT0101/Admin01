@@ -306,10 +306,22 @@
 
 @push('scripts')
 <script>
+    function updateWatchingRentCount() {
+        let rent_count = 0;
+        for (let i = 0; i < localStorage.length; i++) {
+            if (localStorage.key(i).startsWith('watching_rent_')) {
+                rent_count++;
+            }
+        }
+        document.querySelectorAll('.watching-rent-count').forEach(function(el) {
+            el.textContent = rent_count;
+        });
+    }
+
     document.querySelectorAll('.fa-heart').forEach(function(el) {
         var id = el.getAttribute('data-id');
         // Khôi phục trạng thái từ localStorage
-        if (localStorage.getItem('watching_' + id)) {
+        if (localStorage.getItem('watching_rent_' + id)) {
             el.classList.add('watching');
         }
         el.addEventListener('click', function() {
@@ -330,12 +342,15 @@
             } else {
                 // Nếu chưa đăng nhập thì lưu localStorage như cũ
                 if (this.classList.contains('watching')) {
-                    localStorage.setItem('watching_' + id, '1');
+                    localStorage.setItem('watching_rent_' + id, '1');
                 } else {
-                    localStorage.removeItem('watching_' + id);
+                    localStorage.removeItem('watching_rent_' + id);
                 }
+                updateWatchingRentCount();
             }
         });
     });
+    // Cập nhật số lượng khi load trang
+    updateWatchingRentCount();
 </script>
 @endpush
