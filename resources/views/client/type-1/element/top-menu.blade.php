@@ -26,6 +26,11 @@
                 <div class="Login-Register">
                     <ul class="top-menu-right">
                         <li class="mg-left-10">
+                            <a href="#" class="btn btn-register">
+                                <span class="watching-properties-count">0</span> <i class="fas fa-heart"></i>
+                            </a>
+                        </li>
+                        <li class="mg-left-10">
                             <a href="#" class="btn btn-register">Đăng tin</a>
                         </li>
 
