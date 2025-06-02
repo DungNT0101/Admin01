@@ -20,9 +20,9 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('dashboard')->insert([
-            'title' => 'Ginny Shop',
-            'keywords' => 'Ginny Shop',
-            'description' => 'Ginny Shop'
+            'title' => 'Sandat.net',
+            'keywords' => 'Sandat.net, sandat, sandat.net, sandat.vn',
+            'description' => 'Sandat.net - Chuyên cung cấp các dịch vụ bất động sản, nhà đất, cho thuê nhà đất tại Việt Nam',
         ]);
     }
 }

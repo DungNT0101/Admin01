@@ -1,5 +1,6 @@
 <div class="admin-name">
-    <img src="{{ asset('images/logo/logo-admin.png') }}" alt="Đất Phổ Yên" class="">
+    <img src="{{ asset('layout/type-1/images/logo-white.png') }}" alt="Sandat.net - Admin" class="">
+    <h6 class="mg-left-10">Sandat.net</h6>
 </div>
 <div class="box-menu mg-top-20">
     <div class="row">

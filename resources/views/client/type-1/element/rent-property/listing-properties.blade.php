@@ -38,7 +38,7 @@
                                 <p class="property-user"><i class="fa fa-user"></i> OneOne</p>
                             </div>
                             <div class="col-4 mg-top-10 top-line pd-top-10">
-                                <i class="property-icon fa fa-heart" data-id="1"></i>
+                                <i class="property-icon fa fa-heart favorited-rent" data-id="1"></i>
                                 <a href="https://www.facebook.com/sharer/sharer.php?u=https://sandat.net/&display=popup">
                                     <i class="property-icon fa fa-share-alt"></i>
                                 </a>
@@ -88,7 +88,7 @@
                                 <p class="property-user"><i class="fa fa-user"></i> OneOne</p>
                             </div>
                             <div class="col-4 mg-top-10 top-line pd-top-10">
-                                <i class="property-icon fa fa-heart" data-id="2"></i>
+                                <i class="property-icon fa fa-heart favorited-rent" data-id="2"></i>
                                 <a href="https://www.facebook.com/sharer/sharer.php?u=https://sandat.net/&display=popup">
                                     <i class="property-icon fa fa-share-alt"></i>
                                 </a>
@@ -138,7 +138,7 @@
                                 <p class="property-user"><i class="fa fa-user"></i> OneOne</p>
                             </div>
                             <div class="col-4 mg-top-10 top-line pd-top-10">
-                                <i class="property-icon fa fa-heart" data-id="3"></i>
+                                <i class="property-icon fa fa-heart favorited-rent" data-id="3"></i>
                                 <a href="https://www.facebook.com/sharer/sharer.php?u=https://sandat.net/&display=popup">
                                     <i class="property-icon fa fa-share-alt"></i>
                                 </a>
@@ -188,7 +188,7 @@
                                 <p class="property-user"><i class="fa fa-user"></i> OneOne</p>
                             </div>
                             <div class="col-4 mg-top-10 top-line pd-top-10">
-                                <i class="property-icon fa fa-heart" data-id="4"></i>
+                                <i class="property-icon fa fa-heart favorited-rent" data-id="4"></i>
                                 <a href="https://www.facebook.com/sharer/sharer.php?u=https://sandat.net/&display=popup">
                                     <i class="property-icon fa fa-share-alt"></i>
                                 </a>
@@ -238,7 +238,7 @@
                                 <p class="property-user"><i class="fa fa-user"></i> OneOne</p>
                             </div>
                             <div class="col-4 mg-top-10 top-line pd-top-10">
-                                <i class="property-icon fa fa-heart" data-id="5"></i>
+                                <i class="property-icon fa fa-heart favorited-rent" data-id="5"></i>
                                 <a href="https://www.facebook.com/sharer/sharer.php?u=https://sandat.net/&display=popup">
                                     <i class="property-icon fa fa-share-alt"></i>
                                 </a>
@@ -288,7 +288,7 @@
                                 <p class="property-user"><i class="fa fa-user"></i> OneOne</p>
                             </div>
                             <div class="col-4 mg-top-10 top-line pd-top-10">
-                                <i class="property-icon fa fa-heart" data-id="6"></i>
+                                <i class="property-icon fa fa-heart favorited-rent" data-id="6"></i>
                                 <a href="https://www.facebook.com/sharer/sharer.php?u=https://sandat.net/&display=popup">
                                     <i class="property-icon fa fa-share-alt"></i>
                                 </a>
@@ -326,7 +326,7 @@
         });
     }
 
-    document.querySelectorAll('.fa-heart').forEach(function(el) {
+    document.querySelectorAll('.favorited-rent').forEach(function(el) {
         var id = el.getAttribute('data-id');
         // Khôi phục trạng thái từ localStorage
         if (localStorage.getItem('watching_rent_' + id)) {

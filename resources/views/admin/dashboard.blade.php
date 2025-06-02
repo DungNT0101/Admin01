@@ -29,17 +29,17 @@
                     </div>
                 </div>
 
-                <div class="row mg-top-20">
+                {{--  <div class="row mg-top-20">
                     <div class="col-md-11">
                         <label for="keywords">Từ khóa SEO</label>
                         <input type="text" class="form-control" id="keywords" name="keywords" value="{{ $data->keywords }}">
                     </div>
-                </div>
+                </div>  --}}
 
                 <div class="row mg-top-20">
                     <div class="col-md-11">
                         <label for="description">Mô tả</label>
-                        <textarea name="description" id="description" rows="3" class="form-control">{!! $data->description !!}</textarea>
+                        <textarea name="description" id="description" rows="9" class="form-control">{!! $data->description !!}</textarea>
                     </div>
                 </div>
 
@@ -49,7 +49,7 @@
                         <input type="file" class="form-control" id="logo" name="logo" accept="image/png">
                     </div>
                     <div class="col-md-3">
-                        <img src="{{ asset('images/logo/logo.png') }}" alt="Ginny Shop">
+                        <img src="{{ asset('images/logo/logo.png') }}" alt="Logo Sandat.net" class="mg-top-10">
                     </div>
                 </div>
 
@@ -85,11 +85,11 @@
 
                 <div class="row mg-top-20">
                     <div class="col-md-11">
-                        <label for="keywords">Banner (Ảnh jpg tỉ lệ 3:1, 1500:500, 1800x600)</label>
+                        <label for="keywords">Banner</label>
                         <input type="file" class="form-control" id="banner" name="banner" accept="image/jpg">
                     </div>
                     <div class="col-md-9 mg-top-10">
-                        <img src="{{ asset('images/banner/banner.jpg') }}" alt="Banner Ginny Shop">
+                        <img src="{{ asset('images/banner/banner.jpg') }}" alt="Banner Sandat.net">
                     </div>
                 </div>
             </div>
