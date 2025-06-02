@@ -303,3 +303,62 @@
         </div>
     </div>
 </div>
+@push('scripts')
+<script>
+    function updateRentWatchingCount() {
+        let rent_count = 0;
+        for (let i = 0; i < localStorage.length; i++) {
+            if (localStorage.key(i).startsWith('watching_rent_')) {
+                rent_count++;
+            }
+        }
+        // Lưu số lượng vào localStorage
+        localStorage.setItem('rent_count', rent_count);
+        document.querySelectorAll('.watching-rent-count').forEach(function(el) {
+            el.textContent = rent_count;
+        });
+        // Tính tổng sale_count và rent_count, đảm bảo giá trị mặc định là 0 nếu không tồn tại
+        let sale_count = parseInt(localStorage.getItem('sale_count') || '0', 10);
+        let watching_properties = sale_count + rent_count;
+        localStorage.setItem('watching_properties', watching_properties);
+        document.querySelectorAll('.watching-properties-count').forEach(function(el) {
+            el.textContent = watching_properties;
+        });
+    }
+
+    document.querySelectorAll('.fa-heart').forEach(function(el) {
+        var id = el.getAttribute('data-id');
+        // Khôi phục trạng thái từ localStorage
+        if (localStorage.getItem('watching_rent_' + id)) {
+            el.classList.add('watching');
+        }
+        el.addEventListener('click', function() {
+            this.classList.toggle('watching');
+            // Kiểm tra nếu có user đăng nhập (biến userId do backend render ra, ví dụ window.userId)
+            if (typeof window.userId !== 'undefined' && window.userId) {
+                fetch('/api/user/watching', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                    },
+                    body: JSON.stringify({
+                        property_id: id,
+                        watching: this.classList.contains('watching') ? 1 : 0
+                    })
+                });
+            } else {
+                // Nếu chưa đăng nhập thì lưu localStorage như cũ
+                if (this.classList.contains('watching')) {
+                    localStorage.setItem('watching_rent_' + id, '1');
+                } else {
+                    localStorage.removeItem('watching_rent_' + id);
+                }
+                updateRentWatchingCount();
+            }
+        });
+    });
+    // Cập nhật số lượng khi load trang
+    updateRentWatchingCount();
+</script>
+@endpush
