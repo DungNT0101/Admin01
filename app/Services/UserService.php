@@ -39,14 +39,14 @@ class UserService
     public function loginSuccess($user)
     {
         Auth::login($user);
-
-        return redirect(route('dashboard'));
+        // Chuyển hướng về trang trước nếu có, nếu không thì về dashboard
+        return redirect()->intended(route('dashboard'));
     }
 
     public function logout()
     {
         Auth::logout();
-        return redirect(route('login'));
+        return redirect(route('home'));
     }
     public function getUser()
     {

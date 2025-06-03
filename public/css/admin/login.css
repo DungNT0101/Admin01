@@ -7,8 +7,9 @@
     padding: 50px;
     border: 1px solid #a8a8a8;
     border-radius: 12px;
-    width: 500px;
-    margin: auto;
+    width: 100%;
+    max-width: 500px;
+    margin: 10px auto;
     margin-top: 200px;
     background: #fff;
 }

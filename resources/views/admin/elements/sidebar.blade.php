@@ -1,6 +1,8 @@
 <div class="admin-name">
-    <img src="{{ asset('layout/type-1/images/logo-white.png') }}" alt="Sandat.net - Admin" class="">
-    <h6 class="mg-left-10">Sandat.net</h6>
+    <a href="{{ route('home') }}">
+        <img src="{{ asset('layout/type-1/images/logo-white.png') }}" alt="Sandat.net - Admin" class="">
+        <h6 class="mg-left-10">Sandat.net</h6>
+    </a>
 </div>
 <div class="box-menu mg-top-20">
     <div class="row">

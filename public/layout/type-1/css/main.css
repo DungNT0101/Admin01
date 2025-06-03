@@ -226,10 +226,9 @@ ul.top-menu-right li {
     list-style: none;
 }
 .user-avatar{
-    width: 40px;
-    height: 40px;
     border-radius: 50%;
-    overflow: hidden;
+    width: 20px;
+    height: 20px;
 }
 a.user-info {
     display: inline-block;
@@ -267,8 +266,9 @@ a.user-info {
     }
     .user-info img {
         display: block;
-        width: 65px;
-        border-radius: 6px;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
     }
     .mobile-menu-header .fa-bars, .mobile-menu-header .fa-user, .mobile-menu-header .fa-heart {
         font-size: 28px;
@@ -313,6 +313,18 @@ a.user-info {
     }
     body.menu-fixed {
         padding-top: 60px; /* Adjust for mobile menu height */
+    }
+    a.user-info {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 10px;
+        text-decoration: none;
+        margin-top: 15px;
+        background: #FF385C;
+        padding: 5px;
+        width: 60px;
+        height: 60px;
+        border-radius: 6px;
     }
 }
 #topMenu.fixed {
@@ -481,7 +493,7 @@ body.menu-fixed {
 .property-image img:hover {
     transform: scale(1.05);
 }
-.property-location, .square-meters, .bedrooms, .bathrooms, .direction {
+.property-location, .square-meters, .bedrooms, .bathrooms, a.direction, .direction, .property-code {
     font-size: 14px;
     color: #888;
     display: inline;

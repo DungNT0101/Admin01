@@ -31,19 +31,19 @@
                             </a>
                         </li>
                         <li class="mg-left-10">
-                            <a href="#" class="btn btn-register">Đăng tin</a>
+                            <a href="{{ route('sale.create') }}" class="btn btn-register"><i class="fas fa-plus"></i> Đăng tin</a>
                         </li>
 
                         @if (Auth::check())
                             <li class="mg-left-10">
-                                <a href="#" class="user-info">
-                                    <i class="fas fa-user"></i> Xin chào! Admin
-                                    <img src="{{ asset('layout/type-1/images/user-avatar.png') }}" alt="User Avatar" class="user-avatar">
+                                <a href="{{ route('my-profile') }}" class="user-info btn btn-register">
+                                    <img src="{{ asset(Auth::user()->avatar) }}" alt="{{ Auth::user()->full_name }}" class="user-avatar">
+                                    {{ Auth::user()->full_name }}
                                 </a>
                             </li>
                         @else
                             <li class="mg-left-10">
-                                <a href="#" class="btn btn-primary">
+                                <a href="{{ route('login') }}" class="btn btn-primary">
                                     <i class="fas fa-sign-in-alt"></i> Đăng nhập
                                 </a>
                             </li>
@@ -73,12 +73,11 @@
                         </div>
                         <div class="col-3 text-end">
                             @if (Auth::check())
-                                <a href="#" class="user-info">
-                                    {{--  <i class="fas fa-user"></i> Xin chào! Admin  --}}
-                                    <img src="{{ asset('layout/type-1/images/user-avatar.png') }}" alt="User Avatar" class="user-avatar">
+                                <a href="{{ route('my-profile') }}" class="user-info">
+                                    <img src="{{ asset(Auth::user()->avatar) }}" alt="{{ Auth::user()->full_name }}" class="user-avatar">
                                 </a>
                             @else
-                                <a href="#" class="btn login-btn mg-10">
+                                <a href="{{ route('login') }}" class="btn login-btn mg-10">
                                     <i class="fas fa-user"></i>
                                 </a>
                             @endif

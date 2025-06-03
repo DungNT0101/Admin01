@@ -19,8 +19,11 @@
                                     <h3 class="property-title">Chung cư Vinhome Smart City</h3>
                                 </a>
                             </div>
-                            <div class="col-12">
+                            <div class="col-6">
                                 <p class="property-location"><i class="fa fa-map-marker"></i> Hà Nội </p>
+                            </div>
+                            <div class="col-6">
+                                <p class="property-code"><i class="fa fa-hashtag"></i> B-123456 </p>
                             </div>
                             <div class="col-6 mg-top-10">
                                 <p class="square-meters"><i class="fa fa-ruler-combined"></i>100 m²</p>
@@ -32,7 +35,7 @@
                                 <p class="bathrooms"><i class="fa fa-bath"></i> 2</p>
                             </div>
                             <div class="col-6 mg-top-10">
-                                <p class="direction"><i class="fa fa-map-marker"></i> Google Map</p>
+                                <a class="direction" href="https://maps.app.goo.gl/CEhhuzV5QoyhcNx8A" target="_blank"><i class="fa fa-map-marker"></i> Google Map</a>
                             </div>
                             <div class="col-12 mg-top-10 top-line">
                                 <p class="price mg-top-10"><i class="fa fa-dollar-sign"></i> 3 tỷ</p>
@@ -54,8 +57,11 @@
                                     <h3 class="property-title">Chung cư Vinhome Smart City</h3>
                                 </a>
                             </div>
-                            <div class="col-12">
+                            <div class="col-6">
                                 <p class="property-location"><i class="fa fa-map-marker"></i> Hà Nội </p>
+                            </div>
+                            <div class="col-6">
+                                <p class="property-code"><i class="fa fa-hashtag"></i> B-123456 </p>
                             </div>
                             <div class="col-6 mg-top-10">
                                 <p class="square-meters"><i class="fa fa-ruler-combined"></i>100 m²</p>
@@ -67,7 +73,7 @@
                                 <p class="bathrooms"><i class="fa fa-bath"></i> 2</p>
                             </div>
                             <div class="col-6 mg-top-10">
-                                <p class="direction"><i class="fa fa-map-marker"></i> Google Map</p>
+                                <a class="direction" href="https://maps.app.goo.gl/CEhhuzV5QoyhcNx8A" target="_blank"><i class="fa fa-map-marker"></i> Google Map</a>
                             </div>
                             <div class="col-12 mg-top-10 top-line">
                                 <p class="price mg-top-10"><i class="fa fa-dollar-sign"></i> 3 tỷ</p>
@@ -89,8 +95,11 @@
                                     <h3 class="property-title">Chung cư Vinhome Smart City</h3>
                                 </a>
                             </div>
-                            <div class="col-12">
+                            <div class="col-6">
                                 <p class="property-location"><i class="fa fa-map-marker"></i> Hà Nội </p>
+                            </div>
+                            <div class="col-6">
+                                <p class="property-code"><i class="fa fa-hashtag"></i> B-123456 </p>
                             </div>
                             <div class="col-6 mg-top-10">
                                 <p class="square-meters"><i class="fa fa-ruler-combined"></i>100 m²</p>
@@ -102,7 +111,7 @@
                                 <p class="bathrooms"><i class="fa fa-bath"></i> 2</p>
                             </div>
                             <div class="col-6 mg-top-10">
-                                <p class="direction"><i class="fa fa-map-marker"></i> Google Map</p>
+                                <a class="direction" href="https://maps.app.goo.gl/CEhhuzV5QoyhcNx8A" target="_blank"><i class="fa fa-map-marker"></i> Google Map</a>
                             </div>
                             <div class="col-12 mg-top-10 top-line">
                                 <p class="price mg-top-10"><i class="fa fa-dollar-sign"></i> 3 tỷ</p>
@@ -124,8 +133,11 @@
                                     <h3 class="property-title">Chung cư Vinhome Smart City</h3>
                                 </a>
                             </div>
-                            <div class="col-12">
+                            <div class="col-6">
                                 <p class="property-location"><i class="fa fa-map-marker"></i> Hà Nội </p>
+                            </div>
+                            <div class="col-6">
+                                <p class="property-code"><i class="fa fa-hashtag"></i> B-123456 </p>
                             </div>
                             <div class="col-6 mg-top-10">
                                 <p class="square-meters"><i class="fa fa-ruler-combined"></i>100 m²</p>
@@ -137,7 +149,7 @@
                                 <p class="bathrooms"><i class="fa fa-bath"></i> 2</p>
                             </div>
                             <div class="col-6 mg-top-10">
-                                <p class="direction"><i class="fa fa-map-marker"></i> Google Map</p>
+                                <a class="direction" href="https://maps.app.goo.gl/CEhhuzV5QoyhcNx8A" target="_blank"><i class="fa fa-map-marker"></i> Google Map</a>
                             </div>
                             <div class="col-12 mg-top-10 top-line">
                                 <p class="price mg-top-10"><i class="fa fa-dollar-sign"></i> 3 tỷ</p>
@@ -159,8 +171,11 @@
                                     <h3 class="property-title">Chung cư Vinhome Smart City</h3>
                                 </a>
                             </div>
-                            <div class="col-12">
+                            <div class="col-6">
                                 <p class="property-location"><i class="fa fa-map-marker"></i> Hà Nội </p>
+                            </div>
+                            <div class="col-6">
+                                <p class="property-code"><i class="fa fa-hashtag"></i> B-123456 </p>
                             </div>
                             <div class="col-6 mg-top-10">
                                 <p class="square-meters"><i class="fa fa-ruler-combined"></i>100 m²</p>
@@ -172,7 +187,7 @@
                                 <p class="bathrooms"><i class="fa fa-bath"></i> 2</p>
                             </div>
                             <div class="col-6 mg-top-10">
-                                <p class="direction"><i class="fa fa-map-marker"></i> Google Map</p>
+                                <a class="direction" href="https://maps.app.goo.gl/CEhhuzV5QoyhcNx8A" target="_blank"><i class="fa fa-map-marker"></i> Google Map</a>
                             </div>
                             <div class="col-12 mg-top-10 top-line">
                                 <p class="price mg-top-10"><i class="fa fa-dollar-sign"></i> 3 tỷ</p>
@@ -194,8 +209,11 @@
                                     <h3 class="property-title">Chung cư Vinhome Smart City</h3>
                                 </a>
                             </div>
-                            <div class="col-12">
+                            <div class="col-6">
                                 <p class="property-location"><i class="fa fa-map-marker"></i> Hà Nội </p>
+                            </div>
+                            <div class="col-6">
+                                <p class="property-code"><i class="fa fa-hashtag"></i> B-123456 </p>
                             </div>
                             <div class="col-6 mg-top-10">
                                 <p class="square-meters"><i class="fa fa-ruler-combined"></i>100 m²</p>
@@ -207,7 +225,7 @@
                                 <p class="bathrooms"><i class="fa fa-bath"></i> 2</p>
                             </div>
                             <div class="col-6 mg-top-10">
-                                <p class="direction"><i class="fa fa-map-marker"></i> Google Map</p>
+                                <a class="direction" href="https://maps.app.goo.gl/CEhhuzV5QoyhcNx8A" target="_blank"><i class="fa fa-map-marker"></i> Google Map</a>
                             </div>
                             <div class="col-12 mg-top-10 top-line">
                                 <p class="price mg-top-10"><i class="fa fa-dollar-sign"></i> 3 tỷ</p>
