@@ -41,6 +41,9 @@ class Sale extends Model
         // 'gallery_images', // handled by relationship or separate table
     ];
 
-
+    public function images()
+    {
+        return $this->hasMany(\App\Models\SaleImage::class, 'sale_id');
+    }
 
 }

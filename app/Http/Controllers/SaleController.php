@@ -26,6 +26,15 @@ class SaleController extends Controller
 
         $sales = $this->service->getList();
 
+        // // Dump images của từng property
+        // foreach ($sales as $sale) {
+        //     \Log::info('Sale ID: ' . $sale->id . ' Images:', $sale->images->toArray());
+        // }
+        // Hoặc dump trực tiếp ra màn hình (chỉ dùng khi debug)
+        // foreach ($sales as $sale) {
+        //     dump($sale->images[0]->path);
+        // }
+
         return view('admin.sale.list', [
             'dataList' => $sales
         ]);
@@ -35,6 +44,7 @@ class SaleController extends Controller
     public function create()
     {
         $saleTypes = $this->service->getCategories();
+        $cities = $this->service->getCities();
         $laws = (object)[
             [ 'id' => 1, 'name' => 'Số đỏ' ],
             [ 'id' => 2, 'name' => 'Sổ hồng' ],
@@ -50,7 +60,8 @@ class SaleController extends Controller
         $laws = collect($laws);
         return view('admin.sale.create', [
             'saleTypes' => $saleTypes,
-            'laws' => $laws
+            'laws' => $laws,
+            'cities' => $cities
         ]);
     }
 
@@ -108,6 +119,16 @@ class SaleController extends Controller
                     'type' => 'gallery',
                 ]);
             }
+        }
+
+        // Handle video upload
+        if ($request->hasFile('video')) {
+            $video = $request->file('video');
+            $videoName = Auth::id().'_'.time().'.'.$video->guessExtension();
+            $video->move(config('image.sales'), $videoName);
+            // Update video path in Sale
+            $sale->video = config('image.sales').'/'.$videoName;
+            $sale->save();
         }
 
         // Optionally handle main image (if you have a main image field)

@@ -86,16 +86,36 @@
                 </h4>
                 <div class="row mg-top-20 pd-top-20">
                     <div class="col-md-4">
-                        <label for="price">Mức giá (vnd/m2)</label>
+                        <label for="province">Tỉnh / Thành phố</label>
+                        <select name="province" id="province" class="form-control">
+                            <option value="">Chọn tỉnh / thành phố</option>
+                            @foreach($cities as $city)
+                                <option value="{{ $city }}">{{ $city }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="price">Mức giá (bằng chữ)</label>
                         <input type="text" class="form-control" id="price" name="price" value="{{ old('price') }}">
                     </div>
+                    <div class="col-md-4">
+                        <label for="equivalent_value">Mức giá (bằng số)</label>
+                        <input type="number" class="form-control" id="equivalent_value" name="equivalent_value" value="{{ old('equivalent_value') }}">
+                    </div>
+
+                </div>
+                <div class="row mg-top-20">
                     <div class="col-md-4">
                         <label for="area">Diện tích (m2)</label>
                         <input type="text" class="form-control" id="area" name="area" value="{{ old('area') }}">
                     </div>
                     <div class="col-md-4">
-                        <label for="equivalent_value">Giá trị tương đương (vnd)</label>
-                        <input type="text" class="form-control" id="equivalent_value" name="equivalent_value" value="{{ old('equivalent_value') }}">
+                        <label for="price_per_sqm">Giá / (m2)</label>
+                        <input type="number" class="form-control" id="price_per_sqm" name="price_per_sqm" value="{{ old('price_per_sqm') }}">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="maps">Google Maps</label>
+                        <input type="text" class="form-control" id="maps" name="maps" value="{{ old('maps') }}">
                     </div>
                 </div>
                 <div class="row mg-top-20">
@@ -120,7 +140,17 @@
                 <div class="row mg-top-20">
                     <div class="col-md-4">
                         <label for="direction">Hướng</label>
-                        <input type="text" class="form-control" id="direction" name="direction" value="{{ old('direction') }}">
+                        <select name="direction" id="direction" class="form-control">
+                            <option value="">Chọn hướng</option>
+                            <option value="Bắc">Bắc</option>
+                            <option value="Nam">Nam</option>
+                            <option value="Đông">Đông</option>
+                            <option value="Tây">Tây</option>
+                            <option value="Đông Bắc">Đông Bắc</option>
+                            <option value="Tây Bắc">Tây Bắc</option>
+                            <option value="Đông Nam">Đông Nam</option>
+                            <option value="Tây Nam">Tây Nam</option>
+                        </select>
                     </div>
                     <div class="col-md-4">
                         <label for="front">Mặt tiền (m)</label>
@@ -158,24 +188,12 @@
 
             <div class="box-content mg-top-20">
                 <h4 class="border-bottom mg-top-20 pd-bottom-20">
-                    Mạng xã hội
+                    Video
                 </h4>
                 <div class="row mg-top-20">
-                    <div class="col-md-12 mg-top-20">
-                        <label for="video">Video Youtube</label>
-                        <input type="text" class="form-control" id="video" name="video" value="{{ old('video') }}">
-                    </div>
-                    <div class="col-md-12 mg-top-20">
-                        <label for="maps">Google Maps</label>
-                        <input type="text" class="form-control" id="maps" name="maps" value="{{ old('maps') }}">
-                    </div>
-                    <div class="col-md-12 mg-top-20">
-                        <label for="zalo">Zalo</label>
-                        <input type="text" class="form-control" id="zalo" name="zalo" value="{{ old('zalo') }}">
-                    </div>
-                    <div class="col-md-12 mg-top-20">
-                        <label for="facebook">Facebook</label>
-                        <input type="text" class="form-control" id="facebook" name="facebook" value="{{ old('facebook') }}">
+                    <div class="col-md-12">
+                        <label for="video">Thêm video</label>
+                        <input type="file" class="form-control" id="video" name="video" accept="video/*">
                     </div>
                 </div>
                 <div class="row mg-top-20">
@@ -185,7 +203,7 @@
                 </div>
             </div>
 
-            <div class="box-content mg-top-20">
+            {{--  <div class="box-content mg-top-20">
                 <h4 class="border-bottom mg-top-20 pd-bottom-20">
                     Quan tâm
                 </h4>
@@ -203,7 +221,7 @@
                         <button type="submit" class="btn btn-success">Lưu Thông Tin</button>
                     </div>
                 </div>
-            </div>
+            </div>  --}}
 
 
         </div>

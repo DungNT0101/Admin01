@@ -37,6 +37,9 @@ class SaleService
             'zalo' => $request->zalo,
             'facebook' => $request->facebook,
             'favorite' => $request->has('favorite') ? 1 : 0,
+            // Thêm province và price_per_sqm
+            'province' => $request->province,
+            'price_per_sqm' => $request->price_per_sqm,
         ];
         $sale = Sale::create($data);
         return $sale;
@@ -49,7 +52,8 @@ class SaleService
 
     public function getList()
     {
-        return Sale::paginate(10);
+        // Lấy danh sách sale kèm theo images (Eager Loading)
+        return Sale::with('images')->paginate(10);
     }
 
     public function hotProducts()
@@ -102,6 +106,21 @@ class SaleService
     public function delete($id)
     {
         return Sale::find($id)->delete();
+    }
+
+    public function getCities()
+    {
+        $cities = [
+            'Hà Nội', 'Hồ Chí Minh', 'Đà Nẵng', 'Cần Thơ', 'Hải Phòng', 'Huế',
+            'An Giang', 'Bắc Ninh', 'Cà Mau', 'Cao Bằng', 'Đắk Lắk', 'Điện Biên',
+            'Đồng Nai', 'Đồng Tháp', 'Gia Lai', 'Hà Tĩnh', 'Hưng Yên',
+            'Khánh Hòa', 'Lai Châu', 'Lâm Đồng', 'Lạng Sơn', 'Lào Cai',
+            'Nghệ An', 'Ninh Bình', 'Phú Thọ', 'Quảng Ngãi', 'Quảng Ninh',
+            'Quảng Trị', 'Sơn La', 'Tây Ninh', 'Thái Nguyên', 'Thanh Hoá',
+            'Tuyên Quang', 'Vĩnh Long'
+        ];
+
+        return $cities;
     }
 
 }
