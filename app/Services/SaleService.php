@@ -13,8 +13,9 @@ class SaleService
         $slug = Str::slug($request->title);
         // Validate unique slug
         if (Sale::where('slug', $slug)->exists()) {
-            return False;
+            return false;
         }
+
         $data = [
             'user_id' => $request->user_id,
             'type' => $request->type,

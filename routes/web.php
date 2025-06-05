@@ -7,7 +7,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\SaleController;
 use App\Http\Controllers\NewsController;
-use App\Http\Controllers\KienThucController;
+use App\Http\Controllers\MyPropertyController;
 use App\Http\Controllers\PageController;
 
 /*
@@ -51,6 +51,9 @@ Route::group([
     Route::get('/property/sale/delete/{id}', [SaleController::class, 'delete'])->name('sale.delete');
     Route::get('/property/sale/hot', [SaleController::class, 'hotProducts'])->name('sale.hot');
     Route::get('/property/sale/{id}', [SaleController::class, 'edit'])->name('sale.edit');
+
+    // My Property
+    Route::get('/my-properties', [MyPropertyController::class, 'myProperties'])->name('my-properties');
 
     // News
     Route::get('/news', [NewsController::class, 'getNews'])->name('news.index');

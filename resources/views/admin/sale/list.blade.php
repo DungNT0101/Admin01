@@ -49,11 +49,13 @@
         @foreach ($dataList as $item)
             <div class="row property-item">
                 <div class="col-md-1">
-                    <a href="#">
-                        <div class="property-image">
-                            <img src="{{ asset($item->images[0]->path) }}" alt="{{ $item->title }}" class="img-fluid">
-                        </div>
-                    </a>
+                    @if(isset($item->images[0]->path))
+                        <a href="#">
+                            <div class="property-image">
+                                <img src="{{ asset($item->images[0]->path) }}" alt="{{ $item->title }}" class="img-fluid">
+                            </div>
+                        </a>
+                    @endif
                 </div>
                 <div class="col-md-3">
                     <div class="property-info">
@@ -67,7 +69,7 @@
                 <div class="col-md-2">
                     <div class="property-code text-center">
                         <a href="#">
-                            <p class="property-code">B-{{ $item->id }}</p>
+                            <p class="property-code">B-000{{ $item->id }}</p>
                         </a>
                     </div>
                 </div>

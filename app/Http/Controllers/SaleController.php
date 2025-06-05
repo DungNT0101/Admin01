@@ -58,7 +58,15 @@ class SaleController extends Controller
             ];
         });
         $laws = collect($laws);
-        return view('admin.sale.create', [
+
+        // return view('admin.sale.create', [
+        //     'saleTypes' => $saleTypes,
+        //     'laws' => $laws,
+        //     'cities' => $cities
+        // ]);
+
+        // Admin 01 - View
+        return view('admin01.property-sale.create', [
             'saleTypes' => $saleTypes,
             'laws' => $laws,
             'cities' => $cities
@@ -106,6 +114,10 @@ class SaleController extends Controller
     {
         // Validate and save Sale
         $sale = $this->service->store($request);
+
+        if (!$sale) {
+            return redirect()->back()->with('error', 'Dự án đã tồn tại. Vui lòng thay đổi tiêu đề.');
+        }
 
         // Handle gallery images
         if ($request->hasFile('gallery_images')) {
