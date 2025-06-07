@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th6 03, 2025 lúc 01:34 AM
+-- Thời gian đã tạo: Th6 06, 2025 lúc 03:03 AM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -125,8 +125,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (16, '2024_03_31_171650_create_index_to_news_table', 9),
 (17, '2024_03_31_171725_create_index_to_products_table', 9),
 (18, '2024_03_31_171817_create_index_to_product_categories_table', 9),
-(19, '2025_05_26_000000_create_sales_table', 10),
-(20, '2025_05_26_000001_create_sale_images_table', 11);
+(24, '2025_05_26_000001_create_sale_images_table', 10),
+(23, '2025_05_26_000000_create_sales_table', 10);
 
 -- --------------------------------------------------------
 
@@ -236,6 +236,7 @@ CREATE TABLE `product_categories` (
 
 CREATE TABLE `sales` (
   `id` bigint(20) UNSIGNED NOT NULL,
+  `code` bigint(20) DEFAULT NULL,
   `user_id` bigint(20) UNSIGNED DEFAULT NULL,
   `type` varchar(255) DEFAULT NULL,
   `title` varchar(255) NOT NULL,
@@ -243,31 +244,38 @@ CREATE TABLE `sales` (
   `address` varchar(255) DEFAULT NULL,
   `type_property` varchar(255) DEFAULT NULL,
   `content` text DEFAULT NULL,
-  `price` decimal(18,2) DEFAULT NULL,
-  `area` decimal(10,2) DEFAULT NULL,
-  `equivalent_value` decimal(18,2) DEFAULT NULL,
+  `price` varchar(255) DEFAULT NULL,
+  `area` varchar(255) DEFAULT NULL,
+  `equivalent_value` varchar(255) DEFAULT NULL,
   `law` varchar(255) DEFAULT NULL,
   `bedroom` int(11) DEFAULT NULL,
   `bathroom` int(11) DEFAULT NULL,
   `direction` varchar(255) DEFAULT NULL,
-  `front` decimal(10,2) DEFAULT NULL,
-  `road` decimal(10,2) DEFAULT NULL,
+  `front` varchar(255) DEFAULT NULL,
+  `road` varchar(255) DEFAULT NULL,
   `video` varchar(255) DEFAULT NULL,
   `maps` varchar(255) DEFAULT NULL,
   `zalo` varchar(255) DEFAULT NULL,
   `facebook` varchar(255) DEFAULT NULL,
   `favorite` tinyint(1) NOT NULL DEFAULT 0,
+  `province` varchar(255) DEFAULT NULL,
+  `price_per_sqm` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `owner_type` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `sales`
 --
 
-INSERT INTO `sales` (`id`, `user_id`, `type`, `title`, `slug`, `address`, `type_property`, `content`, `price`, `area`, `equivalent_value`, `law`, `bedroom`, `bathroom`, `direction`, `front`, `road`, `video`, `maps`, `zalo`, `facebook`, `favorite`, `created_at`, `updated_at`) VALUES
-(1, 1, NULL, 'sale 1', 'sale-1', 'sale 1', 'Nhà đất', 'sale 1', 3.00, 1.00, 1.00, '1', 1, 1, 'Đông', 1.00, 1.00, '1', '1', '1', '1', 1, '2025-05-26 00:33:30', '2025-05-26 00:33:30'),
-(2, 1, NULL, 'sale 2', 'sale-2', 'sale 2', 'Chung cư', 'sale 2', 3.00, 1.00, 1.00, '2', 1, 1, 'Đông', 1.00, 1.00, NULL, NULL, NULL, NULL, 0, '2025-05-26 00:40:53', '2025-05-26 00:40:53');
+INSERT INTO `sales` (`id`, `code`, `user_id`, `type`, `title`, `slug`, `address`, `type_property`, `content`, `price`, `area`, `equivalent_value`, `law`, `bedroom`, `bathroom`, `direction`, `front`, `road`, `video`, `maps`, `zalo`, `facebook`, `favorite`, `province`, `price_per_sqm`, `created_at`, `updated_at`, `owner_type`) VALUES
+(1, NULL, 1, NULL, 'sale 1', 'sale-1', 'Ha Noi', 'Nhà đất', 'sale 1', '3 tỷ', '50', '3000000000', '1', 3, 2, 'Đông Nam', '8', '8', 'images/sale/1_1748996042.mp4', 'https://maps.app.goo.gl/fg92uKJgnPq5bHuK8', NULL, NULL, 0, NULL, NULL, '2025-06-04 00:14:02', '2025-06-04 00:14:02', NULL),
+(2, NULL, 1, NULL, 'Sale 2', 'sale-2', 'Ha Noi', 'Nhà đất', 'Sale 2', '3 tỷ', '50', '3000000000', '2', 3, 2, 'Nam', '8', '8', 'images/sale/1_1748998757.mp4', 'https://maps.app.goo.gl/fg92uKJgnPq5bHuK8', NULL, NULL, 0, NULL, NULL, '2025-06-04 00:59:17', '2025-06-04 00:59:17', NULL),
+(3, NULL, 1, NULL, 'Bán đất nền dự án Sông Công Park City', 'ban-dat-nen-du-an-song-cong-park-city', 'Sông Công, Thái Nguyên', 'Đất nền', 'Bán đất nền dự án Sông Công Park City', '3 tỷ', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, '2025-06-05 00:10:52', '2025-06-05 00:10:52', NULL),
+(4, NULL, 1, NULL, 'Bán đất nền dự án Sông Công Park City 2', 'ban-dat-nen-du-an-song-cong-park-city-2', 'Sông Công, Thái Nguyên', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'images/sale/1_1749085824.mp4', NULL, NULL, NULL, 0, NULL, NULL, '2025-06-05 01:10:24', '2025-06-05 01:10:24', NULL),
+(5, 1749170034, 1, 'Đất bán', 'Dự án Khu đô thị Cầu Trúc Sông Công, Đường Cách Mạng Tháng Mười', 'du-an-khu-do-thi-cau-truc-song-cong-duong-cach-mang-thang-muoi-1749170034', 'Dự án Khu đô thị Cầu Trúc Sông Công, Đường Cách Mạng Tháng Mười', NULL, 'Dự án Khu đô thị Cầu Trúc Sông Công, Đường Cách Mạng Tháng Mười', '3', '100', NULL, NULL, NULL, NULL, NULL, '8', NULL, 'images/sale/1_1749170035.mp4', NULL, NULL, NULL, 0, NULL, NULL, '2025-06-06 00:33:54', '2025-06-06 00:33:55', 'Môi giới'),
+(6, 1749170182, 1, 'Đất bán', 'Dự án Khu đô thị Cầu Trúc Sông Công, Đường Cách Mạng Tháng Mười', 'du-an-khu-do-thi-cau-truc-song-cong-duong-cach-mang-thang-muoi-1749170182', 'Dự án Khu đô thị Cầu Trúc Sông Công, Đường Cách Mạng Tháng Mười', NULL, 'Dự án Khu đô thị Cầu Trúc Sông Công, Đường Cách Mạng Tháng Mười', '5', '100', NULL, NULL, NULL, NULL, NULL, '8', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, '2025-06-06 00:36:22', '2025-06-06 00:36:22', 'Chủ nhà');
 
 -- --------------------------------------------------------
 
@@ -289,7 +297,28 @@ CREATE TABLE `sale_images` (
 --
 
 INSERT INTO `sale_images` (`id`, `sale_id`, `path`, `type`, `created_at`, `updated_at`) VALUES
-(1, 2, 'images/sale/1_1748220053.png', 'gallery', '2025-05-26 00:40:53', '2025-05-26 00:40:53');
+(1, 1, 'images/sale/1_1748996042.jpg', 'gallery', '2025-06-04 00:14:02', '2025-06-04 00:14:02'),
+(2, 2, 'images/sale/1_1748998757.jpg', 'gallery', '2025-06-04 00:59:17', '2025-06-04 00:59:17'),
+(3, 2, 'images/sale/1_1748998757.jpg', 'gallery', '2025-06-04 00:59:17', '2025-06-04 00:59:17'),
+(4, 3, 'images/sale/1_1749082252.jpg', 'gallery', '2025-06-05 00:10:52', '2025-06-05 00:10:52'),
+(5, 3, 'images/sale/1_1749082252.jpg', 'gallery', '2025-06-05 00:10:52', '2025-06-05 00:10:52'),
+(6, 3, 'images/sale/1_1749082252.jpg', 'gallery', '2025-06-05 00:10:52', '2025-06-05 00:10:52'),
+(7, 3, 'images/sale/1_1749082252.jpg', 'gallery', '2025-06-05 00:10:52', '2025-06-05 00:10:52'),
+(8, 3, 'images/sale/1_1749082252.jpg', 'gallery', '2025-06-05 00:10:52', '2025-06-05 00:10:52'),
+(9, 4, 'images/sale/1_1749085824.jpg', 'gallery', '2025-06-05 01:10:24', '2025-06-05 01:10:24'),
+(10, 4, 'images/sale/1_1749085824.jpg', 'gallery', '2025-06-05 01:10:24', '2025-06-05 01:10:24'),
+(11, 4, 'images/sale/1_1749085824.jpg', 'gallery', '2025-06-05 01:10:24', '2025-06-05 01:10:24'),
+(12, 4, 'images/sale/1_1749085824.jpg', 'gallery', '2025-06-05 01:10:24', '2025-06-05 01:10:24'),
+(13, 4, 'images/sale/1_1749085824.jpg', 'gallery', '2025-06-05 01:10:24', '2025-06-05 01:10:24'),
+(14, 5, 'images/sale/1_1749170034.jpg', 'gallery', '2025-06-06 00:33:55', '2025-06-06 00:33:55'),
+(15, 5, 'images/sale/1_1749170035.jpg', 'gallery', '2025-06-06 00:33:55', '2025-06-06 00:33:55'),
+(16, 5, 'images/sale/1_1749170035.jpg', 'gallery', '2025-06-06 00:33:55', '2025-06-06 00:33:55'),
+(17, 5, 'images/sale/1_1749170035.jpg', 'gallery', '2025-06-06 00:33:55', '2025-06-06 00:33:55'),
+(18, 5, 'images/sale/1_1749170035.jpg', 'gallery', '2025-06-06 00:33:55', '2025-06-06 00:33:55'),
+(19, 6, 'images/sale/1_1749170182.jpg', 'gallery', '2025-06-06 00:36:22', '2025-06-06 00:36:22'),
+(20, 6, 'images/sale/1_1749170182.jpg', 'gallery', '2025-06-06 00:36:22', '2025-06-06 00:36:22'),
+(21, 6, 'images/sale/1_1749170182.jpg', 'gallery', '2025-06-06 00:36:22', '2025-06-06 00:36:22'),
+(22, 6, 'images/sale/1_1749170182.jpg', 'gallery', '2025-06-06 00:36:22', '2025-06-06 00:36:22');
 
 -- --------------------------------------------------------
 
@@ -429,7 +458,7 @@ ALTER TABLE `kien_thuc`
 -- AUTO_INCREMENT cho bảng `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT cho bảng `news`
@@ -459,13 +488,13 @@ ALTER TABLE `product_categories`
 -- AUTO_INCREMENT cho bảng `sales`
 --
 ALTER TABLE `sales`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT cho bảng `sale_images`
 --
 ALTER TABLE `sale_images`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT cho bảng `users`

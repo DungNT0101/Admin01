@@ -24,5 +24,41 @@ class MyPropertyService
         }
         return false;
     }
+    public function storeProperty($request)
+    {
+        $currentTime = time();
+        $slug = Str::slug($request->title). '-'.$currentTime;
+        // Validate unique slug
+        if (Sale::where('slug', $slug)->exists()) {
+            return false;
+        }
+
+        $data = [
+            'code' => $currentTime,
+            'user_id' => $request->user_id,
+            'type' => $request->type,
+            'title' => $request->title,
+            'slug' => $slug,
+            'address' => $request->address,
+            'type_property' => $request->type_property,
+            'content' => $request->content,
+            'price' => $request->price,
+            'area' => $request->area,
+            'equivalent_value' => $request->equivalent_value,
+            'law' => $request->law,
+            'direction' => $request->direction,
+            'front' => $request->front,
+            'road' => $request->road,
+            'video' => $request->video,
+            'maps' => $request->maps,
+            'owner_type' => $request->owner_type,
+            // 'favorite' => $request->has('favorite') ? 1 : 0,
+            // Thêm province và price_per_sqm
+            // 'province' => $request->province,
+            'price_per_sqm' => $request->price_per_sqm,
+        ];
+        return Sale::create($data);
+
+    }
 
 }

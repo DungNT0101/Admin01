@@ -17,6 +17,7 @@ class Sale extends Model
      */
     protected $fillable = [
         'user_id',
+        'code',
         'type',
         'title',
         'slug', // add slug for saving slug by title
@@ -37,6 +38,7 @@ class Sale extends Model
         'zalo',
         'facebook',
         'favorite',
+        'owner_type', // 'owner_type' is used to determine if the owner is a person or an organization
         // 'images', // handled by relationship or separate table
         // 'gallery_images', // handled by relationship or separate table
     ];

@@ -7,42 +7,48 @@
                 </div>
             @else
                 @foreach ($properties as $item)
-                    <div class="col-md-4 pd-20">
+                    <div class="col-md-4 pd-10">
                         <div class="property-item">
-                            <a href="#" class="property-image">
-                                <img src="{{ asset($item->images->first()->path) }}" alt="Bất động sản 1" class="img-fluid">
-                            </a>
-                            <div class="property-details">
+                            @if(@isset($item->images->first()->path))
+                                <a href="#" class="property-image">
+                                    <img src="{{ asset($item->images->first()->path) }}" alt="Bất động sản 1" class="img-fluid">
+                                </a>
+                            @endisset
+                            <div class="property-details pd-20">
                                 <div class="row">
                                     <div class="col-12">
                                         <a href="#">
                                             <h3 class="property-title">{{ $item->title }}</h3>
                                         </a>
                                     </div>
-                                    <div class="col-6">
-                                        <p class="property-location"><i class="fa fa-map-marker"></i> {{ $item->location }} </p>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <p class="property-location"><i class="fa fa-map-marker"></i> {{ $item->address }} </p>
                                     </div>
+                                </div>
+                                <div class="row">
                                     <div class="col-6">
-                                        <p class="property-code"><i class="fa fa-hashtag"></i> B-000{{ $item->id }} </p>
+                                        <p class="property-code"><i class="fa fa-hashtag"></i>{{ $item->code }} </p>
                                     </div>
+                                </div>
+                                <div class="row">
                                     <div class="col-6 mg-top-10">
                                         <p class="square-meters"><i class="fa fa-ruler-combined"></i>{{ $item->area }} m²</p>
                                     </div>
                                     <div class="col-6 mg-top-10">
-                                        <p class="bedrooms"><i class="fa fa-bed"></i> {{ $item->bedrooms }}</p>
-                                    </div>
-                                    <div class="col-6 mg-top-10">
-                                        <p class="bathrooms"><i class="fa fa-bath"></i> {{ $item->bathrooms }}</p>
-                                    </div>
-                                    <div class="col-6 mg-top-10">
                                         <a class="direction" href="{{ $item->maps }}" target="_blank"><i class="fa fa-map-marker"></i> Google Map</a>
                                     </div>
+                                </div>
+                                <div class="row">
                                     <div class="col-6 mg-top-10">
-                                        <p class="price mg-top-10"><i class="fa fa-dollar-sign"></i> {{ number_format((float) $item->price, 0, ',', '.') }} VNĐ</p>
+                                        <p class="price mg-top-10"><i class="fa fa-dollar-sign"></i> {{ number_format((float) $item->price, 0, ',', '.') }} tỷ</p>
                                     </div>
                                     <div class="col-6 mg-top-10">
                                         <p class="price mg-top-10">~ &nbsp; {{ $item->area ? number_format((float) $item->price / (float) $item->area, 0, ',', '.') : '0' }} VNĐ/m²</p>
                                     </div>
+                                </div>
+                                <div class="row">
                                     <div class="col-8 mg-top-10 top-line pd-top-10">
                                         <p class="property-user"><i class="fa fa-user"></i> OneOne</p>
                                     </div>
@@ -52,8 +58,10 @@
                                             <i class="property-icon fa fa-share-alt"></i>
                                         </a>
                                     </div>
+                                </div>
+                                <div class="row">
                                     <div class="col-12 pd-top-10 text-center top-line">
-                                        <p class="property-user"> 209348</p>
+                                        <p class="property-user"> 098****</p>
                                     </div>
                                 </div>
                             </div>

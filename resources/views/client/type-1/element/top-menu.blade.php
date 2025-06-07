@@ -6,23 +6,20 @@
                     <img src="{{ asset('layout/type-1/images/logo.png') }}" alt="Logo" class="img-fluid">
                 </a>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <ul class="nav-top-menu">
                     <li>
-                        <a href="{{ route('sale.property') }}">Nhà đất bán</a>
+                        <a href="{{ route('sale.property') }}">Đất bán</a>
                     </li>
                     <li>
-                        <a href="{{ route('rent.property') }}">Nhà đất cho thuê</a>
+                        <a href="{{ route('rent.property') }}">Nhà bán</a>
                     </li>
                     <li>
                         <a href="{{ route('home') }}">Dự án</a>
                     </li>
-                    <li>
-                        <a href="{{ route('home') }}">Tin tức</a>
-                    </li>
                 </ul>
             </div>
-            <div class="col-md-5 pd-top-15">
+            <div class="col-md-6 pd-top-15">
                 <div class="Login-Register">
                     <ul class="top-menu-right">
                         <li class="mg-left-10">
@@ -31,7 +28,7 @@
                             </a>
                         </li>
                         <li class="mg-left-10">
-                            <a href="{{ route('sale.create') }}" class="btn btn-register"><i class="fas fa-plus"></i> Đăng tin</a>
+                            <a href="{{ route('my-properties.create') }}" class="btn btn-register"><i class="fas fa-plus"></i> Đăng tin</a>
                         </li>
 
                         @if (Auth::check())

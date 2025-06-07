@@ -208,7 +208,7 @@ ul.nav-top-menu > li {
     display: inline-block;
 }
 ul.nav-top-menu > li > a {
-    padding: 10px 20px;
+    padding: 10px 15px;
     color: #707070;
     text-decoration: none;
     font-size: 18px;
@@ -464,9 +464,6 @@ body.menu-fixed {
     color: #777;
     margin-bottom: 20px;
 }
-.property-title:hover {
-    color: #FF385C;
-}
 .property-item {
     background: #fff;
     box-shadow: 0 2px 16px rgba(13,147,139,0.08), 0 1.5px 4px rgba(0,0,0,0.04);
@@ -500,7 +497,18 @@ body.menu-fixed {
 .listing-top-search{
     padding-bottom: 20px;
 }
-
+.property-image {
+    width: 100%;
+    height: 300px;
+    display: block;
+    overflow: hidden;
+}
+.property-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
 @media (max-width: 991.98px) {
     .watching-properties-count{
         position: absolute;
@@ -508,4 +516,51 @@ body.menu-fixed {
         font-size: 18px;
         margin-left: 5px;
     }
+    .breadcrumbs .btn-register {
+        /* margin-top: -20px; */
+        margin-bottom: 20px;
+    }
+}
+.listing-properties .property-title {
+    font-size: 24px;
+    color: #444;
+    height: 60px;
+    display: block;
+    overflow: hidden;
+}
+.property-location {
+    display: block;
+    overflow: hidden;
+    height: 25px;
+    font-size: 16px;
+    color: #888;
+    margin-right: 20px;
+}
+.property-title:hover {
+    color: #FF385C;
+}
+.square-meters, .bedrooms, .bathrooms, a.direction, .direction, .property-code {
+    font-size: 16px;
+    color: #888;
+    display: inline;
+    margin-right: 20px;
+}
+.price {
+    font-size: 16px;
+    color: #FF385C;
+}
+.top-line {
+    border-top: #c5c5c5 1px solid;
+}
+.create-property .form-check-input[type=radio] {
+    border-color: #000;
+}
+.create-property .form-check-input:checked[type=radio] {
+    border-color: #0d6efd;
+}
+.breadcrumbs .btn-register {
+    color: #fff;
+}
+.breadcrumbs .btn-register:hover {
+    color: #fff;
 }

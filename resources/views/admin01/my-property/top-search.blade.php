@@ -4,17 +4,14 @@
             <div class="row">
                 <div class="col-md-3 pd-5">
                     <select name="property_type" class="form-control">
-                        <option value="" disabled selected>Chọn loại bất động sản</option>
-                        <option value="apartment">Căn hộ</option>
-                        <option value="house">Nhà đất riêng</option>
-                        <option value="villa">Biệt thự / Liền kề</option>
-                        <option value="land">Đất nền dự án</option>
-                        <option value="commercial">Nhà mặt phố</option>
+                        <option value="all" selected>Chọn loại bất động sản</option>
+                        <option value="land">Đất bán</option>
+                        <option value="house">Nhà bán</option>
                     </select>
                 </div>
                 <div class="col-md-3 pd-5">
                     <select name="location" class="form-control">
-                        <option value="" disabled selected>Tỉnh / Thành Phố</option>
+                        <option value="all" selected>Tỉnh / Thành Phố</option>
                         <option value="hanoi">Hà Nội</option>
                         <option value="hochiminh">TP. Hồ Chí Minh</option>
                         <option value="danang">Đà Nẵng</option>
@@ -24,7 +21,7 @@
                 </div>
                 <div class="col-md-3 pd-5">
                     <select name="price_range" class="form-control">
-                        <option value="" disabled selected>Khoảng giá</option>
+                        <option value="all" selected>Khoảng giá</option>
                         <option value="3000000000">Dưới 3 tỷ</option>
                         <option value="3000000000-5000000000">3 tỷ - 5 tỷ</option>
                         <option value="5000000000-8000000000">5 tỷ - 8 tỷ</option>
@@ -36,7 +33,7 @@
                 </div>
                 <div class="col-md-3 pd-5">
                     <select name="area_range" class="form-control">
-                        <option value="" disabled selected>Diện tích</option>
+                        <option value="all" selected>Diện tích</option>
                         <option value="100">Dưới 50 m²</option>
                         <option value="100-200">50 m² - 80 m²</option>
                         <option value="200-300">80 m² - 100 m²</option>
@@ -49,15 +46,8 @@
             </div>
 
             <div class="row">
-                <div class="col-md-2 pd-5">
-                    <select name="area_range" class="form-control">
-                        <option value="" disabled selected>Loại tin</option>
-                        <option value="sale">Bán</option>
-                        <option value="rent">Cho thuê</option>
-                    </select>
-                </div>
-                <div class="col-md-10 pd-5">
-                    <input type="text" name="keyword" class="form-control" placeholder="Tìm kiếm bất động sản theo tên, mã, ..." />
+                <div class="col-md-12 pd-5">
+                    <input type="text" name="keyword" class="form-control" placeholder="Tìm kiếm bất động sản theo tiêu đề, mã, ..." />
                 </div>
             </div>
             <div class="row">

@@ -54,6 +54,8 @@ Route::group([
 
     // My Property
     Route::get('/my-properties', [MyPropertyController::class, 'myProperties'])->name('my-properties');
+    Route::get('/my-properties/create', [MyPropertyController::class, 'create'])->name('my-properties.create');
+    Route::post('/my-properties/store', [MyPropertyController::class, 'store'])->name('my-properties.store');
 
     // News
     Route::get('/news', [NewsController::class, 'getNews'])->name('news.index');

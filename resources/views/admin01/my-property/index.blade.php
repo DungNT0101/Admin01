@@ -1,4 +1,4 @@
-@extends('layouts.Admin01')
+@extends('layouts.admin01')
 
 @section('title', 'Sandat.net - Bất động sản bán của tôi')
 @section('keywords', 'Sandat, bất động sản, nhà đất, mua bán nhà, cho thuê nhà, dự án bất động sản')

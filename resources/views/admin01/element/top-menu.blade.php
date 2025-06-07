@@ -6,22 +6,32 @@
                     <img src="{{ asset('layout/type-1/images/logo.png') }}" alt="Logo" class="img-fluid">
                 </a>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-5">
                 <ul class="nav-top-menu">
                     <li>
-                        <a href="{{ route('my-properties') }}">Bất động sản của tôi</a>
+                        <a href="{{ route('my-properties') }}">Đất bán</a>
                     </li>
                     <li class="mg-left-10">
-                        <a href="{{ route('sale.create') }}">Đăng tin bán</a>
+                        <a href="{{ route('sale.create') }}">Nhà bán</a>
                     </li>
-                    <li class="mg-left-10">
-                        <a href="{{ route('sale.create') }}" >Đăng tin cho thuê</a>
-                    </li>
+                    @if (Auth::check())
+                        <li class="mg-left-10">
+                            <a href="{{ route('my-properties') }}" >Tin đã đăng</a>
+                        </li>
+                    @endif
                 </ul>
             </div>
-            <div class="col-md-3 pd-top-15">
+            <div class="col-md-6 pd-top-15">
                 <div class="Login-Register">
                     <ul class="top-menu-right">
+                        @if (Auth::check())
+                            <li class="mg-left-10">
+                                <a href="{{ route('logout') }}" class="btn btn-primary">
+                                    <i class="fas fa-sign-out-alt"></i> Đăng xuất
+                                </a>
+                            </li>
+                        @endif
+
                         <li class="mg-left-10">
                             <a href="#" class="btn btn-register">
                                 <span class="watching-properties-count">0</span> <i class="fas fa-heart"></i>
@@ -80,21 +90,15 @@
                 </div>
                 <ul class="nav-top-menu" id="mobileTopMenu">
                     @if (Auth::check())
-                        <li>
-                            <a href="{{ route('my-properties') }}">Bất động sản của tôi</a>
-                        </li>
                         <li class="">
-                            <a href="{{ route('sale.create') }}">Đăng tin bán</a>
-                        </li>
-                        <li class="">
-                            <a href="{{ route('sale.create') }}" >Đăng tin cho thuê</a>
+                            <a href="{{ route('sale.create') }}" >Tin đã đăng</a>
                         </li>
                     @endif
                     <li>
-                        <a href="{{ route('sale.property') }}">Nhà đất bán</a>
+                        <a href="{{ route('sale.property') }}">Đất bán</a>
                     </li>
                     <li>
-                        <a href="{{ route('rent.property') }}">Nhà đất cho thuê</a>
+                        <a href="{{ route('rent.property') }}">Nhà bán</a>
                     </li>
                     <li>
                         <a href="{{ route('home') }}">Dự án</a>

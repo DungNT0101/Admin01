@@ -39,8 +39,8 @@ class UserService
     public function loginSuccess($user)
     {
         Auth::login($user);
-        // Chuyển hướng về trang trước nếu có, nếu không thì về dashboard
-        return redirect()->intended(route('dashboard'));
+        // Chuyển hướng về trang trước nếu có, nếu không thì về my-properties
+        return redirect()->intended(route('my-properties'));
     }
 
     public function logout()
