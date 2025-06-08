@@ -74,7 +74,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-12 pd-top-10 text-center top-line">
-                                        <p class="property-phone"><i class="fa fa-phone"></i> {{ $item->phone }}</p>
+                                        <p class="property-phone"><i class="fa fa-user"></i> {{ $item->phone }}</p>
                                     </div>
                                 </div>
                                 <div class="row">

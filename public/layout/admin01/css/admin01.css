@@ -545,9 +545,14 @@ body.menu-fixed {
     display: inline;
     margin-right: 20px;
 }
-.price, .property-phone {
+.price{
     font-size: 16px;
     color: #FF385C;
+}
+.property-phone {
+    font-size: 18px;
+    color: #FF385C;
+    font-weight: 600;
 }
 .top-line {
     border-top: #c5c5c5 1px solid;

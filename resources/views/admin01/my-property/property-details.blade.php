@@ -36,8 +36,7 @@
                 <p class="property-address"><i class="fa fa-map-marker"></i> {{ $property->address }}</p>
             </div>
             <div class="col-md-2 col-12">
-                <p class="property-code"><i class="fa fa-hashtag"></i> Mã: {{ $property->code }}</p>
-
+                <p class="property-code"><i class="fa fa-hashtag"></i> Mã: {{ $property->property_code }}</p>
             </div>
             <div class="col-md-2 col-6">
                 <p class="property-area"><i class="fa fa-ruler-combined"></i> Diện tích: {{ $property->area }} m²</p>

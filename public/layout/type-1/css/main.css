@@ -515,11 +515,13 @@ h3.property-title{
         height: 60px;
     }
 }
-.property-phone {
-    color: #888;
+a.property-phone {
+    color: #FF385C;
     height: 25px;
     display: block;
     overflow: hidden;
+    font-size: 18px;
+    font-weight: 600;
 }
 .top-line {
     border-top: #c5c5c5 1px solid;
@@ -801,6 +803,11 @@ h3.property-title{
 .page-listing a{
     color: #444;
     text-decoration: none;
+}
+.page-listing a.property-phone{
+    color: #FF385C;
+    font-size: 18px;
+    font-weight: 600;
 }
 .page-listing a:hover {
     color: #FF385C;

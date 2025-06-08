@@ -64,9 +64,9 @@
                                 </div>
                                 <div class="col-12 pd-top-10 text-center top-line">
                                     @auth
-                                        <a href="tel:{{ $item->phone }}" class="property-phone">{{ $item->phone }}</a>
+                                        <a href="tel:{{ $item->phone }}" class="property-phone"> <i class="fa fa-user"></i> {{ $item->phone }}</a>
                                     @else
-                                        <p class="property-phone">098********</p>
+                                        <p class="property-phone"><i class="fa fa-user"></i>098********</p>
                                     @endauth
                                 </div>
                             </div>

@@ -56,6 +56,18 @@ function updateSaleWatchingCount() {
     });
 }
 
+function getWatchingSaleIds() {
+    const ids = [];
+    for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (key.startsWith('watching_sale_')) {
+            const id = key.replace('watching_sale_', '');
+            ids.push(id);
+        }
+    }
+    return ids;
+}
+
 document.querySelectorAll('.favorited').forEach(function(el) {
     var id = el.getAttribute('data-id');
     // Khôi phục trạng thái từ localStorage
