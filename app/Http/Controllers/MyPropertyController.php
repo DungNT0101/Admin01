@@ -244,4 +244,42 @@ class MyPropertyController extends Controller
         return response()->json(['success' => true]);
     }
 
+    public function search(Request $request)
+    {
+        $user = Auth::user();
+        if (!$user) {
+            return redirect()->route('login');
+        }
+
+        $query = request('query');
+        $keyword = $request->input('keyword');
+        $type = $request->input('type');
+
+        $query = Sale::with(['images', 'user']);
+        if ($type) {
+            $query->where('type', $type);
+        }
+        if ($keyword) {
+            $query->where(function($q) use ($keyword) {
+                $q->where('title', 'LIKE', "%{$keyword}%")
+                  ->orWhere('property_code', 'LIKE', "%{$keyword}%");
+            });
+        }
+        $query->where('user_id', $user->id); // Chỉ lấy bất động sản của người dùng hiện tại
+        $properties = $query->paginate(9);
+        $countProperties = $properties->total();
+
+        $onSale = Sale::ON_SALE;
+        $sold = Sale::SOLD;
+
+        return view('admin01.my-property.index', [
+            'properties' => $properties,
+            'keyword' => $keyword,
+            'onSale' => $onSale,
+            'sold' => $sold,
+            'type' => $type,
+            'count' => $countProperties
+        ]);
+    }
+
 }

@@ -61,6 +61,7 @@ Route::group([
     Route::post('/my-properties/edit/{id}', [MyPropertyController::class, 'update'])->name('my-properties.update');
     Route::delete('/my-properties/image/{id}/delete', [MyPropertyController::class, 'deleteImage'])->name('my-properties.image.delete');
     Route::delete('/my-properties/{id}/video/delete', [MyPropertyController::class, 'deleteVideo'])->name('my-properties.video.delete');
+    Route::get('/my-properties/search', [MyPropertyController::class, 'search'])->name('my-properties.search');
 
     // News
     Route::get('/news', [NewsController::class, 'getNews'])->name('news.index');
