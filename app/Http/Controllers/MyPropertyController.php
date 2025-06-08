@@ -70,8 +70,9 @@ class MyPropertyController extends Controller
 
         // Handle gallery images
         if ($request->hasFile('gallery_images')) {
+            $i = 0;
             foreach ($request->file('gallery_images') as $file) {
-                $filename = Auth::id().'_'.time() . '.' . $file->guessExtension();
+                $filename = Auth::id().'_'.time().'_'.$i++.'.'.$file->guessExtension();
                 $file->move(config('image.sales'), $filename);
                 // Save each image to the database
                 SaleImage::create([
@@ -173,8 +174,9 @@ class MyPropertyController extends Controller
         if ($request->hasFile('gallery_images')) {
             // Xóa ảnh cũ nếu cần
             // $property->images()->delete();
+            $i = 0;
             foreach ($request->file('gallery_images') as $file) {
-                $filename = Auth::id().'_'.time() . '.' . $file->guessExtension();
+                $filename = Auth::id().'_'.time().'_'.$i++.'.'.$file->guessExtension();
                 $file->move(config('image.sales'), $filename);
                 \App\Models\SaleImage::create([
                     'sale_id' => $property->id,

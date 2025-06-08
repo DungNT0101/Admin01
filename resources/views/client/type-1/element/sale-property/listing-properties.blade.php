@@ -3,7 +3,7 @@
         <div class="row">
             @if ($properties->isEmpty())
                 <div class="col-md-12 text-center">
-                    <h3 class="no-properties">Bạn chưa có bất động sản nào được đăng bán.</h3>
+                    <h3 class="no-properties mg-top-12">Không có bất động sản nào được hiển thị.</h3>
                 </div>
             @else
                 @foreach ($properties as $item)

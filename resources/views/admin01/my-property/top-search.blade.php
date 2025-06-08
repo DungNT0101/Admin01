@@ -1,6 +1,6 @@
 <div class="listing-top-search">
     <div class="container">
-        <form action="{{ route('my-properties.search') }}" method="GET" class="search-form">
+        <form action="{{ route('my-properties.search') }}" method="GET" class="my-propertysearch-form">
             <div class="row pd-top-30">
                 <div class="col-md-12">
                     <div class="input-group mb-3">
