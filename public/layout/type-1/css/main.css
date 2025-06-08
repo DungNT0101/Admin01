@@ -489,6 +489,8 @@ body.menu-fixed {
 .property-image img {
     width: 100%;
     transition: transform 0.3s;
+    height: 350px;
+    object-fit: cover;
 }
 .property-image img:hover {
     transform: scale(1.05);
@@ -496,11 +498,28 @@ body.menu-fixed {
 .property-location, .square-meters, .bedrooms, .bathrooms, a.direction, .direction, .property-code {
     font-size: 14px;
     color: #888;
-    display: inline;
-    margin-right: 20px;
+    display: block;
+}
+.property-location {
+    height: 40px;
+    display: block;
+    overflow: hidden;
 }
 h3.property-title{
     margin-top: 0;
+    height: 50px;
+    overflow: hidden;
+}
+@media (max-width: 991.98px) {
+    h3.property-title {
+        height: 60px;
+    }
+}
+.property-phone {
+    color: #888;
+    height: 25px;
+    display: block;
+    overflow: hidden;
 }
 .top-line {
     border-top: #c5c5c5 1px solid;
@@ -509,7 +528,6 @@ h3.property-title{
     font-size: 20px;
     font-weight: 600;
     color: #FF385C;
-    margin: 10px 0;
 }
 .why-choose-us-item {
     border: #e1e1e1 1px solid;
@@ -836,4 +854,53 @@ h3.property-title{
         font-size: 18px;
         margin-left: 5px;
     }
+}
+/* CSS for login page ============================================================ */
+.login-box {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 16px rgba(13,147,139,0.08), 0 1.5px 4px rgba(0,0,0,0.04);
+}
+.page-login {
+    background-color: #f5f7fb;
+    padding: 50px 0;
+    border-top: 1px solid #e5e5e5;
+}
+
+/* CSS for hot properties home page ================================================ */
+.featured-properties .property-item a{
+    text-decoration: none;
+}
+.property-sold{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(255, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 1;
+}
+.property-on-sale{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(0, 128, 0, 0.8);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 1
+}
+.property-on-sale:hover, .property-sold:hover {
+    background-color: rgba(0, 128, 0, 1);
+    color: #fff;
 }

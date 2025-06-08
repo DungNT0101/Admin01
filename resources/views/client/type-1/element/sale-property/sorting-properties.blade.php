@@ -3,10 +3,10 @@
         <div class="line-shadow"></div>
         <div class="row section-header">
             <div class="col-md-12">
-                <a href="{{ route('sale.property') }}">
-                    <h1 class="section-title">Mua bán bất động sản trên toàn quốc</h1>
+                <a href="{{ route('sale.lands') }}">
+                    <h1 class="section-title">Mua bán bất động sản</h1>
                 </a>
-                <p class="section-subtitle">Hiện có 16.668 bất động sản bán</p>
+                <p class="section-subtitle">Hiện có {{ $count }} bất động sản bán</p>
             </div>
         </div>
         <div class="row">

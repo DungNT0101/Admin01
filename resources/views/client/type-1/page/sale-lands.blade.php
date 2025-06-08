@@ -1,8 +1,8 @@
 @extends('layouts.type-1')
 
-@section('title', 'Sandat.net - Bất động sản cho thuê')
+@section('title', 'Sandat.net - Đất bán')
 @section('keywords', 'Sandat, bất động sản, nhà đất, mua bán nhà, cho thuê nhà, dự án bất động sản')
-@section('description', 'Sandat.net cung cấp danh sách nhà đất cho thuê đa dạng trên toàn quốc, bao gồm căn hộ cho thuê, nhà phố cho thuê, biệt thự cho thuê và nhiều loại hình bất động sản cho thuê khác. Người dùng dễ dàng tìm kiếm, so sánh và lựa chọn bất động sản cho thuê phù hợp với nhu cầu an cư hoặc đầu tư.')
+@section('description', 'Sandat.net cung cấp danh sách nhà đất bán đa dạng trên toàn quốc, bao gồm căn hộ, nhà phố, biệt thự, đất nền, dự án và nhiều loại hình bất động sản khác. Người dùng dễ dàng tìm kiếm, so sánh và lựa chọn bất động sản phù hợp với nhu cầu an cư hoặc đầu tư.')
 
 {{--  Start css  --}}
 @push('css')
@@ -20,17 +20,19 @@
     {{--  Breadcrumb  --}}
     @include('client.type-1.element.breadcrumb', [
         'breadcrumbs' => [
-            ['name' => 'Bất động sản cho thuê', 'url' => route('rent.property')]
+            ['name' => 'Đất bán', 'url' => route('sale.lands')]
         ]
     ])
     {{--  Top search section  --}}
-    @include('client.type-1.element.rent-property.listing-top-search')
+    @include('client.type-1.element.sale-property.listing-top-search', [
+        'type' => $type ?? 'Đất bán',
+    ])
 
     {{--  Sorting options  --}}
-    @include('client.type-1.element.rent-property.sorting-properties')
+    @include('client.type-1.element.sale-property.sorting-properties')
 
     {{--  Listing properties  --}}
-    @include('client.type-1.element.rent-property.listing-properties')
+    @include('client.type-1.element.sale-property.listing-properties')
 
 </div>
 

@@ -20,7 +20,7 @@ class Sale extends Model
         'code',
         'type',
         'title',
-        'slug', // add slug for saving slug by title
+        'slug',
         'address',
         'type_property',
         'content',
@@ -38,14 +38,25 @@ class Sale extends Model
         'zalo',
         'facebook',
         'favorite',
-        'owner_type', // 'owner_type' is used to determine if the owner is a person or an organization
-        // 'images', // handled by relationship or separate table
-        // 'gallery_images', // handled by relationship or separate table
+        'owner_type',
+        'property_code',
+        'status',
+        'phone',
+        'hot',
     ];
+
+    const TYPE_LAND = 'Đất bán';
+    const TYPE_HOUSE = 'Nhà bán';
+    const ON_SALE = 'on_sale';
+    const SOLD = 'sold';
 
     public function images()
     {
         return $this->hasMany(\App\Models\SaleImage::class, 'sale_id');
     }
 
+    public function user()
+    {
+        return $this->belongsTo(\App\Models\User::class, 'user_id');
+    }
 }

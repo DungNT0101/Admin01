@@ -2,63 +2,41 @@
 
 namespace App\Services;
 
-use App\Models\Product;
-use App\Models\ProductCategory;
-use App\Models\News;
-use App\Models\KienThuc;
-use App\Models\Page;
+use App\Models\Sale;
+
 
 class ClientService
 {
-    public function getHotProducts(){
-        return Product::where('hot', 1)->get();
+
+    public function getSaleLands()
+    {
+        return Sale::where('type', Sale::TYPE_LAND)
+            ->with(['images', 'user'])
+            ->paginate(9);
     }
 
-    public function getProducts(){
-        return Product::where('home', 1)->get();
+    public function getSaleHouse()
+    {
+        return Sale::where('type', Sale::TYPE_HOUSE)
+            ->with(['images', 'user'])
+            ->paginate(9);
     }
 
-    public function getCategories(){
-        return ProductCategory::all();
+    public function getPropertyBySlug($slug)
+    {
+        return Sale::where('slug', $slug)->with(['images', 'user'])->first();
     }
 
-    public function getHomeNews(){
-        return News::where('home', 1)->get();
+    public function getHotProperties()
+    {
+        return Sale::where('hot', 1)
+            ->with(['images', 'user'])
+            ->get();
     }
 
-    public function getHomePosts(){
-        return KienThuc::where('home', 1)->get();
+    public function getAllProperties()
+    {
+        return Sale::with(['images', 'user'])->paginate(6);
     }
 
-    public function getCategory($slug){
-        return ProductCategory::where('slug', $slug)->first();
-    }
-
-    public function productCategory($categoryId){
-        return Product::where('category_id', $categoryId)->get();
-    }
-
-    public function getNews(){
-        return News::all();
-    }
-
-    public function getKienThuc(){
-        return KienThuc::all();
-    }
-
-    public function getPage($slug){
-        return Page::where('slug', $slug)->first();
-    }
-
-    public function getProductDetails($slug){
-        return Product::where('slug', $slug)->first();
-    }
-
-    public function getNewsDetails($slug){
-        return News::where('slug', $slug)->first();
-    }
-
-    public function getKienThucDetails($slug){
-        return KienThuc::where('slug', $slug)->first();
-    }
 }

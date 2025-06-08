@@ -9,14 +9,16 @@
             <div class="col-md-5">
                 <ul class="nav-top-menu">
                     <li>
-                        <a href="{{ route('sale.property') }}">Đất bán</a>
+                        <a href="{{ route('sale.lands') }}">Đất bán</a>
                     </li>
                     <li>
-                        <a href="{{ route('rent.property') }}">Nhà bán</a>
+                        <a href="{{ route('sale.house') }}">Nhà bán</a>
                     </li>
-                    <li>
-                        <a href="{{ route('home') }}">Dự án</a>
-                    </li>
+                    @if (Auth::check())
+                        <li>
+                            <a href="{{ route('my-properties') }}" >Tin đã đăng</a>
+                        </li>
+                    @endif
                 </ul>
             </div>
             <div class="col-md-6 pd-top-15">
@@ -82,17 +84,16 @@
                     </div>
                 </div>
                 <ul class="nav-top-menu" id="mobileTopMenu">
+                    @if (Auth::check())
+                        <li>
+                            <a href="{{ route('my-properties') }}" >Tin đã đăng</a>
+                        </li>
+                    @endif
                     <li>
-                        <a href="{{ route('sale.property') }}">Nhà đất bán</a>
+                        <a href="{{ route('sale.lands') }}">Đất bán</a>
                     </li>
                     <li>
-                        <a href="{{ route('rent.property') }}">Nhà đất cho thuê</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('home') }}">Dự án</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('home') }}">Tin tức</a>
+                        <a href="{{ route('sale.house') }}">Nhà bán</a>
                     </li>
                 </ul>
             </div>

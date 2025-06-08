@@ -9,10 +9,10 @@
             <div class="col-md-5">
                 <ul class="nav-top-menu">
                     <li>
-                        <a href="{{ route('my-properties') }}">Đất bán</a>
+                        <a href="{{ route('sale.lands') }}">Đất bán</a>
                     </li>
                     <li class="mg-left-10">
-                        <a href="{{ route('sale.create') }}">Nhà bán</a>
+                        <a href="{{ route('sale.house') }}">Nhà bán</a>
                     </li>
                     @if (Auth::check())
                         <li class="mg-left-10">
@@ -24,13 +24,11 @@
             <div class="col-md-6 pd-top-15">
                 <div class="Login-Register">
                     <ul class="top-menu-right">
-                        @if (Auth::check())
-                            <li class="mg-left-10">
-                                <a href="{{ route('logout') }}" class="btn btn-primary">
-                                    <i class="fas fa-sign-out-alt"></i> Đăng xuất
-                                </a>
-                            </li>
-                        @endif
+                        <li class="mg-left-10">
+                            <a href="{{ route('my-properties.create') }}" class="btn btn-register">
+                                <i class="fas fa-plus"></i> Đăng tin
+                            </a>
+                        </li>
 
                         <li class="mg-left-10">
                             <a href="#" class="btn btn-register">
@@ -90,21 +88,15 @@
                 </div>
                 <ul class="nav-top-menu" id="mobileTopMenu">
                     @if (Auth::check())
-                        <li class="">
-                            <a href="{{ route('sale.create') }}" >Tin đã đăng</a>
+                        <li>
+                            <a href="{{ route('my-properties') }}" >Tin đã đăng</a>
                         </li>
                     @endif
                     <li>
-                        <a href="{{ route('sale.property') }}">Đất bán</a>
+                        <a href="{{ route('sale.lands') }}">Đất bán</a>
                     </li>
                     <li>
-                        <a href="{{ route('rent.property') }}">Nhà bán</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('home') }}">Dự án</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('home') }}">Tin tức</a>
+                        <a href="{{ route('sale.house') }}">Nhà bán</a>
                     </li>
                 </ul>
             </div>

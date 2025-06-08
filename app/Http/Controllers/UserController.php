@@ -18,7 +18,7 @@ class UserController extends Controller
 
     public function login()
     {
-        return view('admin.user.login');
+        return view('client.type-1.page.login');
     }
 
     public function userLogin(Request $request)
@@ -37,7 +37,7 @@ class UserController extends Controller
     public function myProfile()
     {
         $user = $this->userService->getUser();
-        return view('admin.user.my-profile', [
+        return view('admin01.my-profile.index', [
             'data' => $user
         ]);
     }

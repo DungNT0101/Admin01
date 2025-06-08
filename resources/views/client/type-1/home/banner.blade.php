@@ -10,14 +10,14 @@
                     <p class="banner-subtitle">Nơi kết nối những giấc mơ về nhà đất</p>
                 </div>
                 <div class="col-md-12">
-                    <form action="#" method="GET" class="search-form">
+                    <form action="{{ route('search.property') }}" method="GET" class="search-form">
                         <div class="input-group mb-2">
                             <select name="type" class="form-select" style="max-width:150px;">
                                 <option value="">Loại hình</option>
-                                <option value="ban">Nhà đất bán</option>
-                                <option value="chothue">Nhà đất cho thuê</option>
+                                <option value="Đất bán">Đất bán</option>
+                                <option value="Nhà bán">Nhà bán</option>
                             </select>
-                            <select name="city" class="form-select" style="max-width:180px;">
+                            {{--  <select name="city" class="form-select" style="max-width:180px;">
                                 <option value="">Tỉnh/Thành phố</option>
                                 <option value="hcm">Hồ Chí Minh</option>
                                 <option value="hn">Hà Nội</option>
@@ -28,8 +28,8 @@
                                 <option value="th">Thanh Hóa</option>
                                 <option value="tn">Thái Nguyên</option>
                                 <!-- Thêm các tỉnh/thành khác nếu cần -->
-                            </select>
-                            <input type="text" name="query" class="form-control" placeholder="Tìm kiếm bất động sản theo tên, mã, ..." required>
+                            </select>  --}}
+                            <input type="text" name="keyword" class="form-control" placeholder="Tìm kiếm bất động sản theo tên, mã, ...">
                             <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i> Tìm kiếm</button>
                         </div>
                     </form>

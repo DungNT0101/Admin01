@@ -545,7 +545,7 @@ body.menu-fixed {
     display: inline;
     margin-right: 20px;
 }
-.price {
+.price, .property-phone {
     font-size: 16px;
     color: #FF385C;
 }
@@ -563,4 +563,88 @@ body.menu-fixed {
 }
 .breadcrumbs .btn-register:hover {
     color: #fff;
+}
+/* CSS for property details ======================================================================= */
+.property-details .property-area, .property-details .property-price, .property-details .property-price-per-sqm, .property-details .google-map, .property-details .property-code{
+    font-size: 16px;
+    color: #888;
+    display: block;
+    margin-top: 10px;
+}
+.property-details {
+    padding-bottom: 30px;
+}
+#mainPropertyImage {
+    width: 100%;
+    height: 500px;
+    object-fit: contain;
+}
+@media (max-width: 991.98px) {
+    #mainPropertyImage {
+        height: 350px;
+    }
+}
+#remove-video-btn{
+    display: block;
+}
+/* CSS for page my profile =============================================================================== */
+.page-my-profile {
+    background-color: #f5f7fb;
+    padding: 20px;
+}
+.img-avatar {
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+@media (max-width: 991.98px) {
+    .img-avatar {
+        width: 150px;
+        height: 150px;
+    }
+}
+.page-my-profile .top-menu ul{
+    float: right;
+    border-bottom: none;
+}
+.page-my-profile .top-menu ul li{
+    display: inline-block;
+    margin-right: 20px;
+    margin-top: 10px;
+
+}
+.property-sold{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(255, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 1;
+}
+.property-on-sale{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(0, 128, 0, 0.8);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 1
+}
+.property-on-sale:hover, .property-sold:hover {
+    background-color: rgba(0, 128, 0, 1);
+    color: #fff;
+}
+a.property-edit{
+    color: #fff;
+}
+a.property-edit:hover{
+    color: #fff;
+    text-decoration: none;
 }

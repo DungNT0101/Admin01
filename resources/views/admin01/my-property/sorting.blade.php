@@ -5,6 +5,7 @@
         <div class="row">
             <div class="col-md-9">
                 <h3 class="section-title">Quản lý bất động sản</h3>
+                <p class="section-subtitle">Bạn có {{ $count }} tin bất động sản</p>
             </div>
             <div class="sorting-options col-md-3 text-right mg-top-20">
                 <select class="form-control sort-select">

@@ -2,14 +2,14 @@
     <div class="container">
         <form action="#" method="GET" class="search-form">
             <div class="row">
-                <div class="col-md-3 pd-5">
+                <div class="col-md-4 pd-5">
                     <select name="property_type" class="form-control">
                         <option value="all" selected>Chọn loại bất động sản</option>
                         <option value="land">Đất bán</option>
                         <option value="house">Nhà bán</option>
                     </select>
                 </div>
-                <div class="col-md-3 pd-5">
+                {{--  <div class="col-md-3 pd-5">
                     <select name="location" class="form-control">
                         <option value="all" selected>Tỉnh / Thành Phố</option>
                         <option value="hanoi">Hà Nội</option>
@@ -18,8 +18,8 @@
                         <option value="haiphong">Hải Phòng</option>
                         <!-- Add more locations as needed -->
                     </select>
-                </div>
-                <div class="col-md-3 pd-5">
+                </div>  --}}
+                <div class="col-md-4 pd-5">
                     <select name="price_range" class="form-control">
                         <option value="all" selected>Khoảng giá</option>
                         <option value="3000000000">Dưới 3 tỷ</option>
@@ -31,7 +31,7 @@
                         <option value="15000000000">Trên 15 tỷ</option>
                     </select>
                 </div>
-                <div class="col-md-3 pd-5">
+                <div class="col-md-4 pd-5">
                     <select name="area_range" class="form-control">
                         <option value="all" selected>Diện tích</option>
                         <option value="100">Dưới 50 m²</option>

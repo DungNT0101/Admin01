@@ -56,6 +56,11 @@ Route::group([
     Route::get('/my-properties', [MyPropertyController::class, 'myProperties'])->name('my-properties');
     Route::get('/my-properties/create', [MyPropertyController::class, 'create'])->name('my-properties.create');
     Route::post('/my-properties/store', [MyPropertyController::class, 'store'])->name('my-properties.store');
+    Route::get('/my-properties/show/{id}', [MyPropertyController::class, 'show'])->name('my-properties.show');
+    Route::get('/my-properties/edit/{id}', [MyPropertyController::class, 'edit'])->name('my-properties.edit');
+    Route::post('/my-properties/edit/{id}', [MyPropertyController::class, 'update'])->name('my-properties.update');
+    Route::delete('/my-properties/image/{id}/delete', [MyPropertyController::class, 'deleteImage'])->name('my-properties.image.delete');
+    Route::delete('/my-properties/{id}/video/delete', [MyPropertyController::class, 'deleteVideo'])->name('my-properties.video.delete');
 
     // News
     Route::get('/news', [NewsController::class, 'getNews'])->name('news.index');
@@ -83,6 +88,8 @@ Route::group([
 // Client
 // Route::get('/home-1', [ClientController::class, 'index'])->name('home-1');
 Route::get('/', [ClientController::class, 'homePage'])->name('home');
-Route::get('/bat-dong-san-ban', [ClientController::class, 'saleProperty'])->name('sale.property');
-Route::get('/bat-dong-san-cho-thue', [ClientController::class, 'rentProperty'])->name('rent.property');
+Route::get('/dat-ban', [ClientController::class, 'saleLands'])->name('sale.lands');
+Route::get('/nha-ban', [ClientController::class, 'saleHouse'])->name('sale.house');
+Route::get('/bat-dong-san/{slug}', [ClientController::class, 'showProperty'])->name('show.property');
+Route::get('/tim-kiem', [ClientController::class, 'searchProperty'])->name('search.property');
 

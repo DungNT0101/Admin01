@@ -17,9 +17,9 @@
 
 @include('client.type-1.home.banner')
 
-@include('client.type-1.home.popular-places')
-
 @include('client.type-1.home.featured-properties')
+
+@include('client.type-1.home.popular-places')
 
 {{--  @include('client.type-1.home.rent-properties')  --}}
 

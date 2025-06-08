@@ -65,10 +65,10 @@ class UserService
             $user->avatar = config('image.users').'/'.$avatarName;
         }
 
-        // $user->user_name = $request->user_name;
-        $user->full_name = $request->fullname;
-        // $user->email = $request->email;
-        // $user->phone = $request->phone;
+        $user->user_name = $request->user_name;
+        $user->full_name = $request->full_name;
+        $user->email = $request->email;
+        $user->phone = $request->phone;
         $user->bio = $request->bio;
         $user->zalo = $request->zalo;
         $user->facebook = $request->facebook;

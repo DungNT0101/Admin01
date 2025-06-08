@@ -11,7 +11,7 @@ class MyPropertyService
     public function getMyProperties($userId)
     {
         // Lấy danh sách bất động sản của người dùng
-        return Sale::where('user_id', $userId)->with('images')->paginate(10);
+        return Sale::where('user_id', $userId)->with('images')->paginate(9);
     }
 
     public function deleteProperty($propertyId)
@@ -49,16 +49,52 @@ class MyPropertyService
             'direction' => $request->direction,
             'front' => $request->front,
             'road' => $request->road,
-            'video' => $request->video,
             'maps' => $request->maps,
             'owner_type' => $request->owner_type,
-            // 'favorite' => $request->has('favorite') ? 1 : 0,
-            // Thêm province và price_per_sqm
-            // 'province' => $request->province,
-            'price_per_sqm' => $request->price_per_sqm,
+            'hot' => $request->has('hot') ? 1 : 0,
+            'property_code' => $request->property_code,
+            'status' => $request->status,
+            'phone' => $request->phone,
+            'owner_type' => $request->owner_type,
         ];
         return Sale::create($data);
 
+    }
+
+    public function getPropertyById($propertyId)
+    {
+        // Lấy bất động sản theo ID và kiểm tra quyền sở hữu
+        return Sale::where('id', $propertyId)->with(['images', 'user'])->first();
+    }
+
+    public function updateProperty($propertyId, $request)
+    {
+        $property = Sale::find($propertyId);
+        if (!$property) {
+            return false;
+        }
+        $data = [
+            'type' => $request->type,
+            'title' => $request->title,
+            'address' => $request->address,
+            'type_property' => $request->type_property,
+            'content' => $request->content,
+            'price' => $request->price,
+            'area' => $request->area,
+            'equivalent_value' => $request->equivalent_value,
+            'law' => $request->law,
+            'direction' => $request->direction,
+            'front' => $request->front,
+            'road' => $request->road,
+            'maps' => $request->maps,
+            'hot' => $request->has('hot') ? 1 : 0,
+            'property_code' => $request->property_code,
+            'owner_type' => $request->owner_type,
+            'status' => $request->status,
+            'phone' => $request->phone,
+        ];
+        $property->update($data);
+        return $property;
     }
 
 }
