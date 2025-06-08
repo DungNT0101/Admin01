@@ -137,7 +137,7 @@
             <div class="row box-content">
                 <div class="col-md-12 mg-top-20">
                     <label for="content">Thông tin mô tả</label>
-                    <textarea name="content" id="content" cols="100%" class="form-control" rows="10"></textarea>
+                    <textarea name="content" id="content" cols="100%" class="form-control" rows="10">{{ old('content') }}</textarea>
                 </div>
             </div>
 
