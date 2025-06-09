@@ -42,12 +42,15 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-6">
-                                        <p class="property-code"><i class="fa fa-hashtag"></i>{{ $item->property_code }} </p>
+                                        <p class="property-code"><i class="fa fa-hashtag"></i> {{ $item->property_code }} </p>
+                                    </div>
+                                    <div class="col-6 ">
+                                        <p class="property-code"><i class="fa fa-ruler-combined"></i> {{ $item->area }} m²</p>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-6 mg-top-10">
-                                        <p class="square-meters"><i class="fa fa-ruler-combined"></i>{{ $item->area }} m²</p>
+                                        <p class="square-meters"><i class="fa fa-home"></i> {{ $item->front }} m</p>
                                     </div>
                                     <div class="col-6 mg-top-10">
                                         <a class="direction" href="{{ $item->maps }}" target="_blank"><i class="fa fa-map-marker"></i> Google Map</a>
@@ -55,10 +58,10 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-6 mg-top-10">
-                                        <p class="price mg-top-10"><i class="fa fa-dollar-sign"></i> {{ number_format((float) $item->price, 0, ',', '.') }} tỷ</p>
+                                        <p class="price mg-top-10"><i class="fa fa-dollar-sign"></i> {{ number_format((float) $item->price, 0, ',', '.') }} </p>
                                     </div>
                                     <div class="col-6 mg-top-10">
-                                        <p class="price mg-top-10">~ &nbsp; {{ $item->area ? number_format((float) $item->price / (float) $item->area, 0, ',', '.') : '0' }} VNĐ/m²</p>
+                                        <p class="price mg-top-10">~ {{ $item->area ? number_format((float) $item->price / (float) $item->area, 0, ',', '.') : '0' }} vnđ/m²</p>
                                     </div>
                                 </div>
                                 <div class="row">

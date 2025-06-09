@@ -43,6 +43,7 @@ class Sale extends Model
         'status',
         'phone',
         'hot',
+        'my_note',
     ];
 
     const TYPE_LAND = 'Đất bán';

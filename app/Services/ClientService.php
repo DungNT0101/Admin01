@@ -12,6 +12,7 @@ class ClientService
     {
         return Sale::where('type', Sale::TYPE_LAND)
             ->with(['images', 'user'])
+            ->orderByDesc('updated_at')
             ->paginate(9);
     }
 
@@ -19,6 +20,7 @@ class ClientService
     {
         return Sale::where('type', Sale::TYPE_HOUSE)
             ->with(['images', 'user'])
+            ->orderByDesc('updated_at')
             ->paginate(9);
     }
 
@@ -36,7 +38,9 @@ class ClientService
 
     public function getAllProperties()
     {
-        return Sale::with(['images', 'user'])->paginate(6);
+        return Sale::with(['images', 'user'])
+            ->orderByDesc('updated_at')
+            ->paginate(6);
     }
 
 }

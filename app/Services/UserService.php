@@ -31,7 +31,7 @@ class UserService
             'userName' => 'Tên đăng nhập hoặc mật khẩu không đúng.'
         ];
 
-        return view('admin.user.login', [
+        return view('client.type-1.page.login', [
             'errors' => collect($errors)
         ]);
     }

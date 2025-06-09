@@ -38,20 +38,23 @@
                                 <div class="col-12">
                                     <p class="property-location"><i class="fa fa-map-marker"></i> {{ $item->address }} </p>
                                 </div>
-                                <div class="col-12">
+                                <div class="col-6">
                                     <p class="property-code"><i class="fa fa-hashtag"></i> {{ $item->property_code }} </p>
                                 </div>
                                 <div class="col-6">
-                                    <p class="square-meters"><i class="fa fa-ruler-combined"></i>{{ $item->area }} m²</p>
+                                    <p class="square-meters"><i class="fa fa-ruler-combined"></i> {{ $item->area }} m²</p>
+                                </div>
+                                <div class="col-6">
+                                    <p class="square-meters"><i class="fa fa-home"></i> {{ $item->front }} m</p>
                                 </div>
                                 <div class="col-6">
                                     <a class="direction" href="{{ $item->maps }}" target="_blank"><i class="fa fa-map-marker"></i> Google Map</a>
                                 </div>
                                 <div class="col-6">
-                                    <p class="price"><i class="fa fa-dollar-sign"></i> {{ number_format((float) $item->price, 0, ',', '.') }} tỷ</p>
+                                    <p class="price"><i class="fa fa-dollar-sign"></i> {{ number_format((float) $item->price, 0, ',', '.') }}</p>
                                 </div>
                                 <div class="col-6">
-                                    <p class="price">~ &nbsp; {{ $item->area ? number_format((float) $item->price / (float) $item->area, 0, ',', '.') : '0' }} VNĐ/m²</p>
+                                    <p class="price">~ &nbsp; {{ $item->area ? number_format((float) $item->price / (float) $item->area, 0, ',', '.') : '0' }} vnđ/m²</p>
                                 </div>
                                 <div class="col-8">
                                     <p class="property-user"><i class="fa fa-user"></i> {{ $item->user->full_name}}</p>

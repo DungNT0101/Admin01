@@ -122,7 +122,7 @@
                     <label for="price">Tổng giá bán nguyên lô (căn)</label>
                     <div class="input-group">
                         <input type="text" class="form-control" id="price" name="price" value="{{ old('price') }}" oninput="formatPriceInput(this)">
-                        <span class="input-group-text">triệu</span>
+                        <span class="input-group-text">vnđ</span>
                     </div>
                 </div>
             </div>
@@ -168,6 +168,12 @@
                         <label class="form-check-label" for="hot">Bất động sản nổi bật</label>
                     </div>
 
+                </div>
+            </div>
+            <div class="row box-content">
+                <div class="col-md-12 mg-top-20">
+                    <label for="content">Ghi chú</label>
+                    <textarea name="my_note" id="content" cols="100%" class="form-control" rows="6">{{ old('my_note') }}</textarea>
                 </div>
             </div>
             <div class="row box-content mg-top-20">

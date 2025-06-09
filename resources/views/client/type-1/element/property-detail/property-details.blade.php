@@ -43,10 +43,13 @@
                 <p class="property-area"><i class="fa fa-ruler-combined"></i> Diện tích: {{ $property->area }} m²</p>
             </div>
             <div class="col-md-2 col-6">
-                <p class="property-price"><i class="fa fa-dollar-sign"></i> Giá: {{ number_format((float) $property->price, 0, ',', '.') }} triệu</p>
+                <p class="property-area"><i class="fa fa-home"></i> Mặt tiền: {{ $property->front }} m</p>
             </div>
             <div class="col-md-2 col-6">
-                <p class="property-price-per-sqm">~ {{ $property->area ? number_format((float) $property->price / (float) $property->area, 0, ',', '.') : '0' }} VNĐ/m²</p>
+                <p class="property-price"><i class="fa fa-dollar-sign"></i> Giá: {{ number_format((float) $property->price, 0, ',', '.') }}</p>
+            </div>
+            <div class="col-md-2 col-6">
+                <p class="property-price-per-sqm">~ {{ $property->area ? number_format((float) $property->price / (float) $property->area, 0, ',', '.') : '0' }} vnđ/m²</p>
             </div>
             <div class="col-md-2 col-6">
                 <p class="google-map"><i class="fa fa-map"></i> Google Map</p>
@@ -55,14 +58,15 @@
         <div class="row">
             <div class="col-md-12">
                 @auth
-                    <a href="tel:{{ $property->phone }}" class="property-phone">{{ $property->phone }}</a>
+                    <a href="tel:{{ $property->phone }}" class="property-phone"><i class="fa fa-user"></i> {{ $property->phone }}</a>
                 @else
-                    <p class="property-phone">098********</p>
+                    <p class="property-phone"><i class="fa fa-user"></i> 098********</p>
                 @endauth
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 mg-top-20">
+                <h5>Thông tin:</h5>
                 <p class="property-description">{{ $property->content }}</p>
             </div>
 

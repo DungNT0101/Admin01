@@ -675,3 +675,8 @@ a.property-edit:hover{
         margin: 0 auto;
     }
 }
+pre{
+    font-family: Roboto;
+    width: 100%;
+    font-size: 16px;
+}

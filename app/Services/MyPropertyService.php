@@ -11,7 +11,7 @@ class MyPropertyService
     public function getMyProperties($userId)
     {
         // Lấy danh sách bất động sản của người dùng
-        return Sale::where('user_id', $userId)->with('images')->paginate(9);
+        return Sale::where('user_id', $userId)->with('images')->orderByDesc('updated_at')->paginate(9);
     }
 
     public function deleteProperty($propertyId)
@@ -42,7 +42,7 @@ class MyPropertyService
             'address' => $request->address,
             'type_property' => $request->type_property,
             'content' => $request->content,
-            'price' => $request->price,
+            'price' => str_replace('.', '', $request->price),
             'area' => $request->area,
             'equivalent_value' => $request->equivalent_value,
             'law' => $request->law,
@@ -56,6 +56,7 @@ class MyPropertyService
             'status' => $request->status,
             'phone' => $request->phone,
             'owner_type' => $request->owner_type,
+            'my_note' => $request->my_note,
         ];
         return Sale::create($data);
 
@@ -79,7 +80,7 @@ class MyPropertyService
             'address' => $request->address,
             'type_property' => $request->type_property,
             'content' => $request->content,
-            'price' => $request->price,
+            'price' => str_replace('.', '', $request->price),
             'area' => $request->area,
             'equivalent_value' => $request->equivalent_value,
             'law' => $request->law,
@@ -92,6 +93,7 @@ class MyPropertyService
             'owner_type' => $request->owner_type,
             'status' => $request->status,
             'phone' => $request->phone,
+            'my_note' => $request->my_note,
         ];
         $property->update($data);
         return $property;

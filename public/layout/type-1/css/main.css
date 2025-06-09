@@ -527,8 +527,7 @@ a.property-phone {
     border-top: #c5c5c5 1px solid;
 }
 .price {
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 14px;
     color: #FF385C;
 }
 .why-choose-us-item {
@@ -804,6 +803,11 @@ a.property-phone {
     color: #444;
     text-decoration: none;
 }
+.page-listing a.direction{
+    color: #888;
+    font-size: 14px;
+    text-decoration: none;
+}
 .page-listing a.property-phone{
     color: #FF385C;
     font-size: 18px;
@@ -910,4 +914,9 @@ a.property-phone {
 .property-on-sale:hover, .property-sold:hover {
     background-color: rgba(0, 128, 0, 1);
     color: #fff;
+}
+pre{
+    font-family: Roboto;
+    width: 100%;
+    font-size: 16px;
 }
