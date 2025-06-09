@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-12 text-center">
                 <h2 class="section-title">Bất động sản bán nổi bật</h2>
-                <p class="section-subtitle">Khám phá những bất động sản nổi bật nhất</p>
+                <p class="section-subtitle">Hiện có <span style="color: #FF385C; font-weight: bold;">{{ $totalProperties }}</span> bất động sản</p>
             </div>
         </div>
         <div class="row">

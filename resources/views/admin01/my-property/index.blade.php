@@ -21,6 +21,17 @@
             ['name' => 'Bất động sản của tôi', 'url' => route('my-properties')]
         ]
     ])
+
+    {{--  Show alerts  --}}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                @include('admin01.element.show-alerts')
+            </div>
+        </div>
+    </div>
+
+
     {{--  Top search section  --}}
     @include('admin01.my-property.top-search')
 

@@ -460,6 +460,12 @@ body.menu-fixed {
     margin-top: 50px;
     background: #f5f7fb;
 }
+@media screen and (max-width: 991.98px) {
+    .featured-properties {
+        margin-top: 0;
+        padding-top: 20px;
+    }
+}
 .property-items a{
     text-decoration: none;
     color: #444;

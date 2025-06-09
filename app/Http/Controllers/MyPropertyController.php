@@ -284,4 +284,23 @@ class MyPropertyController extends Controller
         ]);
     }
 
+    public function delete($id)
+    {
+        $user = Auth::user();
+        if (!$user) {
+            return redirect()->route('login');
+        }
+
+        $property = $this->service->getPropertyById($id);
+        if (!$property || $property->user_id !== $user->id) {
+            return redirect()->route('my-properties')->with('error', 'Không tìm thấy bất động sản.');
+        }
+
+        if ($this->service->deleteProperty($id)) {
+            return redirect()->route('my-properties')->with('success', 'Xóa bất động sản thành công.');
+        } else {
+            return redirect()->back()->with('error', 'Xóa bất động sản thất bại. Vui lòng thử lại.');
+        }
+    }
+
 }

@@ -25,12 +25,14 @@ class ClientController extends Controller
 
     public function homePage(){
         $properties = $this->service->getAllProperties();
+        $totalProperties = $properties->total();
         $onSale = Sale::ON_SALE;
         $sold = Sale::SOLD;
         return view('client.type-1.page.home-1', [
             'properties' => $properties,
             'onSale' => $onSale,
-            'sold' => $sold
+            'sold' => $sold,
+            'totalProperties' => $totalProperties
         ]);
     }
 
