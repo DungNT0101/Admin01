@@ -29,7 +29,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
         {{--  Custom CSS  --}}
-        <link rel="stylesheet" href={{asset('layout/admin01/css/admin01.css') }}?v=05>
+        <link rel="stylesheet" href={{asset('layout/admin01/css/admin01.css') }}?v=06>
 
     </head>
     <body class="">
@@ -40,7 +40,7 @@
 
         @include('admin01.element.footer')
 
-        <script src="{{ asset('layout/admin01/js/admin01.js') }}?v=05"></script>
+        <script src="{{ asset('layout/admin01/js/admin01.js') }}?v=06"></script>
 
         {{--  Custom Scripts  --}}
         @stack('scripts')

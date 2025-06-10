@@ -54,6 +54,14 @@ function updateSaleWatchingCount() {
     document.querySelectorAll('.watching-properties-count').forEach(function(el) {
         el.textContent = watching_properties;
     });
+
+    // Cập nhật giá trị watching_sale_ids vào các thẻ có class watching-sale-ids
+    let watching_ids = getWatchingSaleIds();
+    localStorage.setItem('watching_ids', watching_ids);
+    // Cập nhật giá trị vào các thẻ có class watching-ids
+    document.querySelectorAll('.watching-ids').forEach(function(el) {
+        el.value = watching_ids;
+    });
 }
 
 function getWatchingSaleIds() {
@@ -65,6 +73,7 @@ function getWatchingSaleIds() {
             ids.push(id);
         }
     }
+    console.log('Watching Sale IDs:', localStorage);
     return ids;
 }
 

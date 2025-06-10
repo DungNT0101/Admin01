@@ -29,7 +29,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
         {{--  Custom CSS  --}}
-        <link rel="stylesheet" href="{{ asset('layout/type-1/css/main.css') }}?v=05">
+        <link rel="stylesheet" href="{{ asset('layout/type-1/css/main.css') }}?v=06">
 
     </head>
     <body class="">
@@ -45,7 +45,7 @@
 
         @yield('modals')
 
-        <script src="{{ asset('layout/type-1/js/main.js') }}?v=05"></script>
+        <script src="{{ asset('layout/type-1/js/main.js') }}?v=06"></script>
 
         {{--  Custom Scripts  --}}
         @stack('scripts')

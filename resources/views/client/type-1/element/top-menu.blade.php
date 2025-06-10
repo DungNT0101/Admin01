@@ -25,9 +25,13 @@
                 <div class="Login-Register">
                     <ul class="top-menu-right">
                         <li class="mg-left-10">
-                            <a href="#" class="btn btn-register watching-properties" id="watchingProperties">
-                                <span class="watching-properties-count">0</span> <i class="fas fa-heart"></i>
-                            </a>
+                            <form action="{{ route('watching.properties') }}" method="GET" class="search-form">
+                                @csrf
+                                <input type="hidden" name="watching-ids" class="form-control search-input watching-ids">
+                                <button type="submit" class="btn btn-register watching-properties">
+                                    <span class="watching-properties-count">0</span> <i class="fas fa-heart"></i>
+                                </button>
+                            </form>
                         </li>
                         <li class="mg-left-10">
                             <a href="{{ route('my-properties.create') }}" class="btn btn-register"><i class="fas fa-plus"></i> Đăng tin</a>
@@ -66,9 +70,16 @@
                             </a>
                         </div>
                         <div class="col-3">
-                            <p class="btn mg-10">
+                            {{--  <p class="btn mg-10">
                                 <span class="watching-properties-count">0</span><i class="fas fa-heart"></i>
-                            </p>
+                            </p>  --}}
+                            <form action="{{ route('watching.properties') }}" method="GET" class="search-form">
+                                @csrf
+                                <input type="hidden" name="watching-ids" class="form-control search-input watching-ids">
+                                <button type="submit" class="btn btn-register watching-properties mg-10">
+                                    <span class="watching-properties-count">0</span> <i class="fas fa-heart"></i>
+                                </button>
+                            </form>
                         </div>
                         <div class="col-3 text-end">
                             @if (Auth::check())

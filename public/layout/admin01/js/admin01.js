@@ -54,6 +54,27 @@ function updateSaleWatchingCount() {
     document.querySelectorAll('.watching-properties-count').forEach(function(el) {
         el.textContent = watching_properties;
     });
+
+    // Cập nhật giá trị watching_sale_ids vào các thẻ có class watching-sale-ids
+    let watching_ids = getWatchingSaleIds();
+    localStorage.setItem('watching_ids', watching_ids);
+    // Cập nhật giá trị vào các thẻ có class watching-ids
+    document.querySelectorAll('.watching-ids').forEach(function(el) {
+        el.value = watching_ids;
+    });
+}
+
+function getWatchingSaleIds() {
+    const ids = [];
+    for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (key.startsWith('watching_sale_')) {
+            const id = key.replace('watching_sale_', '');
+            ids.push(id);
+        }
+    }
+    console.log('Watching Sale IDs:', localStorage);
+    return ids;
 }
 
 document.querySelectorAll('.favorited').forEach(function(el) {

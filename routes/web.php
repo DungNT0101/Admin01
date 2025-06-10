@@ -64,6 +64,7 @@ Route::group([
     Route::get('/my-properties/search', [MyPropertyController::class, 'search'])->name('my-properties.search');
     Route::get('/my-properties/{id}/delete', [MyPropertyController::class, 'delete'])->name('my-properties.delete');
 
+
     // News
     Route::get('/news', [NewsController::class, 'getNews'])->name('news.index');
     Route::get('/news/create', [NewsController::class, 'createNews'])->name('news.create');
@@ -94,5 +95,5 @@ Route::get('/dat-ban', [ClientController::class, 'saleLands'])->name('sale.lands
 Route::get('/nha-ban', [ClientController::class, 'saleHouse'])->name('sale.house');
 Route::get('/bat-dong-san/{slug}', [ClientController::class, 'showProperty'])->name('show.property');
 Route::get('/tim-kiem', [ClientController::class, 'searchProperty'])->name('search.property');
-Route::get('/theo-doi', [ClientController::class, 'watchingProperty'])->name('watching.property');
+Route::get('/theo-doi', [ClientController::class, 'watchingProperties'])->name('watching.properties');
 

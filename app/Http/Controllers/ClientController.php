@@ -111,9 +111,28 @@ class ClientController extends Controller
         ]);
     }
 
-    public function watchingProperties()
+    public function watchingProperties(Request $request)
     {
-
+        // Lấy danh sách ID từ query string (?watching-ids=1,2,3)
+        $ids = $request->input('watching-ids');
+        $propertyIds = [];
+        if ($ids) {
+            $propertyIds = array_filter(explode(',', $ids));
+        }
+        $properties = collect();
+        if (!empty($propertyIds)) {
+            $properties = Sale::with(['images', 'user'])
+                ->whereIn('id', $propertyIds)
+                ->orderByDesc('updated_at')
+                ->paginate(33);
+        }
+        $onSale = Sale::ON_SALE;
+        $sold = Sale::SOLD;
+        return view('client.type-1.page.watching-properties', [
+            'properties' => $properties,
+            'onSale' => $onSale,
+            'sold' => $sold
+        ]);
     }
 
 }
