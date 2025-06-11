@@ -83,6 +83,7 @@ class UserController extends Controller
 
     public function create()
     {
+        /** @var \App\Models\User $user */
         $user = $this->userService->getUser();
         if(!$user || !$user->isAdmin()){
             return redirect()->route('accounts.index')->with('error', 'Bạn không có quyền truy cập');
