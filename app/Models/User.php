@@ -21,6 +21,18 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'admin_type',
+        'full_name',
+        'bio',
+        'phone',
+        'avatar',
+        'user_name',
+        'zalo',
+        'facebook',
+        'youtube',
+        'tiktok',
+        'remember_token',
+        'status',
     ];
 
     /**
@@ -42,4 +54,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    /**
+     * Kiểm tra user có phải admin không
+     */
+    public function isAdmin()
+    {
+        return $this->admin_type == 1;
+    }
 }

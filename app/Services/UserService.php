@@ -96,11 +96,13 @@ class UserService
         $user = User::find($id);
         return $user->delete();
     }
-    public function getAllUser()
+
+    public function getAllUsers()
     {
         return User::all();
     }
-    public function createUser($request)
+
+    public function store($request)
     {
         // Validate unique user_name
         if (User::where('user_name', $request->user_name)->exists()) {
@@ -123,4 +125,38 @@ class UserService
         ];
     }
 
+    public function update($id, $request)
+    {
+        $user = User::find($id);
+        if (!$user) {
+            return [
+                'success' => false,
+                'message' => 'Người dùng không tồn tại.'
+            ];
+        }
+        // Validate unique user_name
+        if (User::where('user_name', $request->user_name)->where('id', '!=', $id)->exists()) {
+            return [
+                'success' => false,
+                'message' => 'Tên đăng nhập đã tồn tại.'
+            ];
+        }
+        $user->user_name = $request->user_name;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->phone = $request->phone;
+        $user->address = $request->address;
+        $user->status = $request->status;
+
+        return $user->save();
+    }
+
+    public function delete($id)
+    {
+        $user = User::find($id);
+        if (!$user) {
+            return false;
+        }
+        return $user->delete();
+    }
 }

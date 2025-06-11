@@ -64,15 +64,6 @@ Route::group([
     Route::get('/my-properties/search', [MyPropertyController::class, 'search'])->name('my-properties.search');
     Route::get('/my-properties/{id}/delete', [MyPropertyController::class, 'delete'])->name('my-properties.delete');
 
-
-    // News
-    Route::get('/news', [NewsController::class, 'getNews'])->name('news.index');
-    Route::get('/news/create', [NewsController::class, 'createNews'])->name('news.create');
-    Route::post('/news/store', [NewsController::class, 'storeNews'])->name('news.store');
-    Route::get('/news/edit/{id}', [NewsController::class, 'editNews'])->name('news.edit');
-    Route::post('/news/update', [NewsController::class, 'updateNews'])->name('news.update');
-    Route::get('/news/delete/{id}', [NewsController::class, 'deleteNews'])->name('news.delete');
-
     // Pages
     Route::group([
         'prefix' => 'page'
@@ -84,6 +75,18 @@ Route::group([
         Route::post('/update', [PageController::class, 'update'])->name('page.update');
         Route::get('/delete/{id}', [PageController::class, 'delete'])->name('page.delete');
         Route::get('/view/{slug}', [PageController::class, 'view'])->name('page.view');
+    });
+
+    // Accounts Administration
+    Route::group([
+        'prefix' => 'accounts'
+    ], function(){
+        Route::get('/', [UserController::class, 'index'])->name('accounts.index');
+        Route::get('/create', [UserController::class, 'create'])->name('accounts.create');
+        Route::post('/store', [UserController::class, 'store'])->name('accounts.store');
+        Route::get('/edit/{id}', [UserController::class, 'edit'])->name('accounts.edit');
+        Route::post('/update', [UserController::class, 'update'])->name('accounts.update');
+        Route::get('/delete/{id}', [UserController::class, 'delete'])->name('accounts.delete');
     });
 
 });

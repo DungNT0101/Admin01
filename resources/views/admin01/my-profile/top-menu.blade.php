@@ -2,7 +2,7 @@
     <div class="col-md-12 text-end">
         <ul class="nav nav-tabs">
             <li class="nav-item">
-                <a href="#" class="btn btn-register"> <i class="fa fa-plus"></i> Thêm tài khoản</a>
+                <a href="{{ route('accounts.create') }}" class="btn btn-register"> <i class="fa fa-plus"></i> Thêm tài khoản</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link btn btn-register" href="{{ route('my-properties.create') }}" ><i class="fa fa-plus"></i> Đăng tin</a>
