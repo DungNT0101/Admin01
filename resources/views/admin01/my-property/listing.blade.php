@@ -69,7 +69,7 @@
                                         <p class="property-user"><i class="fa fa-user"></i> {{ Auth::user()->full_name }}</p>
                                     </div>
                                     <div class="col-4 mg-top-10 top-line pd-top-10">
-                                        <i class="property-icon fa fa-heart favorited" data-id="1"></i>
+                                        <i class="property-icon fa fa-heart favorited" data-id="{{ $item->id }}"></i>
                                         <a href="https://www.facebook.com/sharer/sharer.php?u=https://sandat.net/&display=popup">
                                             <i class="property-icon fa fa-share-alt"></i>
                                         </a>
