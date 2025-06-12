@@ -113,10 +113,6 @@ class UserService
         }
         $user = new User();
         $user->user_name = $request->user_name;
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->phone = $request->phone;
-        $user->address = $request->address;
         $user->password = Hash::make($request->password);
         $user->save();
         return [
@@ -125,30 +121,22 @@ class UserService
         ];
     }
 
-    public function update($id, $request)
+    public function update($request, $id)
     {
         $user = User::find($id);
         if (!$user) {
-            return [
-                'success' => false,
-                'message' => 'Người dùng không tồn tại.'
-            ];
+            return false;
         }
         // Validate unique user_name
         if (User::where('user_name', $request->user_name)->where('id', '!=', $id)->exists()) {
-            return [
-                'success' => false,
-                'message' => 'Tên đăng nhập đã tồn tại.'
-            ];
+            return false;
         }
-        $user->user_name = $request->user_name;
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->phone = $request->phone;
-        $user->address = $request->address;
-        $user->status = $request->status;
 
-        return $user->save();
+        $user->user_name = $request->user_name;
+        if($request->password) {
+            $user->password = Hash::make($request->password);
+        }
+        return $user->save() ? $user : false;
     }
 
     public function delete($id)

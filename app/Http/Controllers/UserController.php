@@ -77,7 +77,7 @@ class UserController extends Controller
     {
         $users = $this->userService->getAllUsers();
         return view('admin01.accounts.index', [
-            'data' => $users
+            'accounts' => $users
         ]);
     }
 
@@ -111,12 +111,13 @@ class UserController extends Controller
             return redirect()->route('accounts.index')->with('error', 'Tài khoản không tồn tại');
         }
         return view('admin01.accounts.edit', [
-            'data' => $user
+            'user' => $user
         ]);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
+        $id = $request->id;
         $user = $this->userService->update($request, $id);
         if($user){
             return redirect()->route('accounts.index')->with('success', 'Cập nhật tài khoản thành công');
