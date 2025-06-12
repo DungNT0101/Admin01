@@ -78,12 +78,14 @@
                 @endforeach
             @endif
         </div>
-        <div class="row mg-top-20">
-            <div class="col-md-12 d-flex justify-content-center align-items-center">
-                <nav aria-label="Page navigation">
-                    {{ $properties->links('vendor.pagination.bootstrap-4') }}
-                </nav>
+        @if ($properties->isNotEmpty())
+            <div class="row mg-top-20">
+                <div class="col-md-12 d-flex justify-content-center align-items-center">
+                    <nav aria-label="Page navigation">
+                        {{ $properties->links('vendor.pagination.bootstrap-4') }}
+                    </nav>
+                </div>
             </div>
-        </div>
+        @endif
     </div>
 </div>
