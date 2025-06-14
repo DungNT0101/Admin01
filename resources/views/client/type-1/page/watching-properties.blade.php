@@ -51,6 +51,14 @@
 
 {{--  Start scripts  --}}
 @push('scripts')
-
+<script>
+    // Xóa các key watching_sale_{id} trong localStorage nếu id nằm trong $notFoundIds
+    @if (!empty($notFoundIds))
+        @foreach ($notFoundIds as $id)
+            localStorage.removeItem('watching_sale_{{ $id }}');
+        @endforeach
+        updateSaleWatchingCount();
+    @endif
+</script>
 @endpush
 {{--  End scripts  --}}

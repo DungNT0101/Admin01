@@ -116,18 +116,24 @@ class ClientController extends Controller
             $propertyIds = array_filter(explode(',', $ids));
         }
         $properties = collect();
+        $notFoundIds = [];
         if (!empty($propertyIds)) {
             $properties = Sale::with(['images', 'user'])
                 ->whereIn('id', $propertyIds)
                 ->orderByDesc('updated_at')
                 ->paginate(33);
+            // Lấy danh sách ID thực tế đã tìm thấy
+            $foundIds = $properties->pluck('id')->map(fn($id) => (string)$id)->all();
+            // Tìm các ID không tồn tại trong bảng Sale
+            $notFoundIds = array_diff($propertyIds, $foundIds);
         }
         $onSale = Sale::ON_SALE;
         $sold = Sale::SOLD;
         return view('client.type-1.page.watching-properties', [
             'properties' => $properties,
             'onSale' => $onSale,
-            'sold' => $sold
+            'sold' => $sold,
+            'notFoundIds' => $notFoundIds
         ]);
     }
 
