@@ -60,7 +60,7 @@
             <div class="row box-content">
                 <div class="col-md-12 mg-top-20">
                     <label for="address">Địa chỉ</label>
-                    <input type="text" class="form-control" id="address" name="address" value="{{ old('address') }}">
+                    <input type="text" class="form-control" id="address" name="address" value="{{ old('address') }}" required>
                 </div>
             </div>
 
@@ -71,7 +71,7 @@
                 <div class="row mg-top-20">
                     <div class="col-md-12">
                         <label for="gallery_images">Hình ảnh</label>
-                        <input type="file" class="form-control" id="gallery_images" name="gallery_images[]" multiple accept="image/*" onchange="handleGalleryFiles(event)">
+                        <input type="file" class="form-control" id="gallery_images" name="gallery_images[]" multiple accept="image/*" onchange="handleGalleryFiles(event)" required>
                         <div id="gallery-preview-container" class="row mt-3"></div>
                     </div>
                 </div>
@@ -107,21 +107,21 @@
                 <div class="col-6 col-md-4 pd-10">
                     <label for="area">Diện tích (m2)</label>
                     <div class="input-group">
-                        <input type="text" class="form-control" id="area" name="area" value="{{ old('area') }}">
+                        <input type="text" class="form-control" id="area" name="area" value="{{ old('area') }}" required>
                         <span class="input-group-text">m<sup>2</sup></span>
                     </div>
                 </div>
                 <div class="col-6 col-md-4 pd-10">
                     <label for="front">Chiều ngang (m)</label>
                     <div class="input-group">
-                        <input type="text" class="form-control" id="front" name="front" value="{{ old('front') }}">
+                        <input type="text" class="form-control" id="front" name="front" value="{{ old('front') }}" required>
                         <span class="input-group-text">m</span>
                     </div>
                 </div>
                 <div class="col-md-4 pd-10 col-12">
                     <label for="price">Tổng giá bán nguyên lô (căn)</label>
                     <div class="input-group">
-                        <input type="text" class="form-control" id="price" name="price" value="{{ old('price') }}" oninput="formatPriceInput(this)">
+                        <input type="text" class="form-control" id="price" name="price" value="{{ old('price') }}" oninput="formatPriceInput(this)" required>
                         <span class="input-group-text">vnđ</span>
                     </div>
                 </div>
@@ -130,14 +130,14 @@
             <div class="row box-content mg-top-20">
                 <div class="col-md-12">
                     <label for="title">Tiêu đề</label>
-                    <input type="text" class="form-control" id="title" name="title" value="{{ old('title') }}">
+                    <input type="text" class="form-control" id="title" name="title" value="{{ old('title') }}"  required>
                 </div>
             </div>
 
             <div class="row box-content">
                 <div class="col-md-12 mg-top-20">
                     <label for="content">Thông tin mô tả</label>
-                    <textarea name="content" id="content" cols="100%" class="form-control" rows="10">{{ old('content') }}</textarea>
+                    <textarea name="content" id="content" cols="100%" class="form-control" rows="10" required>{{ old('content') }}</textarea>
                 </div>
             </div>
 
@@ -173,17 +173,17 @@
             <div class="row box-content">
                 <div class="col-md-12 mg-top-20">
                     <label for="content">Ghi chú</label>
-                    <textarea name="my_note" id="content" cols="100%" class="form-control" rows="6">{{ old('my_note') }}</textarea>
+                    <textarea name="my_note" id="content" cols="100%" class="form-control" rows="6" required>{{ old('my_note') }}</textarea>
                 </div>
             </div>
             <div class="row box-content mg-top-20">
                 <div class="col-md-3 mg-top-10 pd-right-10">
                     <label for="phone">Số điện thoại</label>
-                    <input type="text" class="form-control" id="phone" name="phone" value="{{ old('phone') }}">
+                    <input type="text" class="form-control" id="phone" name="phone" value="{{ old('phone') }}"  required>
                 </div>
                 <div class="col-md-3 mg-top-10 pd-right-10">
                     <label for="property_code">Mã tin</label>
-                    <input type="text" class="form-control" id="property_code" name="property_code" value="{{ old('property_code') }}">
+                    <input type="text" class="form-control" id="property_code" name="property_code" value="{{ old('property_code') }}" required>
                 </div>
             </div>
 

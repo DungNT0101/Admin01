@@ -521,7 +521,7 @@ h3.property-title{
         height: 60px;
     }
 }
-a.property-phone {
+a.property-phone, .property-phone {
     color: #FF385C;
     height: 25px;
     display: block;

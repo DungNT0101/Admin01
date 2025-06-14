@@ -68,7 +68,7 @@
                                         @auth
                                             <a href="tel:{{ $item->phone }}" class="property-phone"> <i class="fa fa-user"></i> {{ $item->phone }}</a>
                                         @else
-                                            <p class="property-phone"><i class="fa fa-user"></i> 098********</p>
+                                            <p class="property-phone"><i class="fa fa-user"></i> {{ $item->user->phone}}</p>
                                         @endauth
                                     </div>
                                 </div>

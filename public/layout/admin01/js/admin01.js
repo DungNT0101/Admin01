@@ -109,5 +109,19 @@ document.querySelectorAll('.favorited').forEach(function(el) {
         }
     });
 });
+
+document.querySelectorAll('a#deleteProperty').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+        var key = btn.getAttribute('data');
+        if (key) {
+            localStorage.removeItem(key);
+            updateSaleWatchingCount();
+        }
+        // Ngăn chặn chuyển trang ngay lập tức để đảm bảo localStorage được cập nhật
+        // Có thể bỏ preventDefault nếu muốn chuyển trang luôn
+        // e.preventDefault();
+    });
+});
+
 // Cập nhật số lượng khi load trang
 updateSaleWatchingCount();

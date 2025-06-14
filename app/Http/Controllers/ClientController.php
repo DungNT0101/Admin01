@@ -19,10 +19,6 @@ class ClientController extends Controller
         $this->service = $service;
     }
 
-    public function index(){
-        return view('client.home', []);
-    }
-
     public function homePage(){
         $properties = $this->service->getAllProperties();
         $totalProperties = $properties->total();

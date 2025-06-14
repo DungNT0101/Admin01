@@ -83,7 +83,7 @@
                                 <div class="row">
                                     <div class="col-12 pd-top-10 text-center top-line">
                                         <a href="{{ route('my-properties.edit', ['id' => $item->id]) }}" class="property-edit btn btn-register"><i class="fa fa-pencil-alt"></i> Chỉnh sửa</a>
-                                        <a href="{{ route('my-properties.delete', ['id' => $item->id]) }}" class="property-edit btn btn-register"><i class="fa fa-trash"></i> Xóa</a>
+                                        <a href="{{ route('my-properties.delete', ['id' => $item->id]) }}" class="property-edit btn btn-register" id="deleteProperty" data="watching_sale_{{ $item->id }}"><i class="fa fa-trash"></i> Xóa</a>
                                     </div>
                                 </div>
                             </div>
