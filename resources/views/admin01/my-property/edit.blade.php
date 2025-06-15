@@ -190,7 +190,7 @@
             <div class="row box-content">
                 <div class="col-md-12 mg-top-20">
                     <label for="content">Ghi chú</label>
-                    <textarea name="my_note" id="content" cols="100%" class="form-control" rows="6" required>{{ old('my_note', $property->my_note) }}</textarea>
+                    <textarea name="my_note" id="myNote" cols="100%" class="form-control" rows="6" required>{{ old('my_note', $property->my_note) }}</textarea>
                 </div>
             </div>
             <div class="row box-content mg-top-20">

@@ -73,7 +73,7 @@ function getWatchingSaleIds() {
             ids.push(id);
         }
     }
-    console.log('Watching Sale IDs:', localStorage);
+
     return ids;
 }
 
