@@ -185,8 +185,11 @@
                     <label for="property_code">Mã tin</label>
                     <input type="text" class="form-control" id="property_code" name="property_code" value="{{ old('property_code') }}" required>
                 </div>
+                <div class="col-md-6 mg-top-10 pd-right-10">
+                    <label for="maps">Bản đồ</label>
+                    <input type="text" class="form-control" id="maps" name="maps" value="{{ old('maps') }}"  required>
+                </div>
             </div>
-
             <div class="row box-content mg-top-20">
                 <div class="row mg-top-20">
                     <div class="col-md-12 mg-top-10 text-center">

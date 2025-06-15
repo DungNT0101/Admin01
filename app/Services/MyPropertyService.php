@@ -32,7 +32,7 @@ class MyPropertyService
         if (Sale::where('slug', $slug)->exists()) {
             return false;
         }
-        $mapsUrl = 'https://www.google.com/maps?q=' . urlencode($request->address);
+        // $mapsUrl = 'https://www.google.com/maps?q=' . urlencode($request->address);
         $data = [
             'code' => $currentTime,
             'user_id' => $request->user_id,
@@ -49,7 +49,7 @@ class MyPropertyService
             'direction' => $request->direction,
             'front' => $request->front,
             'road' => $request->road,
-            'maps' => $mapsUrl,
+            'maps' => $request->maps,
             'owner_type' => $request->owner_type,
             'hot' => $request->has('hot') ? 1 : 0,
             'property_code' => $request->property_code,
@@ -74,7 +74,7 @@ class MyPropertyService
         if (!$property) {
             return false;
         }
-        $mapsUrl = 'https://www.google.com/maps?q=' . urlencode($request->address);
+        // $mapsUrl = 'https://www.google.com/maps?q=' . urlencode($request->address);
         $data = [
             'type' => $request->type,
             'title' => $request->title,
@@ -88,7 +88,7 @@ class MyPropertyService
             'direction' => $request->direction,
             'front' => $request->front,
             'road' => $request->road,
-            'maps' => $mapsUrl,
+            'maps' => $request->maps,
             'hot' => $request->has('hot') ? 1 : 0,
             'property_code' => $request->property_code,
             'owner_type' => $request->owner_type,
