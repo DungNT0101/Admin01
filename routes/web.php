@@ -4,11 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\SaleController;
-use App\Http\Controllers\NewsController;
 use App\Http\Controllers\MyPropertyController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\PartnerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -87,6 +86,18 @@ Route::group([
         Route::get('/edit/{id}', [UserController::class, 'edit'])->name('accounts.edit');
         Route::post('/update', [UserController::class, 'update'])->name('accounts.update');
         Route::get('/delete/{id}', [UserController::class, 'delete'])->name('accounts.delete');
+    });
+
+    // Partner
+    Route::group([
+        'prefix' => 'partner'
+    ], function(){
+        Route::get('/', [PartnerController::class, 'index'])->name('partner.index');
+        Route::get('/create', [PartnerController::class, 'create'])->name('partner.create');
+        Route::post('/store', [PartnerController::class, 'store'])->name('partner.store');
+        Route::get('/edit/{id}', [PartnerController::class, 'edit'])->name('partner.edit');
+        Route::post('/update', [PartnerController::class, 'update'])->name('partner.update');
+        Route::get('/delete/{id}', [PartnerController::class, 'delete'])->name('partner.delete');
     });
 
 });

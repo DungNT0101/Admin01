@@ -611,11 +611,11 @@ body.menu-fixed {
         height: 150px;
     }
 }
-.page-my-profile .top-menu ul{
+.top-menu ul{
     float: right;
     border-bottom: none;
 }
-.page-my-profile .top-menu ul li{
+.top-menu ul li{
     display: inline-block;
     margin-right: 20px;
     margin-top: 10px;
@@ -682,4 +682,13 @@ pre{
     font-family: Roboto;
     width: 100%;
     font-size: 16px;
+}
+.box-top-menu {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 16px rgba(13,147,139,0.08), 0 1.5px 4px rgba(0,0,0,0.04);
+    margin-bottom: 20px;
+    float: right;
+    width: 100%;
+    text-align: right;
 }

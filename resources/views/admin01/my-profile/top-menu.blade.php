@@ -5,6 +5,9 @@
                 <li class="nav-item">
                     <a href="{{ route('accounts.index') }}" class="btn btn-primary"> <i class="fa fa-list"></i> Danh sách tài khoản</a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('partner.create') }}" class="btn btn-primary"> <i class="fa fa-list"></i> Danh sách đối tác</a>
+                </li>
             @endif
 
             <li class="nav-item">
