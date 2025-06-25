@@ -17,18 +17,13 @@
                                 <option value="Đất bán">Đất bán</option>
                                 <option value="Nhà bán">Nhà bán</option>
                             </select>
-                            {{--  <select name="city" class="form-select" style="max-width:180px;">
-                                <option value="">Tỉnh/Thành phố</option>
-                                <option value="hcm">Hồ Chí Minh</option>
-                                <option value="hn">Hà Nội</option>
-                                <option value="dn">Đà Nẵng</option>
-                                <option value="bd">Bình Dương</option>
-                                <option value="dna">Đồng Nai</option>
-                                <option value="ph">Hải Phòng</option>
-                                <option value="th">Thanh Hóa</option>
-                                <option value="tn">Thái Nguyên</option>
-                                <!-- Thêm các tỉnh/thành khác nếu cần -->
-                            </select>  --}}
+                            <select name="price" class="form-select" style="max-width:180px;">
+                                <option value="">Khoảng giá</option>
+                                <option value="1">Dưới 1 tỷ</option>
+                                <option value="2">Từ 1 tỷ đến 2 tỷ</option>
+                                <option value="3">Từ 2 tỷ đến 3 tỷ</option>
+                                <option value="4">Trên 3 tỷ</option>
+                            </select>
                             <input type="text" name="keyword" class="form-control" placeholder="Tìm kiếm bất động sản theo tên, mã, ...">
                             <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i> Tìm kiếm</button>
                         </div>

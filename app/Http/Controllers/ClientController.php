@@ -82,6 +82,7 @@ class ClientController extends Controller
     {
         $keyword = $request->input('keyword');
         $type = $request->input('type');
+        $price = $request->input('price');
 
         $query = Sale::with(['images', 'user']);
         if ($type) {
@@ -90,9 +91,29 @@ class ClientController extends Controller
         if ($keyword) {
             $query->where(function($q) use ($keyword) {
                 $q->where('title', 'LIKE', "%{$keyword}%")
-                  ->orWhere('property_code', 'LIKE', "%{$keyword}%");
+                  ->orWhere('property_code', 'LIKE', "%{$keyword}%")
+                  ->orWhere('address', 'LIKE', "%{$keyword}%");
             });
         }
+        if ($price) {
+            // Giả sử giá trị $price là một chuỗi như "dưới 1 tỷ", "từ 1 tỷ đến 2 tỷ", v.v.
+            if ($price == 1) {
+                $maxPrice = 1 * 1000000000;
+                $query->where('price', '<=', $maxPrice);
+            } elseif ($price == 2) {
+                $minPrice = 1 * 1000000000;
+                $maxPrice = 2 * 1000000000;
+                $query->whereBetween('price', [$minPrice, $maxPrice]);
+            } elseif ($price == 3) {
+                $minPrice = 2 * 1000000000;
+                $maxPrice = 3 * 1000000000;
+                $query->whereBetween('price', [$minPrice, $maxPrice]);
+            } elseif ($price == 4) {
+                $minPrice = 3 * 1000000000;
+                $query->where('price', '>=', $minPrice);
+            }
+        }
+
         $properties = $query->paginate(9);
 
         $onSale = Sale::ON_SALE;
@@ -103,7 +124,8 @@ class ClientController extends Controller
             'keyword' => $keyword,
             'onSale' => $onSale,
             'sold' => $sold,
-            'type' => $type
+            'type' => $type,
+            'price' => $price
         ]);
     }
 

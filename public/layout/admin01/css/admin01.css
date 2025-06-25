@@ -557,6 +557,9 @@ body.menu-fixed {
     color: #FF385C;
     font-weight: 600;
 }
+a.property-phone {
+    color: #FF385C;
+}
 .top-line {
     border-top: #c5c5c5 1px solid;
 }
