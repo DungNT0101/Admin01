@@ -28,7 +28,9 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <h3 class="property-title">{{ $property->title }}</h3>
+                <a href="{{ route('show.property', $property->slug) }}">
+                    <h1 class="property-title">{{ $property->title }}</h1>
+                </a>
             </div>
         </div>
         <div class="row">
@@ -60,7 +62,7 @@
                 @auth
                     <a href="tel:{{ $property->phone }}" class="property-phone"><i class="fa fa-user"></i> {{ $property->phone }}</a>
                 @else
-                    <p class="property-phone"><i class="fa fa-user"></i> 098********</p>
+                    <p class="property-phone"><i class="fa fa-user"></i> {{ $property->user->phone }}</p>
                 @endauth
             </div>
         </div>

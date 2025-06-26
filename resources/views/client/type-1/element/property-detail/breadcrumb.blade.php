@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-9 mg-top-20">
                 <ul>
-                    <li><a href="#">Trang chủ</a></li>
+                    <li><a href="{{ route('home') }}">Trang chủ</a></li>
                     @foreach ($breadcrumbs as $breadcrumb)
                         <li> &nbsp;/&nbsp; <a href="{{ $breadcrumb['url'] }}">{{ $breadcrumb['name'] }}</a></li>
                     @endforeach
